@@ -1,6 +1,6 @@
 # Pole
 
-Pole is a Mod mnu for Geometry Dash made by Mystical!
+Pole is a Mod menu for Geometry Dash made by Mystical and Gtxripmxt!
 
 # Features
 - Noclip
