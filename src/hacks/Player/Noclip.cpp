@@ -4,10 +4,13 @@
 using namespace geode::prelude;
 
 class $modify(NoclipPlayer, PlayerObject) {
-    bool checkCollisions(CCRect rect) {
-        if (Mod::get()->getSettingValue<bool>("enable-noclip")) {
-            return false; // dis makes you not die 
+    void destroyPlayer() {
+        if (Mod::get()->getSettingValue<bool>("noclip")) {
+            // dont die when you die
+            return;
         }
-        return PlayerObject::checkCollisions(rect); // dis makes you die
+
+        // die when you die
+        PlayerObject::destroyPlayer();
     }
 };
