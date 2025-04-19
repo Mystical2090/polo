@@ -10,7 +10,7 @@
     "id": "polo.polo",
     "name": "Polo",
     "developer": "Polo Team",
-    "description": "Eclipse-style modular hack menu for Geometry Dash.",
+    "description": "for Geometry Dash.",
     "entry": "main.cpp",
     "settings": {
         "player": {
