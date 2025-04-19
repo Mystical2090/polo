@@ -4,13 +4,13 @@
 using namespace geode::prelude;
 
 class $modify(NoclipPlayer, PlayerObject) {
-    void destroyPlayer() {
+    void destroyPlayer() override {
         if (Mod::get()->getSettingValue<bool>("noclip")) {
-            // dont die when you die
+            // dont die when die
             return;
         }
 
-        // die when you die
+        // die when die
         PlayerObject::destroyPlayer();
     }
 };
