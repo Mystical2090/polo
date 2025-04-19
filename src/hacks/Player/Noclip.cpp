@@ -6,10 +6,10 @@ using namespace geode::prelude;
 class $modify(NoclipPlayer, PlayerObject) {
     void pushButton(PlayerButton btn) {
         if (Mod::get()->getSettingValue<bool>("noclip")) {
-            this->m_isDead = false; // Prevents dying
-            this->m_yVelocity = std::max(this->m_yVelocity, -5.0f); // Avoid bugged falling
+            this->m_isDead = false; // The actual mod
+            this->m_yVelocity = std::max(this->m_yVelocity, static_cast<decltype(this->m_yVelocity)>(-5.0));
         }
 
-        PlayerObject::pushButton(btn); // Call the original method
+        PlayerObject::pushButton(btn); // Calles the method
     }
-}
+};
