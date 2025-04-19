@@ -4,13 +4,12 @@
 using namespace geode::prelude;
 
 class $modify(NoclipPlayer, PlayerObject) {
-    void collided(cocos2d::CCObject* obj) {
-        if (Mod::get()->getSettingValue<bool>("enable-noclip")) {
-            // dont die when die
-            return;
+    void pushButton(PlayerButton btn) {
+        if (Mod::get()->getSettingValue<bool>("noclip")) {
+            this->m_isDead = false; // Prevents dying
+            this->m_yVelocity = std::max(this->m_yVelocity, -5.0f); // Avoid bugged falling
         }
 
-        // die when die
-        PlayerObject::collided(obj);
+        PlayerObject::pushButton(btn); // Call the original method
     }
-};
+}
