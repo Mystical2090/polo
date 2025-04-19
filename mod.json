@@ -15,7 +15,7 @@
     "settings": {
         "player": {
             "type": "title",
-            "name": "player"
+            "name": "Player Hacks"
         },
                 "enable-noclip": {
                     "name": "Noclip",
@@ -34,7 +34,7 @@
                 },
         "global": {
             "type": "title",
-            "name": "global"
+            "name": "Global Hacks"
         },
                 "speedhack": {
                     "name": "Speed Multiplier",
