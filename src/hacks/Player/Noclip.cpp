@@ -1,16 +1,13 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>
+#include <Geode/modify/PlayerObject.hpp>
+
 using namespace geode::prelude;
 
-class $modify(NoclipHack, PlayLayer) {
-    void update(float dt) {
-    auto myBool = Mod::get()->getSettingValue<bool>("enable-noclip");
-        if (Mod::get()->getSettingValue<bool>("enable-noclip"))
-            if (this->m_player1) this->m_player1->m_isDead = false;
-        PlayLayer::update(dt);
+class $modify(NoclipPlayer, PlayerObject) {
+    bool checkCollisions(CCRect rect) {
+        if (Mod::get()->getSettingValue<bool>("enable-noclip")) {
+            return false; // skip collision
+        }
+        return PlayerObject::checkCollisions(rect); // original behavior
     }
 };
-
-void loadPlayerHacks() {
-    log::info("Noclip loaded");
-}
