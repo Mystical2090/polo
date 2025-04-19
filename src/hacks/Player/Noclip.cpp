@@ -4,13 +4,13 @@
 using namespace geode::prelude;
 
 class $modify(NoclipPlayer, PlayerObject) {
-    void destroyPlayer() override {
+    void collided(cocos2d::CCObject* obj) {
         if (Mod::get()->getSettingValue<bool>("noclip")) {
             // dont die when die
             return;
         }
 
         // die when die
-        PlayerObject::destroyPlayer();
+        PlayerObject::collided(obj);
     }
 };
