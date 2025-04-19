@@ -1,8 +1,5 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/EditorPauseLayer.hpp>
-#include <Geode/modify/EndLevelLayer.hpp>
 #include <Geode/modify/PauseLayer.hpp>
-#include <Geode/modify/PlayerObject.hpp>
 #include <Geode/ui/GeodeUI.hpp>
 #include <Geode/utils/cocos.hpp>
 
@@ -17,17 +14,13 @@ public:
 void PauseWithImageButton::customSetup() {
     PauseLayer::customSetup();
 
-auto settingsBtn = CCMenuItemSpriteExtra::create(
-            CCSprite::createWithSpriteFrameName("GJ_optionsBtn_001.png"),
-            this,
-            menu_selector(PauseLayer::onSettings)
-        );
+    auto sprite = CCSprite::createWithSpriteFrameName("GJ_optionsBtn_001.png");
 
     auto button = CCMenuItemSpriteExtra::create(
         sprite,
         sprite,
         this,
-        menu_selector(PauseWithImageButton::onSettingsButton) // whowza
+        menu_selector(PauseWithImageButton::onSettingsButton)
     );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
@@ -36,9 +29,10 @@ auto settingsBtn = CCMenuItemSpriteExtra::create(
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(button);
     menu->setPosition({ 0, 0 });
+
     this->addChild(menu);
 }
 
 void PauseWithImageButton::onSettingsButton(cocos2d::CCObject*) {
-    geode::openSettingsPopup(Mod::get(), true);
+    geode::openSettingsPopup(Mod::get(), true); //wowowowow
 }
