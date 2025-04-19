@@ -1,7 +1,7 @@
-# Pole
+# Polo
 
 <img src="logo.png" width="150" alt="the mod's logo" />
-Pole is a Mod mnu for Geometry Dash made by Mystical!
+Polo is a Mod mnu for Geometry Dash made by Mystical!
 
 # Features
 - Noclip
