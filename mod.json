@@ -14,9 +14,9 @@
     "entry": "main.cpp",
     "settings": {
         "player": {
-            "type": "group",
-            "name": "Player Hacks",
-            "items": {
+            "type": "title",
+            "name": "player"
+        },
                 "enable-noclip": {
                     "name": "Noclip",
                     "type": "bool",
@@ -32,12 +32,10 @@
                     "type": "bool",
                     "default": false
                 }
-            }
-        },
         "global": {
-            "type": "group",
-            "name": "Global Hacks",
-            "items": {
+            "type": "title",
+            "name": "global"
+        },
                 "speedhack": {
                     "name": "Speed Multiplier",
                     "type": "float",
@@ -46,6 +44,4 @@
                     "default": 1.0
                 }
             }
-        }
-    }
 }
