@@ -1,13 +1,11 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>\
+#include <Geode/modify/PlayLayer.hpp>
 
 using namespace geode::prelude;
 
+// Only apply this mod if the setting is enabled
 $execute {
-    if (!Mod::get()->getSettingValue<bool>("enable-noclip")) {
-        return Mod::Result::Error("Noclip is disabled in settings");
-    }
-    return Mod::Result::Success;
+    return Mod::get()->getSettingValue<bool>("enable-noclip");
 }
 
 class $modify(NoclipHack, PlayLayer) {
