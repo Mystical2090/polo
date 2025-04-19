@@ -1,15 +1,20 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayerObject.hpp>
+#include <Geode/modify/PlayLayer.hpp>\
 
 using namespace geode::prelude;
 
-class $modify(NoclipPlayer, PlayerObject) {
-    void pushButton(PlayerButton btn) {
-        if (Mod::get()->getSettingValue<bool>("noclip")) {
-            this->m_isDead = false; // The actual mod
-            this->m_yVelocity = std::max(this->m_yVelocity, static_cast<decltype(this->m_yVelocity)>(-5.0));
-        }
+$execute {
+    if (!Mod::get()->getSettingValue<bool>("enable-noclip")) {
+        return Mod::Result::Error("Noclip is disabled in settings");
+    }
+    return Mod::Result::Success;
+}
 
-        PlayerObject::pushButton(btn); // Calles the method
+class $modify(NoclipHack, PlayLayer) {
+    void update(float dt) {
+        if (this->m_player1) {
+            this->m_player1->m_isDead = false;
+        }
+        PlayLayer::update(dt);
     }
 };
