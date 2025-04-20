@@ -4,5 +4,5 @@ void loadPlayerHacks();
 void loadGlobalHacks();
 
 $on_mod(Loaded) {
-    loadGlobalHacks();
+    // idk hmmm why does this file exist
 }
