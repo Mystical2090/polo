@@ -2,8 +2,8 @@
 #include <Geode/modify/PauseLayer.hpp>
 #include <Geode/ui/GeodeUI.hpp>
 #include <Geode/utils/cocos.hpp>
-#include <Geode/binding/OptionsLayer.hpp> // Include OptionsLayer
-#include <Geode/ext/cocos/CCMenuItemSpriteExtra.hpp> // If CCMenuItemSpriteExtra isn't recognized
+#include <Geode/binding/OptionsLayer.hpp>
+#include <Geode/ext/cocos/CCMenuItemSpriteExtra.hpp>
 
 using namespace geode::prelude;
 
@@ -17,7 +17,7 @@ void PauseWithImageButton::customSetup() {
     PauseLayer::customSetup();
 
     auto sprite = CCSprite::createWithSpriteFrameName("GJ_optionsBtn_001.png");
-    if (!sprite) return; // Safeguard against missing sprite
+    if (!sprite) return;
 
     auto button = CCMenuItemSpriteExtra::create(
         sprite,
