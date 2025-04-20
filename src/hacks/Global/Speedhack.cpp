@@ -1,22 +1,16 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayLayer.hpp>
+
 using namespace geode::prelude;
 
-class $modify(Speedhack, PlayLayer) {
+class $modify(SpeedhackMod, PlayLayer) {
+public:
+    // update overide yayyayayayayay
     void update(float dt) {
-        float mult = Mod::get()->getSettingValue<float>("speedhack");
-
-        // logging stuff to see if it worksasjkdc DEV thing
-        log::debug("Running Speedhack: dt = {}, mult = {}", dt, mult);
-
-        // Apply da speedhack to make da work daadsldci
-        PlayLayer::update(dt * mult);
+        // Check if geode settings has it enabled
+        float speedMultiplier = Mod::get()->getSettingValue<float>("speedhack");
+        
+        // Adjust to adjust speed yay
+        PlayLayer::update(dt * speedMultiplier); // Scale the delta time by the speed multiplier
     }
 };
-
-void loadGlobalHacks() {
-    log::info("Speedhack loaded");
-
-    // Link the class
-    Speedhack::get();
-}
