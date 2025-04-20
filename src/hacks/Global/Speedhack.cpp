@@ -12,5 +12,6 @@ class $modify(SpeedHack, PlayLayer) {
             PlayLayer::update(dt * speed);
         } else {
             PlayLayer::update(dt);
+        }
     }
-}
+};
