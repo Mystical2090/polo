@@ -9,9 +9,8 @@
     "version": "v2.0.0",
     "id": "polo.polo",
     "name": "Polo",
-    "developer": "Polo Team",
+     "developers": ["Gtxripmxt","Mystical"],
     "description": "for Geometry Dash.",
-    "entry": "main.cpp",
     "settings": {
         "player": {
             "type": "title",
@@ -36,12 +35,28 @@
             "type": "title",
             "name": "Global Hacks"
         },
+                "speedhack-bool": {
+                    "name": "Speed Hack",
+                    "type": "bool",
+                    "name": "Enable Groovy Mode",
+                    "description": "uhh ye speedhack",
+                    "default": false
+                }
                 "speedhack": {
-                    "name": "Speed Multiplier",
+                    "name": "Speed Hack",
                     "type": "float",
-                    "min": 0.1,
-                    "max": 3.0,
-                    "default": 1.0
+                    "min": 0.01,
+                    "max": 5.0,
+                    "default": 1.0,
+                    "enable-if": "speedhack-bool",
+                    "controls": {
+        "arrows": true,
+        "arrow-step": 0.1,
+        "big-arrows": false,
+        "big-arrow-step": 0.5,
+        "slider": true,
+        "slider-step": 0.1,
+        "input": false
                 }
             }
 }
