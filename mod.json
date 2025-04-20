@@ -41,7 +41,7 @@
                     "name": "Enable Groovy Mode",
                     "description": "uhh ye speedhack",
                     "default": false
-                }
+                },
                 "speedhack": {
                     "name": "Speed Hack",
                     "type": "float",
