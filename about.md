@@ -1,7 +1,5 @@
 # Pole
 
-# Polo is a Mod menu for Geometry Dash made by Mystical and Gtxripmxt!
-
 ## Features
 - Noclip
 - Speedhack
