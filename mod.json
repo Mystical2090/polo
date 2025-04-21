@@ -7,10 +7,13 @@
         "ios": "2.2074"
     },
     "version": "v2.0.0",
-    "id": "polo.polo",
+    "id": "mystical.gtxripmxt.polo",
     "name": "Polo",
      "developers": ["Gtxripmxt","Mystical"],
     "description": "for Geometry Dash.",
+    "links": {
+            "source": "https://github.com/Gtxripmxt/not-a-mod-menu"
+    },
     "settings": {
         "player": {
             "type": "title",
