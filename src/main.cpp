@@ -4,5 +4,5 @@ void loadPlayerHacks();
 void loadGlobalHacks();
 
 $on_mod(Loaded) {
-    // idk hmmm why does this file exist
+    // idk why i did void loadGlobalHacks theres no cpp file but cool ig idk also idgaf
 }
