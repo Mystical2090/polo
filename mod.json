@@ -24,19 +24,19 @@
                 "enable-noclip": {
                     "name": "Noclip",
                     "type": "bool",
-                    "description": "spaceuk hack"
+                    "description": "spaceuk hack",
                     "default": false
                 },
                 "enable-auto-click": {
                     "name": "Auto Click",
                     "type": "bool",
-                    "description": "me when i autoclick"
+                    "description": "me when i autoclick",
                     "default": false
                 },
                 "enable-fly": {
                     "name": "Fly Hack",
                     "type": "bool",
-                    "description": "uhh ye some stuff called fly hack yay"
+                    "description": "uhh ye some stuff called fly hack yay",
                     "default": false
                 },
         "global": {
