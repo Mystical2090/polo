@@ -19,7 +19,7 @@
     "settings": {
         "player": {
             "type": "title",
-            "name": "Player Hacks"
+            "name": "Player"
         },
                 "enable-noclip": {
                     "name": "Noclip",
@@ -38,13 +38,18 @@
                 },
         "global": {
             "type": "title",
-            "name": "Global Hacks"
+            "name": "Global"
         },
                 "speedhack-bool": {
                     "name": "Speed Hack",
-                    "type": "bool",
-                    "name": "Enable Groovy Mode",
+                    "type": "bool",,
                     "description": "uhh ye speedhack",
+                    "default": false
+                },
+                "icon-hack": {
+                    "name": "Icon Hack",
+                    "type": "bool",
+                    "description": "icon hack yes nice",
                     "default": false
                 },
                 "speedhack": {
