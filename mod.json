@@ -79,7 +79,7 @@
                 "type": "bool",
                 "description": "verify hack thing hmm",
                 "default": false
-                },
+                }
                 }
             }
         }
