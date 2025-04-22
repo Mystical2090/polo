@@ -45,7 +45,7 @@
         },
                 "speedhack-bool": {
                     "name": "Speed Hack",
-                    "type": "bool",,
+                    "type": "bool",
                     "description": "uhh ye speedhack",
                     "default": false
                 },
