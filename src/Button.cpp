@@ -56,7 +56,7 @@ void MainMenuWithImageButton::onEnter() {
     );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-    button->setPosition({ 40.f, winSize.height - 60.f });
+    button->setPosition({ 40.f, winSize.height / 2 });
 
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(button);
