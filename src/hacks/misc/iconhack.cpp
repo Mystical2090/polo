@@ -7,6 +7,10 @@ class $modify(MyMenuLayer, GameManager) {
 	bool isIconUnlocked(int p0, IconType p1) {
 		bool result = GameManager::isIconUnlocked(p0, p1);
 
-		return true;
+		if (Mod::get()->getSettingValue<bool>("icon-hack")) {
+			return true;
+		}
+
+		return result;
 	}
 };
