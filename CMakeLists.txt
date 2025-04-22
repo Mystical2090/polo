@@ -13,11 +13,11 @@ project(polo VERSION 1.0.0)
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
     src/Button.cpp
-    src/hacks/player/Noclip.cpp
-    src/hacks/player/FlyHack.cpp
-    src/hacks/player/AutoClick.cpp
-    src/hacks/global/speedhack.cpp
-    src/hacks/global/iconhack.cpp
+    src/hacks/Player/Noclip.cpp
+    src/hacks/Player/FlyHack.cpp
+    src/hacks/Player/AutoClick.cpp
+    src/hacks/misc/speedhack.cpp
+    src/hacks/misc/iconhack.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
