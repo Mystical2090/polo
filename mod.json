@@ -70,6 +70,16 @@
         "slider": true,
         "slider-step": 0.1,
         "input": false
+        "creator": {
+            "type": "title",
+            "name": "Creator"
+        },   
+            "verify-hackk": {
+                "name": "Verify Hack",
+                "type": "bool",
+                "description": "verify hack thing hmm",
+                "default": false
+                },
                 }
             }
         }
