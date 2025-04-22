@@ -24,16 +24,19 @@
                 "enable-noclip": {
                     "name": "Noclip",
                     "type": "bool",
+                    "description": "spaceuk hack"
                     "default": false
                 },
                 "enable-auto-click": {
                     "name": "Auto Click",
                     "type": "bool",
+                    "description": "me when i autoclick"
                     "default": false
                 },
                 "enable-fly": {
                     "name": "Fly Hack",
                     "type": "bool",
+                    "description": "uhh ye some stuff called fly hack yay"
                     "default": false
                 },
         "global": {
@@ -49,7 +52,7 @@
                 "icon-hack": {
                     "name": "Icon Hack",
                     "type": "bool",
-                    "description": "icon hack yes nice",
+                    "description": "icon hack yay",
                     "default": false
                 },
                 "speedhack": {
