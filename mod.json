@@ -39,9 +39,9 @@
                     "description": "uhh ye some stuff called fly hack yay",
                     "default": false
                 },
-        "global": {
+        "Misc": {
             "type": "title",
-            "name": "Global"
+            "name": "Misc"
         },
                 "speedhack-bool": {
                     "name": "Speed Hack",
