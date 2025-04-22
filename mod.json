@@ -63,13 +63,14 @@
                     "default": 1.0,
                     "enable-if": "speedhack-bool",
                     "controls": {
-        "arrows": true,
-        "arrow-step": 0.1,
-        "big-arrows": false,
-        "big-arrow-step": 0.5,
-        "slider": true,
-        "slider-step": 0.1,
-        "input": false
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": false,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": false
+                    },
         "creator": {
             "type": "title",
             "name": "Creator"
@@ -79,7 +80,6 @@
                 "type": "bool",
                 "description": "verify hack thing hmm",
                 "default": false
-                }
                 }
             }
         }
