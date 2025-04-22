@@ -37,14 +37,15 @@ void PauseWithImageButton::customSetup() {
 void PauseWithImageButton::onSettingsButton(cocos2d::CCObject*) {
     	geode::openSettingsPopup(Mod::get(), true);
 }
+
 class $modify(MainMenuWithImageButton, MenuLayer) {
 public:
-    void onEnter() override;
+    bool init() override;
     void onSettingsButton(cocos2d::CCObject*);
 };
 
-void MainMenuWithImageButton::onEnter() {
-    MenuLayer::onEnter();
+bool MainMenuWithImageButton::init() {
+    if (!MenuLayer::init()) return false;
 
     auto sprite = CCSprite::createWithSpriteFrameName("GJ_optionsBtn_001.png");
 
@@ -56,13 +57,15 @@ void MainMenuWithImageButton::onEnter() {
     );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-    button->setPosition({ 40.f, winSize.height / 2 });
+    button->setPosition({ 40.f, winSize.height - 0.f }); // Top-left
 
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(button);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
+
+    return true;
 }
 
 void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
