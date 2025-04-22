@@ -1,7 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GameManager.hpp>
 
-using namesoace geode::prelude
+using namespace geode::prelude
 
 class $modify(MyMenuLayer, GameManager) {
 	bool isIconUnlocked(int p0, IconType p1) {
