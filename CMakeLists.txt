@@ -16,7 +16,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/player/Noclip.cpp
     src/hacks/player/FlyHack.cpp
     src/hacks/player/AutoClick.cpp
-    src/hacks/global/Speedhack.cpp
+    src/hacks/global/speedhack.cpp
     src/hacks/global/iconhack.cpp
 )
 
