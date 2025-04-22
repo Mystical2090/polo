@@ -1,6 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PauseLayer.hpp>
 #include <Geode/ui/GeodeUI.hpp>
+#include <Geode/modify/MenuLayer.hpp>
 #include <Geode/utils/cocos.hpp>
 
 using namespace geode::prelude;
@@ -35,4 +36,35 @@ void PauseWithImageButton::customSetup() {
 
 void PauseWithImageButton::onSettingsButton(cocos2d::CCObject*) {
     	geode::openSettingsPopup(Mod::get(), true);
+}
+class $modify(MainMenuWithImageButton, MenuLayer) {
+public:
+    void onEnter() override;
+    void onSettingsButton(cocos2d::CCObject*);
+};
+
+void MainMenuWithImageButton::onEnter() {
+    MenuLayer::onEnter();
+
+    auto sprite = CCSprite::createWithSpriteFrameName("GJ_optionsBtn_001.png");
+
+    auto button = CCMenuItemSpriteExtra::create(
+        sprite,
+        sprite,
+        this,
+        menu_selector(MainMenuWithImageButton::onSettingsButton)
+    );
+
+    auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+    button->setPosition({ 40.f, winSize.height - 60.f });
+
+    auto menu = cocos2d::CCMenu::create();
+    menu->addChild(button);
+    menu->setPosition({ 0, 0 });
+
+    this->addChild(menu);
+}
+
+void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
+    geode::openSettingsPopup(Mod::get(), true);
 }
