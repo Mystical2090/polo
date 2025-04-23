@@ -8,9 +8,9 @@ class $modify(EditorUI) {
         if (Mod::get()->getSettingValue<bool>("custom-obj-bypass")) {
             log::info("bypassing object limit thing");
             this->m_customObjectDict->setObject(CCArray::create(), CCDictionary::create()->count() + 1);
-            EditorUI::onSaveCustomObject(sender);
+            EditorUI::onNewCustomObject(sender);
             return;
         }
-        EditorUI::onSaveCustomObject(sender);
+        EditorUI::onNewCustomObject(sender);
     }
 };
