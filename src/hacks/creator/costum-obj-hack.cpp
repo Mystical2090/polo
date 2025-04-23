@@ -3,14 +3,21 @@
 
 using namespace geode::prelude;
 
-class $modify(EditorUI) {
-    void onSaveCustomObject(CCObject* sender) {
-        if (Mod::get()->getSettingValue<bool>("custom-obj-bypass")) {
-            log::info("bypassing object limit thing");
-            this->m_customObjectDict->setObject(CCArray::create(), CCDictionary::create()->count() + 1);
-            EditorUI::onNewCustomObject(sender);
-            return;
+    class $modify(customobjbypassthing, EditorUI) {
+
+        void onNewCustomItem(CCObject* sender) {
+            if (auto gameManager = utils::get<GameManager>()) {
+                cocos2d::CCArray* newSelectedObjs;
+                if (m_selectedObjects->count() == 0) {
+                    newSelectedObjs = cocos2d::CCArray::create();
+                    newSelectedObjs->addObject(m_selectedObject);
+                } else {
+                    newSelectedObjs = this->m_selectedObjects;
+                }
+                gameManager->addNewCustomObject(copyObjects(newSelectedObjs, false, false));
+                m_selectedObjectIndex = 0;
+                reloadCustomItems();
+            }
         }
-        EditorUI::onNewCustomObject(sender);
-    }
-};
+    };
+}
