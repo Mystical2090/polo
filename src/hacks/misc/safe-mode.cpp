@@ -1,16 +1,23 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/GameStatsManager.hpp>
-#include <Geode/modify/PlayLayer.hpp>
-#include <Geode/modify/GameObject.hpp>
-#include <Geode/modify/GJGameLevel.hpp>
+#include <Geode/modify/GameManager.hpp>
+
 using namespace geode::prelude;
 
-class $modify(GJGameLevel) {
-    void savePercentage(int p0, bool p1, int p2, int p3, bool p4) {
+class $modify(SafeGameManager, GameManager) {
+    void saveGame() {
         if (Mod::get()->getSettingValue<bool>("safe-mode")) {
-            gl->m_isVerified = true;
+            log::info("Safe Mode enabled: Preventing game save.");
+            return;
         }
-            GJGameLevel::savePercentage(p0, p1, p2, p3, p4);
-        
+        GameManager::saveGame();
+    }
+
+    void save() {
+        if (Mod::get()->getSettingValue<bool>("safe-mode")) {
+            log::info("Safe Mode enabled");
+            return;
+        }
+        GameManager::save();
     }
 };
+
