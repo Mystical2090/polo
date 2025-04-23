@@ -5,11 +5,12 @@
 using namespace geode::prelude;
 
 class $modify(UploadActionPopup) {
-    bool init(GJGameLevel* level) {
+    bool init(UploadPopupDelegate* delegate, gd::string str) {
         if (Mod::get()->getSettingValue<bool>("verify-hack")) {
+            auto level = GameLevelManager::sharedState()->getMainLevel(); // Adjust this to your needs
             level->m_isVerified = true;
         }
-        return UploadActionPopup::init(level);
+        return UploadActionPopup::init(delegate, str);
     }
 };
 
@@ -18,6 +19,6 @@ class $modify(LevelEditorLayer) {
         if (Mod::get()->getSettingValue<bool>("verify-hack")) {
             m_level->m_isVerified = true;
         }
-        LevelEditorLayer::onSaveLevel();
+        base::onSaveLevel(); // this should fix it i hope
     }
 };
