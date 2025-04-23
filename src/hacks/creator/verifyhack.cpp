@@ -4,8 +4,10 @@
 using namespace geode::prelude;
 
 class $modify(VerifyHackHmmm, EditLevelLayer) {
-        bool init(GJGameLevel* gl) {
+    bool init(GJGameLevel* gl) {
+        if (Mod::get()->getSettingValue<bool>("verify-hack")) {
             gl->m_isVerified = true;
-            return EditLevelLayer::init(gl);
         }
-    };
+        return EditLevelLayer::init(gl);
+    }
+};
