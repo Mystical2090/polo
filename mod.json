@@ -55,6 +55,12 @@
                     "description": "icon hack yay",
                     "default": false
                 },
+                "safe-mode": {
+                    "name": "Safe Mode",
+                    "type": "bool",
+                    "description": "Safe mode hehehehe this took 5 hours btw im bad at coding i need to git gud",
+                    "default": false
+                },
                 "speedhack": {
                     "name": "Speed Hack",
                     "type": "float",
@@ -83,9 +89,9 @@
                 "default": false
                 },
             "custum-obj-bypass": {
-                "name": "Custum Objects Bypass",
+                "name": "Custom Objects Bypass",
                 "type": "bool",
-                "description": "hmmm",
+                "description": "i love this mod ngl",
                 "default": false
                 }
         }
