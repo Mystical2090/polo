@@ -3,9 +3,9 @@
 
 using namespace geode::prelude;
 
-    class $modify(customobjbypassthing, EditorUI) {
+class $modify(customobjbypassthing, EditorUI) {
 
-        void onNewCustomItem(CCObject* sender) {
+    void onNewCustomItem(CCObject* sender) {
             if (auto gameManager = utils::get<GameManager>()) {
                 cocos2d::CCArray* newSelectedObjs;
                 if (m_selectedObjects->count() == 0) {
