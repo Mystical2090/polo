@@ -82,8 +82,8 @@
                 "description": "spaceUsa hack frfr",
                 "default": false
                 },
-            "costum-obj-hack": {
-                "name": "Costum Obj Hack",
+            "custum-obj-bypass": {
+                "name": "Custum Objects Bypass",
                 "type": "bool",
                 "description": "hmmm",
                 "default": false
