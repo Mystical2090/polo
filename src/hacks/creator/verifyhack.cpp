@@ -5,15 +5,19 @@
 using namespace geode::prelude;
 
 class $modify(UploadActionPopup) {
-    bool init(GJGameLevel * level) {
-        level->m_isVerified = true;
+    bool init(GJGameLevel* level) {
+        if (Mod::get()->getSettingValue<bool>("verify-hack")) {
+            level->m_isVerified = true;
+        }
         return UploadActionPopup::init(level);
     }
 };
 
 class $modify(LevelEditorLayer) {
     void onSaveLevel() {
-        m_level->m_isVerified = true;
+        if (Mod::get()->getSettingValue<bool>("verify-hack")) {
+            m_level->m_isVerified = true;
+        }
         LevelEditorLayer::onSaveLevel();
     }
 };
