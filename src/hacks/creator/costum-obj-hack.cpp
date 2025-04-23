@@ -6,7 +6,7 @@ using namespace geode::prelude;
 class $modify(EditorUI) {
     void onSaveCustomObject(CCObject* sender) {
         if (Mod::get()->getSettingValue<bool>("custom-obj-bypass")) {
-            log::info("Bypassing custom object limit...");
+            log::info("bypassing object limit thing");
             this->m_customObjectDict->setObject(CCArray::create(), CCDictionary::create()->count() + 1);
             EditorUI::onSaveCustomObject(sender);
             return;
