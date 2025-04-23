@@ -75,10 +75,10 @@
             "type": "title",
             "name": "Creator"
         },   
-            "verify-hackk": {
+            "verify-hack": {
                 "name": "Verify Hack",
                 "type": "bool",
-                "description": "zoink hack frfr",
+                "description": "spaceUsa hack frfr",
                 "default": false
                 }
             }
