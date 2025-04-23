@@ -1,5 +1,5 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/EditorUI.hpp>// idk this might be wrong im lazy to check
+#include <Geode/modify/EditorUI.hpp>
 
 using namespace geode::prelude;
 
