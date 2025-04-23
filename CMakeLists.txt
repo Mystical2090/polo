@@ -19,6 +19,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/speedhack.cpp
     src/hacks/misc/iconhack.cpp
     src/hacks/creator/verifyhack.cpp
+    src/hacks/creator/costum-obj-bypass.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
