@@ -1,5 +1,5 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/LevelEditorLayer.hpp>
+#include <Geode/modify/EditLevelLayer.hpp>
 
 using namespace geode::prelude;
 
