@@ -6,7 +6,7 @@
         "android": "2.2074",
         "ios": "2.2074"
     },
-    "version": "v2.0.0-beta",
+    "version": "v2.0.0",
     "id": "mystical.gtxripmxt.polo",
     "name": "Polo",
      "developers": ["Gtxripmxt","Mystical"],
@@ -70,7 +70,8 @@
                 "slider": true,
                 "slider-step": 0.1,
                 "input": false
-                    },
+                    }
+                },
         "creator": {
             "type": "title",
             "name": "Creator"
@@ -81,6 +82,5 @@
                 "description": "spaceUsa hack frfr",
                 "default": false
                 }
-            }
         }
 }
