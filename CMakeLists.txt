@@ -19,7 +19,6 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/speedhack.cpp
     src/hacks/misc/iconhack.cpp
     src/hacks/creator/verifyhack.cpp
-    // src/hacks/creator/custom-obj-hack.cpp
     src/hacks/misc/safe-mode.cpp
 )
 
