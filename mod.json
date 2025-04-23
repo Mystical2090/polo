@@ -81,6 +81,12 @@
                 "type": "bool",
                 "description": "spaceUsa hack frfr",
                 "default": false
+                },
+            "costum-obj-hack": {
+                "name": "Costum Obj Hack",
+                "type": "bool",
+                "description": "hmmm",
+                "default": false
                 }
         }
 }
