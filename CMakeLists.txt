@@ -18,6 +18,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/Player/AutoClick.cpp
     src/hacks/misc/speedhack.cpp
     src/hacks/misc/iconhack.cpp
+    src/hacks/creator/verifyhack.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
