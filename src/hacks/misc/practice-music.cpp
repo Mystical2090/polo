@@ -11,5 +11,5 @@ class $modify(GameStatsManager) {
         } else {
             return GameStatsManager::isItemUnlocked(p0,p1);
         }
-    };
-}
+    }
+};
