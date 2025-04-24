@@ -1,11 +1,15 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayerObject.hpp>
 #include <Geode/modify/PlayLayer.hpp>
+#include <Geode/utils/cocos.hpp>
 
 using namespace geode::prelude;
 
 class $modify(PlayLayer) {
     void destroyPlayer(PlayerObject* player, GameObject* obj) {
-        this->resetLevel();
+        if (Mod::get()->getSettingValue<bool>("instant-respawn")) {
+            this->resetLevel();
+        } else {
+            PlayLayer::destroyPlayer(player, obj);
+        }
     }
-}; // easiest hack ever lol
+}; // easiesst hack ever lol
