@@ -49,6 +49,12 @@
                     "description": "uhh ye speedhack",
                     "default": false
                 },
+                "practice-hack": {
+                "name": "Practice Hack",
+                "type": "bool",
+                "description": "spaceUK balls",
+                "default": false
+                },
                 "icon-hack": {
                     "name": "Icon Hack",
                     "type": "bool",
