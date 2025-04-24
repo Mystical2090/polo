@@ -7,9 +7,9 @@ class $modify(Speedhack, GameManager) {
     void setGameSpeed(float speed) {
         if (Mod::get()->getSettingValue<bool>("speedhack-bool")) {
             float multiplier = Mod::get()->getSettingValue<float>("speedhack");
-            GameManager::setGameSpeed(speed * multiplier);
+            Speedhack::setGameSpeed$base(speed * multiplier);
         } else {
-            GameManager::setGameSpeed(speed);
+            Speedhack::setGameSpeed$base(speed); // i like my cheese drippy bruh
         }
     }
 };
