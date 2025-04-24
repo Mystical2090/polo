@@ -50,7 +50,7 @@
                     "default": false
                 },
                 "practice-music": {
-                "name": "Practice Hack",
+                "name": "Practice Music Hack",
                 "type": "bool",
                 "description": "spaceUK balls",
                 "default": false
