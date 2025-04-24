@@ -1,17 +1,15 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>
-#include <cocos2d.h>
+#include <Geode/modify/GameManager.hpp>
 
 using namespace geode::prelude;
 
-class $modify(SpeedHack, PlayLayer) {
-    void update(float dt) {
+class $modify(Speedhack, GameManager) {
+    void setGameSpeed(float speed) {
         if (Mod::get()->getSettingValue<bool>("speedhack-bool")) {
-            float speed = Mod::get()->getSettingValue<double>("speed-value");
-            speed = std::clamp(speed, 0.01f, 5.0f);
-            PlayLayer::update(dt * speed);
+            float multiplier = Mod::get()->getSettingValue<float>("speedhack");
+            GameManager::setGameSpeed(speed * multiplier);
         } else {
-            PlayLayer::update(dt);
+            GameManager::setGameSpeed(speed);
         }
     }
 };
