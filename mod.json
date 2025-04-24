@@ -55,6 +55,12 @@
                 "description": "spaceUK balls",
                 "default": false
                 },
+                "layout-mode": {
+                    "name": "Layout Mode",
+                    "type": "bool",
+                    "description": "i love this ngl",
+                    "default": false
+                },
                 "icon-hack": {
                     "name": "Icon Hack",
                     "type": "bool",
