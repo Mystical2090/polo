@@ -18,4 +18,4 @@ class $modify(LevelInfoLayer) {
         }
         return true;
     }
-};
+}:
