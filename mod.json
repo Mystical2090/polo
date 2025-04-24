@@ -94,6 +94,11 @@
                 "description": "spaceUsa hack frfr",
                 "default": false
                 },
+                "enable-copy-hack-balls": {
+                    "name": "Copy Hack",
+                    "type": "bool",
+                    "description": "Ez hack ngl",
+                    "default": false
             "custum-obj-bypass": {
                 "name": "Custom Objects Bypass",
                 "type": "bool",
