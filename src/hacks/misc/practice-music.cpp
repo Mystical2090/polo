@@ -1,15 +1,15 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GameStatsManager.hpp>
-#include <Geode/modify/PlayLayer.hpp>
-#include <Geode/modify/FMODAudioEngine.hpp>
+
+using namespace geode::prelude;
 
 class $modify(GameStatsManager) {
-    bool isItemUnlocked(UnlockType p0, int p1) {
-        if (p0 != UnlockType::GJItem || p1 != 17) return GameStatsManager::isItemUnlocked(p0,p1);
-        if (Mod::get()->getSettingValue<bool>("instant-respawn")) {
-            return true;
-        } else {
-            return GameStatsManager::isItemUnlocked(p0,p1);
+    bool isItemUnlocked(UnlockType type, int itemID) {
+        if (Mod::get()->getSettingValue<bool>("practice-music-hack")) {
+            if (type == UnlockType::GJItem && itemID == 17) {
+                return true;
+            }
         }
+        return GameStatsManager::isItemUnlocked(type, itemID);
     }
 };
