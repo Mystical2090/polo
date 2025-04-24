@@ -5,7 +5,7 @@ using namespace geode::prelude;
 
 class $modify(GameStatsManager) {
     bool isItemUnlocked(UnlockType type, int itemID) {
-        if (Mod::get()->getSettingValue<bool>("practice-music-hack")) {
+        if (Mod::get()->getSettingValue<bool>("practice-music")) {
             if (type == UnlockType::GJItem && itemID == 17) {
                 return true;
             }
