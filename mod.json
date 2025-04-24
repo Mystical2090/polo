@@ -49,7 +49,7 @@
                     "description": "uhh ye speedhack",
                     "default": false
                 },
-                "practice-hack": {
+                "practice-music": {
                 "name": "Practice Hack",
                 "type": "bool",
                 "description": "spaceUK balls",
@@ -100,7 +100,7 @@
                 "description": "spaceUsa hack frfr",
                 "default": false
                 },
-                "enable-copy-hack-balls": {
+                "copy-hack-balls": {
                     "name": "Copy Hack",
                     "type": "bool",
                     "description": "Ez hack ngl",
