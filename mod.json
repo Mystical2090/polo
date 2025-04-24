@@ -55,6 +55,12 @@
                     "description": "icon hack yay",
                     "default": false
                 },
+              "instant-respawn": {
+                    "name": "Instant Respawn",
+                    "type": "bool",
+                    "description": "yes",
+                    "default": false
+                },
                 "safe-mode": {
                     "name": "Safe Mode",
                     "type": "bool",
