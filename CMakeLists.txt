@@ -20,6 +20,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/iconhack.cpp
     src/hacks/misc/instant-respawn.cpp
     src/hacks/creator/verifyhack.cpp
+    src/hacks/creator/copy-hack.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
