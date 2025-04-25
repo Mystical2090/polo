@@ -10,10 +10,19 @@ using namespace geode::prelude;
 
 class $modify(GameObject) {
     void setVisible(bool v) {
-        if (Mod::get()->getSettingValue<bool>("layout-mode")) return GameObject::setVisible(v);
-        if (m_objectType == GameObjectType::Decoration && m_objectID != 44 && m_objectID != 38 && m_objectID != 749 && m_objectID != 747); // 44 is checkpoints cus apparebtky thats a quote decoration lmao
-            GameObject::setVisible(false); // mystic pls stop forgeting to put ";"
+        if (Mod::get()->getSettingValue<bool>("layout-mode")) {
+            if (m_objectType == GameObjectType::Decoration &&
+                m_objectID != 44 && // 44 is checkpoints cus apparently thats a quote decoration lmao
+                m_objectID != 38 &&
+                m_objectID != 749 &&
+                m_objectID != 747) {
+                // These are decorative objects to hide in layout mode
+                GameObject::setVisible(false);
+            } else {
+                GameObject::setVisible(v);
+            }
         } else {
             GameObject::setVisible(v);
-        };
-    };
+        }
+    }
+};
