@@ -29,8 +29,5 @@ class $modify(PlayLayer) {
             PlayLayer::onQuit();
         }
     }
+    }
 };
-
-$execute {
-    log::info("Instant Respawn mod has been loaded!");
-}
