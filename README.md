@@ -11,7 +11,7 @@
 
 ### This wouldnt with been possible without:
 
-- speedyfriend67
+- Speedyfriend67
 - Gtxripmxt
 - Firee
 - Geode :)
