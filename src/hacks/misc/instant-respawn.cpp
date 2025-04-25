@@ -10,7 +10,9 @@ class $modify(PlayLayer) {
         }
         return true;
     }
-
+    void instantRespawnCallback(float dt) {
+        this->resetLevel();
+    }
     void destroyPlayer(PlayerObject* player, GameObject* obstacle) {
         PlayLayer::destroyPlayer(player, obstacle);
 
@@ -19,10 +21,6 @@ class $modify(PlayLayer) {
         if (instantRespawnEnabled && !m_hasCompletedLevel) {
             this->scheduleOnce(schedule_selector(PlayLayer::instantRespawnCallback), 0.01f);
         }
-    }
-
-    void instantRespawnCallback(float dt) {
-        this->resetLevel();
     }
 
     void onQuit() {
