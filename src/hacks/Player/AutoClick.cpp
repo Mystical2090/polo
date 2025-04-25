@@ -8,4 +8,4 @@ class $modify(AutoClickHack, PlayLayer) {
             if (this->m_player1) this->m_player1->pushButton(PlayerButton::Jump);
         PlayLayer::update(dt);
     }
-};
+}; //not working 
