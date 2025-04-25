@@ -22,4 +22,5 @@ class $modify(CustumObjectBypass, EditorUI) {
         } else {
             EditorUI::onNewCustomItem(pSender);
     };
+};
 }
