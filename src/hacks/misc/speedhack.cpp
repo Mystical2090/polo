@@ -1,14 +1,20 @@
-#include <Geode/Geode.hpp>
-#include <Geode/modify/CCScheduler.hpp>
-#include <Geode/modify/GJBaseGameLayer.hpp>
 #include "speedhack.hpp"
+#include <Geode/Geode.hpp>
 
-class $modify (CCScheduler)
-{
-    virtual void update(float dt)
-    {
-        dt = speedhackLogic(dt);
+using namespace geode::prelude;
 
-        CCScheduler::update(dt);
+bool isSpeedhackEnabled() {
+    return Mod::get()->getSettingValue<bool>("speedhack-bool");
+}
+
+float getSpeedMultiplier() {
+    return Mod::get()->getSettingValue<float>("speedhack");
+}
+
+float speedhackLogic(float dt) {
+    if (isSpeedhackEnabled()) {
+        float multiplier = getSpeedMultiplier();
+        return std::clamp(dt * multiplier, 0.001f, 0.5f);
     }
-};
+    return dt;
+}
