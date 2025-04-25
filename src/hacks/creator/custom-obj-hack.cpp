@@ -3,11 +3,12 @@
 
 using namespace geode::prelude;
 
-class $modify(customobjbypassthing, EditorUI) {
-
-    void onNewCustomItem(CCObject* sender) {
-            if (auto gameManager = utils::get<GameManager>()) {
-                cocos2d::CCArray* newSelectedObjs;
+class $modify(CostumObjectBypass, EditorUI) {
+    void onNewCustomItem(CCObject* pSender) {
+        if (!Mod::get()->getSettingValue<bool>("costum-obj-bypass")) return EditorUI::onNewCustomItem(pSender);
+        if (m_selectedObjects && m_selectedObjects->count() > 0) {
+            if (auto gameManager = GameManager::sharedState()) {
+                CCArray* newSelectedObjs;
                 if (m_selectedObjects->count() == 0) {
                     newSelectedObjs = cocos2d::CCArray::create();
                     newSelectedObjs->addObject(m_selectedObject);
@@ -18,6 +19,6 @@ class $modify(customobjbypassthing, EditorUI) {
                 m_selectedObjectIndex = 0;
                 reloadCustomItems();
             }
+        } else {
+            EditorUI::onNewCustomItem(pSender);
         }
-    };
-} //i will fix this sometime then i will include it in the cmakelists
