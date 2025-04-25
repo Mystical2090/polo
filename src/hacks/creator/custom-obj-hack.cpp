@@ -20,4 +20,4 @@ class $modify(customobjbypassthing, EditorUI) {
             }
         }
     };
-}
+} //i will fix this sometime then i will include it in the cmakelists
