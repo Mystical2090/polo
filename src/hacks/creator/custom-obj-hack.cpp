@@ -8,14 +8,10 @@ class $modify(CustumObjectBypass, EditorUI) {
         if (!Mod::get()->getSettingValue<bool>("custum-obj-bypass")) return EditorUI::onNewCustomItem(pSender);
         if (m_selectedObjects && m_selectedObjects->count() > 0) {
             if (auto gameManager = GameManager::sharedState()) {
-                CCArray* newSelectedObjs;
-                if (m_selectedObjects->count() == 0) {
-                    newSelectedObjs = cocos2d::CCArray::create();
-                    newSelectedObjs->addObject(m_selectedObject);
-                } else {
-                    newSelectedObjs = this->m_selectedObjects;
-                }
-                gameManager->addNewCustomObject(copyObjects(newSelectedObjs, false, false));
+                CCArray* objectsToCopy = m_selectedObjects->count() == 0 
+                    ? CCArray::createWithObject(m_selectedObject)
+                    : m_selectedObjects;
+                gameManager->addNewCustomObject(copyObjects(objectsToCopy, false, false));
                 m_selectedObjectIndex = 0;
                 reloadCustomItems();
             }
