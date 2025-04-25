@@ -15,5 +15,5 @@ class $modify(GameObject) {
             GameObject::setVisible(false);
         }; else {
             GameObject::setVisible(v);
-        }
+        };
     };
