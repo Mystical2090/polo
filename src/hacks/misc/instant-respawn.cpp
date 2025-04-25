@@ -4,49 +4,39 @@
 using namespace geode::prelude;
 
 class $modify(PlayLayer) {
-    bool init(GJGameLevel* level) {
-        if (!PlayLayer::init(level)) {
+    bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
+        if (!PlayLayer::init(level, useReplay, dontCreateObjects)) {
             return false;
         }
         return true;
     }
-
+    
     void resetLevel() {
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
         
-        if (instantRespawnEnabled && this->m_isDead) {
-            this->m_isDead = false;
-            
-            if (this->m_player1) {
-                this->m_player1->m_isDead = false;
-                this->m_player1->setVisible(true);
-            }
-            if (this->m_player2) {
-                this->m_player2->m_isDead = false;
-                this->m_player2->setVisible(true);
-            }
-            
-            this->m_hasCompletedLevel = false;
-            this->m_bIsDualMode = this->m_bIsDualMode && this->m_levelSettings->m_originalIsDual;
-            this->stopActionByTag(0);
+        if (instantRespawnEnabled && this->m_isGameplayActive && !this->m_hasCompletedLevel) {
+            this->stopAllActions();
             
             PlayLayer::resetLevel();
         } else {
             PlayLayer::resetLevel();
         }
     }
-    
-    void playerKilled(PlayerObject* player) {
-        PlayLayer::playerKilled(player);
-        
+};
+
+class $modify(GJBaseGameLayer) {
+    void destroyPlayer(PlayerObject* player, bool doDeathActions) {
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
         
-        if (instantRespawnEnabled) {
-            this->template runAction(CCSequence::create(
-                CCDelayTime::create(0.01f),
-                CCCallFunc::create(this, callfunc_selector(PlayLayer::resetLevel)),
-                nullptr
-            ));
+        GJBaseGameLayer::destroyPlayer(player, doDeathActions);
+        
+        if (instantRespawnEnabled && doDeathActions) {
+            auto playLayer = static_cast<PlayLayer*>(this);
+            if (playLayer && !playLayer->m_hasCompletedLevel) {
+                playLayer->scheduleOnce([playLayer](float) {
+                    playLayer->resetLevel();
+                }, 0.01f, "instant_respawn");
+            }
         }
     }
 };
