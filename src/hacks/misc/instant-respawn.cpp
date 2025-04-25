@@ -12,34 +12,33 @@ class $modify(PlayLayer) {
     }
     
     void resetLevel() {
+        PlayLayer::resetLevel();
+    }
+    
+    void playerKill() {
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
         
-        if (instantRespawnEnabled && this->m_isGameplayActive && !this->m_hasCompletedLevel) {
-            this->stopAllActions();
-            
-            PlayLayer::resetLevel();
+        PlayLayer::playerKill();
+        
+        if (instantRespawnEnabled) {
+            this->scheduleOnce([this](float) {
+                this->resetLevel();
+            }, 0.01f, "instant_respawn");
+        }
+    }
+    
+    void onQuit() {
+        bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
+        bool isDying = !this->m_hasCompletedLevel;
+        
+        if (instantRespawnEnabled && isDying) {
+            this->resetLevel();
         } else {
-            PlayLayer::resetLevel();
+            PlayLayer::onQuit();
         }
     }
 };
 
-class $modify(GJBaseGameLayer) {
-    void destroyPlayer(PlayerObject* player, bool doDeathActions) {
-        bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
-        
-        GJBaseGameLayer::destroyPlayer(player, doDeathActions);
-        
-        if (instantRespawnEnabled && doDeathActions) {
-            auto playLayer = static_cast<PlayLayer*>(this);
-            if (playLayer && !playLayer->m_hasCompletedLevel) {
-                playLayer->scheduleOnce([playLayer](float) {
-                    playLayer->resetLevel();
-                }, 0.01f, "instant_respawn");
-            }
-        }
-    }
-};
 
 $execute {
     log::info("Instant Respawn mod has been loaded!");
