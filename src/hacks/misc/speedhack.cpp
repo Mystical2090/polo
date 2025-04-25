@@ -3,11 +3,11 @@
 
 using namespace geode::prelude;
 
-bool isSpeedhackEnabled() {
+bool isSpeedhackBool() {
     return Mod::get()->getSettingValue<bool>("speedhack-bool");
 }
 
-float getSpeedMultiplier() {
+float getSpeedhack() {
     return Mod::get()->getSettingValue<float>("speedhack");
 }
 
