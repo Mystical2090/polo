@@ -3,22 +3,19 @@
 
 using namespace geode::prelude;
 
-class $modify(PlayLayer) {
+class $modify(InstantRespawn, PlayLayer) {
     bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
         if (!PlayLayer::init(level, useReplay, dontCreateObjects)) {
             return false;
         }
         return true;
     }
-    void instantRespawnCallback(float dt) {
-        this->resetLevel();
-    }
     void destroyPlayer(PlayerObject* player, GameObject* obstacle) {
         PlayLayer::destroyPlayer(player, obstacle);
 
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
         if (instantRespawnEnabled) {
-            this->scheduleOnce(schedule_selector(PlayLayer::instantRespawnCallback), 0.1f);
+            this->resetLevel();
         }
     }
 }; // not working idk
