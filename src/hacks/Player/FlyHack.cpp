@@ -8,4 +8,4 @@ class $modify(FlyHack, PlayLayer) {
             if (this->m_player1) this->m_player1->m_yVelocity = 14.0f; // dis make it
         PlayLayer::update(dt);
     }
-};
+}; // not working
