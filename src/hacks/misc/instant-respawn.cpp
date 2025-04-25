@@ -18,16 +18,5 @@ class $modify(PlayLayer) {
 
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
 
-
-    void onQuit() {
-        bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
-        bool isDying = !m_hasCompletedLevel;
-
-        if (instantRespawnEnabled && isDying) {
-            this->resetLevel();
-        } else {
-            PlayLayer::onQuit();
-        }
-    }
     }
 };
