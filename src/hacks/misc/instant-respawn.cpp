@@ -3,13 +3,6 @@
 
 using namespace geode::prelude;
 
-void instantRespawnCallback(CCObject* sender) {
-    auto playLayer = static_cast<PlayLayer*>(sender);
-    if (playLayer) {
-        playLayer->resetLevel();
-    }
-}
-
 class $modify(PlayLayer) {
     bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
         if (!PlayLayer::init(level, useReplay, dontCreateObjects)) {
@@ -17,21 +10,23 @@ class $modify(PlayLayer) {
         }
         return true;
     }
-    
+
     void destroyPlayer(PlayerObject* player, GameObject* obstacle) {
         PlayLayer::destroyPlayer(player, obstacle);
-        
+
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
-        
-        if (instantRespawnEnabled && !this->m_hasCompletedLevel) {
-            this->scheduleOnce(schedule_selector(instantRespawnCallback), 0.01f);
+
+        if (instantRespawnEnabled && !m_hasCompletedLevel) {
+            this->scheduleOnce([this](float) {
+                this->resetLevel();
+            }, 0.01f, "instant_respawn_key");
         }
     }
-    
+
     void onQuit() {
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
-        bool isDying = !this->m_hasCompletedLevel;
-        
+        bool isDying = !m_hasCompletedLevel;
+
         if (instantRespawnEnabled && isDying) {
             this->resetLevel();
         } else {
