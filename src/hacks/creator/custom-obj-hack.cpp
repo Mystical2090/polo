@@ -3,9 +3,9 @@
 
 using namespace geode::prelude;
 
-class $modify(CostumObjectBypass, EditorUI) {
+class $modify(CustumObjectBypass, EditorUI) {
     void onNewCustomItem(CCObject* pSender) {
-        if (!Mod::get()->getSettingValue<bool>("costum-obj-bypass")) return EditorUI::onNewCustomItem(pSender);
+        if (!Mod::get()->getSettingValue<bool>("custum-obj-bypass")) return EditorUI::onNewCustomItem(pSender);
         if (m_selectedObjects && m_selectedObjects->count() > 0) {
             if (auto gameManager = GameManager::sharedState()) {
                 CCArray* newSelectedObjs;
