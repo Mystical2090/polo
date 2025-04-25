@@ -23,6 +23,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/creator/copy-hack.cpp
     src/hacks/misc/practice-music.cpp
     src/hacks/misc/layout-mode-i-love-this-mod-
+    src/hacks/misc/speedhack.hpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
