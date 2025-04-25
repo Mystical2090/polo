@@ -19,4 +19,4 @@ class $modify(PlayLayer) {
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
 
     }
-};
+}; // not working idk
