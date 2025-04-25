@@ -1,7 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/CCScheduler.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
-#include "Speedhack.hpp"
+#include "speedhack.hpp"
 
 class $modify (CCScheduler)
 {
