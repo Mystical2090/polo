@@ -1,22 +1,14 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>
-#include <Geode/utils/cocos.hpp>
+#include <Geode/modify/CCScheduler.hpp>
+#include <Geode/modify/GJBaseGameLayer.hpp>
+#include "Speedhack.hpp"
 
-using namespace geode::prelude;
+class $modify (CCScheduler)
+{
+    virtual void update(float dt)
+    {
+        dt = speedhackLogic(dt);
 
-class $modify(PlayLayer) {
-    bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
-        if (!PlayLayer::init(level, useReplay, dontCreateObjects))
-            return false;
-
-        float speed = Mod::get()->getSettingValue<float>("speed-hack");
-        CCDirector::get()->getScheduler()->setTimeScale(speed);
-
-        return true;
+        CCScheduler::update(dt);
     }
-
-    void onExit() {
-        CCDirector::get()->getScheduler()->setTimeScale(1.0f);
-        PlayLayer::onExit();
-    }
-}; // ok 
+};
