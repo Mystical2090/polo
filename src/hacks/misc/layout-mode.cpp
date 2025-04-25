@@ -16,7 +16,7 @@ class $modify(GameObject) {
                 m_objectID != 38 &&
                 m_objectID != 749 &&
                 m_objectID != 747) {
-                // These are decorative objects to hide in layout mode
+                // These are deco obj that will hide in layout mode
                 GameObject::setVisible(false);
             } else {
                 GameObject::setVisible(v);
