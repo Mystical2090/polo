@@ -17,11 +17,11 @@ class $modify(PlayLayer) {
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
 
         if (instantRespawnEnabled && !m_hasCompletedLevel) {
-            this->scheduleOnce(schedule_selector(PlayLayer::onInstantRespawn), 0.01f);
+            this->scheduleOnce(schedule_selector(PlayLayer::instantRespawnCallback), 0.01f);
         }
     }
 
-    void onInstantRespawn(float) {
+    void instantRespawnCallback(float dt) {
         this->resetLevel();
     }
 
