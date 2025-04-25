@@ -10,4 +10,4 @@ class $modify(VerifyHackHmmm, EditLevelLayer) {
         }
         return EditLevelLayer::init(gl);
     }
-};
+}; // working
