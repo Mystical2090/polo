@@ -17,6 +17,8 @@ class $modify(PlayLayer) {
         PlayLayer::destroyPlayer(player, obstacle);
 
         bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
-
+        if (instantRespawnEnabled) {
+            this->scheduleOnce(schedule_selector(PlayLayer::instantRespawnCallback), 0.1f);
+        }
     }
 }; // not working idk
