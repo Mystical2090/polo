@@ -1,21 +1,15 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/CCScheduler.hpp>
-#include <Geode/modify/PlayLayer.hpp>
+#include <Geode/modify/GameManager.hpp>
 
 using namespace geode::prelude;
 
-class $modify(CCScheduler) { // hmm midding bindings gor mcowcos
-    float getTimeScale() {
-        float originalTimeScale = CCScheduler::getTimeScale();
-        
-        auto speedhackEnabled = Mod::get()->getSettingValue<bool>("enabled");
-        
-        if (speedhackEnabled) {
-            float speedMultiplier = Mod::get()->getSettingValue<float>("speed-value");
-            
-            return originalTimeScale * speedMultiplier;
+class $modify(Speedhack, GameManager) {
+    void setGameSpeed(float speed) {
+        if (Mod::get()->getSettingValue<bool>("speedhack-enabled")) {
+            float multiplier = Mod::get()->getSettingValue<float>("speedhack");
+            GameManager::setGameSpeed(speed * multiplier);
+        } else {
+            GameManager::setGameSpeed(speed);
         }
-        
-        return originalTimeScale;
     }
 };
