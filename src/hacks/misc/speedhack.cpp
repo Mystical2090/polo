@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $modify(CCScheduler) {
+class $modify(CCScheduler) { // hmm midding bindings gor mcowcos
     float getTimeScale() {
         float originalTimeScale = CCScheduler::getTimeScale();
         
