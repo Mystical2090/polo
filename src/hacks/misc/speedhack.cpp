@@ -1,15 +1,16 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/GameManager.hpp>
+#include <Geode/modify/GJBaseGameLayer.hpp>
 
 using namespace geode::prelude;
 
-class $modify(Speedhack, GameManager) {
-    void setGameSpeed(float speed) {
-        if (Mod::get()->getSettingValue<bool>("speedhack-enabled")) {
+class $modify(Speedhack, GJBaseGameLayer) {
+public:
+    void update(float dt) { // delta time is bad
+        if (Mod::get()->getSettingValue<bool>("speedhack-bool")) {
             float multiplier = Mod::get()->getSettingValue<float>("speedhack");
-            GameManager::setGameSpeed(speed * multiplier);
+            GJBaseGameLayer::update(dt * multiplier);
         } else {
-            GameManager::setGameSpeed(speed);
+            GJBaseGameLayer::update(dt);
         }
     }
-};
+};   // dinno if itll work or not but migjt eork dhdnn
