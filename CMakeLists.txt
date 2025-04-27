@@ -18,7 +18,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/Player/AutoClicker.cpp
     src/hacks/misc/speedhack.cpp
     src/hacks/misc/iconhack.cpp
-    src/hacks/misc/instant-respawn.cpp
+    src/hacks/misc/suicide.cpp
     src/hacks/creator/verifyhack.cpp
     src/hacks/creator/copy-hack.cpp
     src/hacks/creator/custom-obj-hack.cpp
