@@ -1,11 +1,18 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>
+#include <Geode/modify/PlayerObject.hpp>
+
 using namespace geode::prelude;
 
-class $modify(FlyHack, PlayLayer) {
-    void update(float dt) {
-        if (Mod::get()->getSettingValue<bool>("enable-fly")) // dis make it
-            if (this->m_player1) this->m_player1->m_yVelocity = 14.0f; // dis make it
-        PlayLayer::update(dt);
+class $modify(Jumphack, PlayerObject) {
+public:
+    void pushButton(PlayerButton btn) {
+        if (Mod::get()->getSettingValue<bool>("enable-jump-hack")) {
+            if (btn == PlayerButton::Jump) {
+                this->jump(); // jump when on air or jot on ground hehdbds
+                return;
+            }
+        }
+
+        PlayerObject::pushButton(btn);
     }
-}; // not working
+};
