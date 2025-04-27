@@ -33,6 +33,34 @@
                     "description": "me when i autoclick",
                     "default": false
                 },
+                "auto-clicker-delay": {
+                "name": "Auto Clicker Delay (frames)",
+                "type": "int",
+                "description": "How many frames between clicks (lower = faster)",
+                "default": 5,
+                "min": 1,
+                "max": 60
+                },
+                "auto-clicker-holdfor": {
+                "name": "Auto Clicker Hold Time (frames)",
+                "type": "int",
+                "description": "How many frames to hold jump button",
+                "default": 2,
+                "min": 1,
+                "max": 60
+                },
+                "auto-clicker-player1": {
+                "name": "Auto Clicker Player 1",
+                "type": "bool",
+                "description": "Auto click player 1",
+                "default": true
+                },
+                "auto-clicker-player2": {
+                "name": "Auto Clicker Player 2",
+                "type": "bool",
+                "description": "Auto click player 2 (dual mode)",
+                "default": false
+                },
                 "enable-jump-hack": {
                     "name": "Jump Hack",
                     "type": "bool",
