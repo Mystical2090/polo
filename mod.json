@@ -33,10 +33,10 @@
                     "description": "me when i autoclick",
                     "default": false
                 },
-                "enable-fly": {
-                    "name": "Fly Hack",
+                "enable-jump-hack": {
+                    "name": "Jump Hack",
                     "type": "bool",
-                    "description": "uhh ye some stuff called fly hack yay",
+                    "description": "jump.hack.desc",
                     "default": false
                 },
         "Misc": {
