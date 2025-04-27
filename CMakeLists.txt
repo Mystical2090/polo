@@ -15,7 +15,7 @@ add_library(${PROJECT_NAME} SHARED
     src/Button.cpp
     src/hacks/Player/Noclip.cpp
     src/hacks/Player/jumphack.cpp
-    src/hacks/Player/AutoClicker.cpp
+    src/hacks/Player/ignore-inputs.cpp
     src/hacks/misc/speedhack.cpp
     src/hacks/misc/iconhack.cpp
     src/hacks/misc/suicide.cpp
