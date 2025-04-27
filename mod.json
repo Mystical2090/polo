@@ -27,6 +27,13 @@
                     "description": "spaceuk hack",
                     "default": false
                 },
+        
+                "ignore-inputs": {
+                    "name": "Ignore Inputs",
+                    "type": "bool",
+                    "description": "yea when the bot will come out this will be usefull if you wanna be spaceuk",
+                    "default": false
+                },
                 "enable-auto-clicker": {
                     "name": "Auto Clicker",
                     "type": "bool",
