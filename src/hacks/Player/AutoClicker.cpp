@@ -23,7 +23,7 @@ public:
     void touchesBegan(CCSet* touches, CCEvent* event) override {
         CCTouchDispatcher::touchesBegan(touches, event); // Just call, no assignment
 
-        if (Mod::get()->getSettingValue<bool>("auto-click-enabled")) {
+        if (Mod::get()->getSettingValue<bool>("enable-auto-clicker")) {
             if (g_activePlayLayer && g_activePlayLayer->m_player1) {
                 g_activePlayLayer->m_player1->pushButton(PlayerButton::Jump);
             }
