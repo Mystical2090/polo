@@ -4,17 +4,10 @@
 using namespace geode::prelude;
 
 class $modify(PlayerObject) {
-    void pushButton(PlayerButton button) {
-        if (Mod::get()->getSettingValue<bool>("ignore-inputs")) {
-            return;
-        }
-        PlayerObject::pushButton(button);
-    }
-
-    void releaseButton(PlayerButton button) {
-        if (Mod::get()->getSettingValue<bool>("ignore-inputs")) {
-            return;
-        }
-        PlayerObject::releaseButton(button);
-    }
-};
+    void handleButton(bool down, int button, bool player1) {
+         if (Mod::get()->getSettingValue<bool>("ignore-inputs")) {
+                return;
+            GJBaseGameLayer::handleButton(down, button, player1);
+    } else {
+                return;
+}
