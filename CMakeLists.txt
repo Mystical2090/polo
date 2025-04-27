@@ -15,7 +15,7 @@ add_library(${PROJECT_NAME} SHARED
     src/Button.cpp
     src/hacks/Player/Noclip.cpp
     src/hacks/Player/FlyHack.cpp
-    src/hacks/Player/AutoClick.cpp
+    src/hacks/Player/AutoClicker.cpp
     src/hacks/misc/speedhack.cpp
     src/hacks/misc/iconhack.cpp
     src/hacks/misc/instant-respawn.cpp
