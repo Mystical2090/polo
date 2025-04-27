@@ -1,33 +1,62 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>
+#include <Geode/modify/GJBaseGameLayer.hpp>
 
 using namespace geode::prelude;
 
-static PlayLayer* g_activePlayLayer = nullptr; // my dick
-static double g_lastClickTime = 0.0;
-
-class $modify(AutoclickerFix, PlayLayer) {
+class $modify(AutoClikcer, GJBaseGameLayer) {
 public:
-    bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
-        if (!PlayLayer::init(level, useReplay, dontCreateObjects))
-            return false;
+    struct Fields {
+        int frames = 0;
+        int framesHeld = 0;
+        bool isHeld = false;
+    };
 
-        g_activePlayLayer = this;
-        g_lastClickTime = 0.0;
-        return true;
+    void checkRepellPlayer() override {
+        GJBaseGameLayer::checkRepellPlayer();
+
+        auto& fcont = m_fields.self();
+
+        fcont->frames++;
+
+        auto mod = Mod::get();
+        int delay = mod->getSettingValue<int>("auto-clicker-delay");
+        int holdFor = mod->getSettingValue<int>("auto-clicker-holdfor");
+        bool player1Enabled = mod->getSettingValue<bool>("auto-clicker-player1");
+        bool player2Enabled = mod->getSettingValue<bool>("auto-clicker-player2");
+
+        if (fcont->frames >= delay) {
+            fcont->frames = 0;
+            fcont->framesHeld = 0;
+        }
+
+        if (fcont->frames == 0) {
+            if (player1Enabled)
+                this->handleButton(true, static_cast<int>(PlayerButton::Jump), true);
+
+            if (player2Enabled && m_player2 && m_gameState.m_isDualMode)
+                this->handleButton(true, static_cast<int>(PlayerButton::Jump), false);
+
+            fcont->isHeld = true;
+        }
+
+        if (fcont->framesHeld >= holdFor) {
+            if (player1Enabled)
+                this->handleButton(false, static_cast<int>(PlayerButton::Jump), true);
+
+            if (player2Enabled && m_player2 && m_gameState.m_isDualMode)
+                this->handleButton(false, static_cast<int>(PlayerButton::Jump), false);
+
+            fcont->isHeld = false;
+        }
+
+        if (fcont->isHeld)
+            fcont->framesHeld++;
     }
 
-    void update(float dt) override {
-        PlayLayer::update(dt);
-
-        if (Mod::get()->getSettingValue<bool>("enable-auto-clicker")) {
-            double now = utils::time(); // Geode provides utils::time()
-            if (now - g_lastClickTime > 0.05) { // every 50ms = 20 clicks per second
-                if (this->m_player1) {
-                    this->m_player1->pushButton(PlayerButton::Jump);
-                }
-                g_lastClickTime = now;
-            }
-        }
+    static void onModify(auto& self) {
+        auto hook = self.getHook("GJBaseGameLayer::checkRepellPlayer");
+        Loader::get()->queueInMainThread([hook]() {
+            hook->enable();
+        });
     }
 };
