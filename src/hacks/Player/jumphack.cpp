@@ -1,17 +1,31 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PlayerObject.hpp>
+#include <Geode/modify/GJBaseGameLayer.hpp>
 
 using namespace geode::prelude;
 
-class $modify(JumpHackPlayer, PlayerObject) {
+class $modify(JumpHackLayer, GJBaseGameLayer) {
 public:
-    void pushButton(PlayerButton btn) {
-        if (Mod::get()->getSettingValue<bool>("enable-jump-hack")) {
-            if (btn == PlayerButton::Jump) {
-                this->m_isOnGround = true; // Fake i sh*t my pants
-            }
+    void update(float dt) override {
+        auto mod = Mod::get();
+        bool jumpHackEnabled = mod->getSettingValue<bool>("enable-jump-hack");
+
+        if (jumpHackEnabled && m_player1) {
+            m_player1->m_isOnGround = true;
+            m_player1->m_vehicleGrounded = true;
         }
 
-        PlayerObject::pushButton(btn);
+        GJBaseGameLayer::update(dt);
+
+        if (jumpHackEnabled && m_player1) {
+            m_player1->m_isOnGround = true;
+            m_player1->m_vehicleGrounded = true;
+        }
+    }
+
+    static void onModify(auto& self) {
+        auto hook = self.getHook("GJBaseGameLayer::update");
+        Loader::get()->queueInMainThread([hook]() {
+            hook->enable();
+        });
     }
 };
