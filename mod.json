@@ -68,9 +68,9 @@
                     "default": false
                 },
               "instant-respawn": {
-                    "name": "Instant Respawn",
+                    "name": "Suicide",
                     "type": "bool",
-                    "description": "yes",
+                    "description": "Disable nolcip for this to work",
                     "default": false
                 },
                 "safe-mode": {
