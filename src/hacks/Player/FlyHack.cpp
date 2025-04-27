@@ -3,13 +3,12 @@
 
 using namespace geode::prelude;
 
-class $modify(Jumphack, PlayerObject) {
+class $modify(JumpHackPlayer, PlayerObject) {
 public:
     void pushButton(PlayerButton btn) {
         if (Mod::get()->getSettingValue<bool>("enable-jump-hack")) {
             if (btn == PlayerButton::Jump) {
-                this->jump(); // jump when on air or jot on ground hehdbds
-                return;
+                this->m_isOnGround = true; // Fake i sh*t my pants
             }
         }
 
