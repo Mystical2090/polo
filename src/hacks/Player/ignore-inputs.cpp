@@ -12,7 +12,7 @@ class $modify(PlayerObject) {
     }
 
     void releaseButton(PlayerButton button) {
-        if (Mod::get()->getSettingValue<bool>("ignore-inputs")) 
+        if (Mod::get()->getSettingValue<bool>("ignore-inputs")) {
             return;
         }
         PlayerObject::releaseButton(button);
