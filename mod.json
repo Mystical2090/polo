@@ -27,8 +27,8 @@
                     "description": "spaceuk hack",
                     "default": false
                 },
-                "enable-auto-click": {
-                    "name": "Auto Click",
+                "enable-auto-clicker": {
+                    "name": "Auto Clicker",
                     "type": "bool",
                     "description": "me when i autoclick",
                     "default": false
