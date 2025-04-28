@@ -2,7 +2,7 @@
 #include <Geode/modify/PlayLayer.hpp>
 using namespace geode::prelude;
 
-class $modify(AutoClickHack, PlayLayer) {
+class $modify(AutoClicker, PlayLayer) {
     void update(float dt) {
         if (Mod::get()->getSettingValue<bool>("enable-auto-click")) {
             if (this->m_player1) {
@@ -17,8 +17,8 @@ class $modify(AutoClickHack, PlayLayer) {
                 touchSet->addObject(touch);
                 
                 auto dispatcher = cocos2d::CCDirector::sharedDirector()->getTouchDispatcher();
-                dispatcher->touches(touchSet, nullptr, cocos2d::ccTouchBegan);
-                dispatcher->touches(touchSet, nullptr, cocos2d::ccTouchEnded);
+                dispatcher->touches(touchSet, nullptr, 0); // CCTOUCHBEGAN = 0
+                dispatcher->touches(touchSet, nullptr, 2); // CCTOUCHENDED = 2
             }
         }
         PlayLayer::update(dt);
