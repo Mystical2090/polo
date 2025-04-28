@@ -11,9 +11,8 @@
 
 ### This wouldnt with been possible without:
 
+- Mystical
 - Speedyfriend67
 - Gtxripmxt
-- Firee
-- Geode :)
 
 ## Hope you enjoy!
