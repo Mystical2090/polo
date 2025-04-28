@@ -1,9 +1,9 @@
-// thanks qolmod
+// thanks qolmod 
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
 using namespace geode::prelude;
 
-class $modify(JumpHackLayer, GJBaseGameLayer) {
+class $modify(JumpHack, GJBaseGameLayer) {
 public:
     void update(float dt) override {
         auto mod = Mod::get();
@@ -23,9 +23,11 @@ public:
     static void onModify(auto& self) {
         auto hook = self.getHook("GJBaseGameLayer::update");
         Loader::get()->queueInMainThread([hook]() {
-            // Use unwrap() to get the pointer from Result<Hook*>
             if (hook.isOk()) {
-                hook.unwrap()->enable();
+                bool success = hook.unwrap()->enable();
+                if (!success) {
+                    log::error("Failed to enable hook for GJBaseGameLayer::update");
+                }
             }
         });
     }
