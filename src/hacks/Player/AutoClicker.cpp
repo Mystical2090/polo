@@ -17,8 +17,8 @@ class $modify(AutoClickHack, PlayLayer) {
                 touchSet->addObject(touch);
                 
                 auto dispatcher = cocos2d::CCDirector::sharedDirector()->getTouchDispatcher();
-                dispatcher->touches(touchSet, nullptr, cocos2d::CCTouchDispatcher::kEventTouchBegan);
-                dispatcher->touches(touchSet, nullptr, cocos2d::CCTouchDispatcher::kEventTouchEnded);
+                dispatcher->touches(touchSet, nullptr, cocos2d::ccTouchBegan);
+                dispatcher->touches(touchSet, nullptr, cocos2d::ccTouchEnded);
             }
         }
         PlayLayer::update(dt);
