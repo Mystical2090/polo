@@ -11,14 +11,12 @@ public:
         
         if (jumpHackEnabled && m_player1) {
             m_player1->m_isOnGround = true;
-            // Remove m_vehicleGrounded as it doesn't exist in PlayerObject
         }
         
         GJBaseGameLayer::update(dt);
         
         if (jumpHackEnabled && m_player1) {
             m_player1->m_isOnGround = true;
-            // Remove m_vehicleGrounded as it doesn't exist in PlayerObject
         }
     }
     
