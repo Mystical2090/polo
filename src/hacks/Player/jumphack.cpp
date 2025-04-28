@@ -1,4 +1,4 @@
-// thanks qolmod 
+// qolmod go brrrrr anyways thanks doggo
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
 using namespace geode::prelude;
@@ -24,10 +24,7 @@ public:
         auto hook = self.getHook("GJBaseGameLayer::update");
         Loader::get()->queueInMainThread([hook]() {
             if (hook.isOk()) {
-                bool success = hook.unwrap()->enable();
-                if (!success) {
-                    log::error("Failed to enable hook for GJBaseGameLayer::update");
-                }
+                hook.unwrap()->enable();
             }
         });
     }
