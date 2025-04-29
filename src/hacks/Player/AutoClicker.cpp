@@ -4,7 +4,7 @@ using namespace geode::prelude;
 
 class $modify(AutoClickLayer, PlayLayer) {
     void update(float dt) {
-        if (Mod::get()->getSettingValue<bool>("enable-auto-click"))
+        if (Mod::get()->getSettingValue<bool>("enable-auto-clicker"))
             if (this->m_player1) this->pushButton(0, true);
         PlayLayer::update(dt);
     }
