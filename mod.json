@@ -37,13 +37,13 @@
                 "enable-auto-clicker": {
                     "name": "Auto Clicker",
                     "type": "bool",
-                    "description": "Autoclicker.hack.mod.desc",
+                    "description": "Infinitely clicks for you.",
                     "default": false
                 },
                 "enable-jump-hack": {
                     "name": "Jump Hack",
                     "type": "bool",
-                    "description": "Allows you to jump infinatly.",
+                    "description": "Allows you to jump infinitely.",
                     "default": false
                 },
         "Misc": {
@@ -53,11 +53,11 @@
                 "speedhack-bool": {
                     "name": "Speed Hack",
                     "type": "bool",
-                    "description": "uhh ye speedhack",
+                    "description": "Allows you to speed up the game.",
                     "default": false
                 },
                 "speedhack": {
-                    "name": "Speed Hack",
+                    "name": "SpeedHack",
                     "type": "float",
                     "min": 0.01,
                     "max": 5.0,
@@ -76,31 +76,31 @@
                 "practice-music": {
                 "name": "Practice Music Hack",
                 "type": "bool",
-                "description": "spaceUK balls",
+                "description": "Bypasses practice music checkmark in settings.",
                 "default": false
                 },
                 "layout-mode": {
                     "name": "Layout Mode",
                     "type": "bool",
-                    "description": "i love this ngl",
+                    "description": "Shows the layout of the level.",
                     "default": false
                 },
                 "icon-hack": {
                     "name": "Icon Hack",
                     "type": "bool",
-                    "description": "icon hack yay",
+                    "description": "Unlocks all the icons.",
                     "default": false
                 },
               "instant-respawn": {
                     "name": "Suicide",
                     "type": "bool",
-                    "description": "Disable nolcip for this to work",
+                    "description": "Instant Kills you. WARNING: Dont use noclip with this mod.",
                     "default": false
                 },
                 "safe-mode": {
                     "name": "Safe Mode",
                     "type": "bool",
-                    "description": "Safe mode hehehehe this took 5 hours btw im bad at coding i need to git gud",
+                    "description": "Locks you from beating the level.",
                     "default": false
                 },
         "creator": {
@@ -110,19 +110,19 @@
             "verify-hack": {
                 "name": "Verify Hack",
                 "type": "bool",
-                "description": "spaceUsa hack frfr",
+                "description": "Allows you to upload any level.",
                 "default": false
                 },
                 "copy-hack-balls": {
                     "name": "Copy Hack",
                     "type": "bool",
-                    "description": "Ez hack ngl",
+                    "description": "Allows you to copy any level.",
                     "default": false
                 },
             "custum-obj-bypass": {
                 "name": "Custom Objects Bypass",
                 "type": "bool",
-                "description": "i love this mod ngl",
+                "description": "custom.objects.bypass.info.desc",
                 "default": false
                 }
         }
