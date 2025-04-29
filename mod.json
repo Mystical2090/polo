@@ -24,26 +24,26 @@
                 "enable-noclip": {
                     "name": "Noclip",
                     "type": "bool",
-                    "description": "spaceuk hack",
+                    "description": "Allows you to pass through objects.",
                     "default": false
                 },
         
                 "ignore-inputs": {
                     "name": "Ignore Inputs",
                     "type": "bool",
-                    "description": "yea when the bot will come out this will be usefull if you wanna be spaceuk",
+                    "description": "Ignores the inputs you've made.",
                     "default": false
                 },
                 "enable-auto-clicker": {
                     "name": "Auto Clicker",
                     "type": "bool",
-                    "description": "me when i autoclick",
+                    "description": "Autoclicker.hack.mod.desc",
                     "default": false
                 },
                 "enable-jump-hack": {
                     "name": "Jump Hack",
                     "type": "bool",
-                    "description": "jump.hack.desc",
+                    "description": "Allows you to jump infinatly.",
                     "default": false
                 },
         "Misc": {
