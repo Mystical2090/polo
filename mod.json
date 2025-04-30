@@ -34,12 +34,6 @@
                     "description": "Ignores the inputs you've made.",
                     "default": false
                 },
-                "enable-auto-clicker": {
-                    "name": "Auto Clicker",
-                    "type": "bool",
-                    "description": "Infinitely clicks for you.",
-                    "default": false
-                },
                 "enable-jump-hack": {
                     "name": "Jump Hack",
                     "type": "bool",
