@@ -4,13 +4,23 @@
 using namespace geode::prelude;
 
 class $modify(MyMenuLayer, GameManager) {
-	bool isIconUnlocked(int p0, IconType p1) {
-		bool result = GameManager::isIconUnlocked(p0, p1);
+    bool isIconUnlocked(int p0, IconType p1) {
+        bool result = GameManager::isIconUnlocked(p0, p1);
 
-		if (Mod::get()->getSettingValue<bool>("icon-hack")) {
-			return true;
-		}
+        if (Mod::get()->getSettingValue<bool>("icon-hack")) {
+            return true;
+        }
 
-		return result;
-	}
+        return result;
+    }
+
+    bool isColorUnlocked(int p0, UnlockType p1) {
+        bool result = GameManager::isColorUnlocked(p0, p1);
+
+        if (Mod::get()->getSettingValue<bool>("icon-hack")) {
+            return true;
+        }
+
+        return result;
+    }
 };
