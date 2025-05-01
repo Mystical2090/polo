@@ -26,7 +26,7 @@ void PauseWithImageButton::customSetup() {
     );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-    button->setPosition({ winSize.width - 40.f, winSize.height / 2 });
+    button->setPosition({ winSize.width - 100.f, winSize.height / 2 });
 
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(button);
@@ -58,7 +58,7 @@ bool MainMenuWithImageButton::init() {
     );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-    button->setPosition({ 40.f, winSize.height / 2 }); // Top-left
+    button->setPosition({ 100.f, winSize.height / 2 }); // Top-left
 
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(button);
