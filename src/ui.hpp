@@ -6,22 +6,22 @@ using namespace geode::prelude;
 
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
-    bool setup(std::string const& value) override {
-        this->setTitle("Polo");
+    // Custom black background with light blue border
+    auto size = this->getContentSize();
 
-    auto bg = CCLayerColor::create({0, 0, 0, 255});
-    bg->setColor({0, 0, 0});
-    bg->setOpacity(255);
+    auto bg = CCLayerColor::create({0, 0, 0, 255}, size.width, size.height);
+    bg->setPosition({0, 0});
+    m_mainLayer->addChild(bg, -1);  // add behind everything
+
+    auto outline = CCDrawNode::create();
+    ccColor4F borderColor = {0.4f, 0.8f, 1.0f, 1.0f};
+    float borderWidth = 2.0f; // outline thickness
+    ccColor4F fillColor = {0, 0, 0, 0}; // transparent fill
 
     outline->drawRect({0, 0}, {size.width, size.height}, borderColor, borderWidth, fillColor);
     bg->addChild(outline);
-    auto size = bg->getContentSize();
 
-    ccColor4F borderColor = {0.4f, 0.8f, 1.0f, 1.0f};
-    outline->drawRect({0, 0}, {size.width, size.height}, borderColor);
-    outline->setPosition({0, 0});
-    bg->addChild(outline, 999);
-
+    // Label
     auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
     label->setColor({100, 200, 255});
     m_mainLayer->addChildAtPosition(label, Anchor::Top, {0, -20});
