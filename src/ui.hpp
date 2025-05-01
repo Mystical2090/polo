@@ -39,12 +39,7 @@ protected:
             menu_selector(MyPopup::onPlayerButton)
         );
 
-        auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
         playerbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 50.f });
-
-        auto menu = cocos2d::CCMenu::create();
-        menu->addChild(playerbutton);
-        menu->setPosition({ 0, 0 });
 
         this->addChild(menu);
         return true;
