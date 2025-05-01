@@ -3,6 +3,7 @@
 #include <Geode/ui/GeodeUI.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/utils/cocos.hpp>
+#include "ui.hpp"
 
 using namespace geode::prelude;
 
