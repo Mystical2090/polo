@@ -2,7 +2,6 @@
 
 #include <Geode/ui/Popup.hpp>
 #include <Geode/ui/ButtonSprite.hpp>
-#include <Geode/utils/cocos.hpp>
 
 using namespace geode::prelude;
 
