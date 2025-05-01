@@ -91,12 +91,6 @@
                     "description": "Instant Kills you. WARNING: Dont use noclip with this mod.",
                     "default": false
                 },
-                "safe-mode": {
-                    "name": "Safe Mode",
-                    "type": "bool",
-                    "description": "Locks you from beating the level.",
-                    "default": false
-                },
         "creator": {
             "type": "title",
             "name": "Creator"
