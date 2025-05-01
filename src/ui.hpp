@@ -7,7 +7,7 @@ using namespace geode::prelude;
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
-            this->setTitle("Polo Mod Menu");
+            this->setTitle("Polo");
 
     auto popupSize = this->getContentSize();
 
