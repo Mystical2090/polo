@@ -13,12 +13,6 @@ public:
     void onSettingsButton(cocos2d::CCObject*);
 };
 
-class $modify(PoloUIThing, PoloUI) {
-public:
-    void onMiscButton(cocos2d::CCObject*):
-};
-
-
 void PauseWithImageButton::customSetup() {
     PauseLayer::customSetup();
 
