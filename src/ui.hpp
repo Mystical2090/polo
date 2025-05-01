@@ -37,7 +37,7 @@ protected:
 public:
     static MyPopup* create(std::string const& text) {
         auto ret = new MyPopup();
-        if (ret->initAnchored(240.f, 160.f, text)) {
+        if (ret->initAnchored(500.f, 340.f, text)) {
             ret->autorelease();
             return ret;
         }
