@@ -21,7 +21,7 @@ protected:
         miscbtn,
         miscbtn,
         this,
-        menu_selector(miscButton::onMiscButton)
+        menu_selector(PoloUI::onMiscButton)
 );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
