@@ -7,7 +7,7 @@ using namespace geode::prelude;
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
-        this->setTitle("Hi mom!");
+        this->setTitle("Polo");
 
         m_bgLayer->setColor({0, 0, 0});
         m_bgLayer->setOpacity(255);
