@@ -27,7 +27,6 @@ protected:
         menu->setPosition({ 0, 0 });
 
         this->addChild(menu);
-        return true;
         // player button 
         auto playerbtn = ButtonSprite::create("Player");
         miscbtn->setScale(0.9f);
