@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $modify(PoloUI, PoloUILayer) {
+class $modify(MyLayer, PoloUI) {
     void onMiscButton(cocos2d::CCObject*);
 };
 
@@ -24,7 +24,7 @@ protected:
         miscbtn,
         miscbtn,
         this,
-        menu_selector(PoloUI::onMiscButton)
+        menu_selector(MyLayer::onMiscButton)
 );
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
@@ -40,7 +40,7 @@ protected:
 
 public:
     static PoloUI* create(std::string const& text) {
-        auto ret = new PoloUI();
+        auto ret = new MyLayer();
         if (ret->initAnchored(240.f, 160.f, text)) {
             ret->autorelease();
             return ret;
