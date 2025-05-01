@@ -9,6 +9,8 @@ protected:
     bool setup(std::string const& value) override {
             this->setTitle("Polo Mod Menu");
 
+    auto popupSize = this->getContentSize();
+
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
 
     // Misc button
