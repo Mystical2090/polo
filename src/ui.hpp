@@ -12,7 +12,7 @@ protected:
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
 
     // Misc button
-    auto miscbtn = ButtonSprite::create("  Misc  ");
+    auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
     auto miscbutton = CCMenuItemSpriteExtra::create(
         miscbtn,
@@ -31,7 +31,7 @@ protected:
         this,
         menu_selector(MyPopup::onPlayerButton)
     );
-    playerbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 40.f });
+    playerbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 25.f });
 
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
