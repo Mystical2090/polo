@@ -9,7 +9,7 @@ protected:
     bool setup(std::string const& value) override {
         this->setTitle("Polo");
 
-    auto bg = CCLayerColor::create({0, 0, 0, 255}, size.width, size.height);
+    auto bg = CCLayerColor::create({0, 0, 0, 255});
     bg->setColor({0, 0, 0});
     bg->setOpacity(255);
 
