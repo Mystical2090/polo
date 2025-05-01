@@ -33,6 +33,7 @@ protected:
     }
 
     void onMiscButton(cocos2d::CCObject*) {
+// i will add code to show only misc hacks
     }
 
 public:
