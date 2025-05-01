@@ -1,4 +1,4 @@
-# Pole
+# Polo
 
 ## Features
 - Noclip
