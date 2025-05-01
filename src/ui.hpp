@@ -20,7 +20,7 @@ protected:
         );
 
         auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-        miscbutton->setPosition({ winSize.width / 2 - 150.f, winSize.height / 2 - 50.f });
+        miscbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 50.f });
 
         auto menu = cocos2d::CCMenu::create();
         menu->addChild(miscbutton);
