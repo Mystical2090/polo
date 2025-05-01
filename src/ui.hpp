@@ -11,7 +11,25 @@ protected:
 
         auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
         m_mainLayer->addChildAtPosition(label, Anchor::Center);
+        
+    auto miscbtn = ButtonSprite::create("Misc");
+        miscbtn->setScale(0.9f);
 
+    auto miscbutton = CCMenuItemSpriteExtra::create(
+        miscbtn,
+        misctbtn,
+        this,
+        menu_selector(miscButton::onMiscButton)
+);
+
+    auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+    miscbutton->setPosition({ winSize.width / 2 - 150.f, winSize.height / 2 - 50.f });
+
+    auto menu = cocos2d::CCMenu::create();
+    menu->addChild(miscbutton);
+    menu->setPosition({ 0, 0 });
+
+    this->addChild(menu);
         return true;
     }
 
