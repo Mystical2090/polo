@@ -6,25 +6,22 @@ using namespace geode::prelude;
 
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
-    // Custom black background with light blue border
+    this->setTitle("Polo Mod Menu");
+
     auto size = this->getContentSize();
+    cocos2d::CCSize size = this->getContentSize();
 
-    auto bg = CCLayerColor::create({0, 0, 0, 255}, size.width, size.height);
+    cocos2d::CCLayerColor* bg = CCLayerColor::create({0, 0, 0, 255}, size.width, size.height);
     bg->setPosition({0, 0});
-    m_mainLayer->addChild(bg, -1);  // add behind everything
+    m_mainLayer->addChild(bg, -1);
 
-    auto outline = CCDrawNode::create();
+    cocos2d::CCDrawNode* outline = CCDrawNode::create();
     ccColor4F borderColor = {0.4f, 0.8f, 1.0f, 1.0f};
-    float borderWidth = 2.0f; // outline thickness
-    ccColor4F fillColor = {0, 0, 0, 0}; // transparent fill
+    float borderWidth = 2.0f;
+    ccColor4F fillColor = {0, 0, 0, 0};
 
     outline->drawRect({0, 0}, {size.width, size.height}, borderColor, borderWidth, fillColor);
     bg->addChild(outline);
-
-    // Label
-    auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-    label->setColor({100, 200, 255});
-    m_mainLayer->addChildAtPosition(label, Anchor::Top, {0, -20});
 
         return true;
     }
