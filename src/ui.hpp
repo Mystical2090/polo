@@ -33,10 +33,22 @@ protected:
         this,
         menu_selector(MyPopup::onPlayerButton)
     );
-    playerbutton->setPosition({ 100.f, popupSize.height - 90.f });
+    playerbutton->setPosition({ 100.f, popupSize.height - 50.f });
+        //creator button
+    auto creatorbtn = ButtonSprite::create("Creator");
+    creatorbtn->setScale(0.9f);
+    auto creatorbutton = CCMenuItemSpriteExtra::create(
+        creatorbtn,
+        creatorbtn,
+        this,
+        menu_selector(MyPopup::onCreatorButton)
+    );
+    creatorbutton->setPosition({ 100.f, popupSize.height - 90.f });
+        // idk
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
     menu->addChild(miscbutton);
+    menu->addChild(creatorbutton);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
@@ -49,6 +61,10 @@ protected:
     void onPlayerButton(cocos2d::CCObject*) {
 // i will add code to show only player hacks
     }
+    void onCreatorButton(cocos2d::CCObject*) {
+// i will add code to show only player hacks
+    }
+
 
 public:
     static MyPopup* create(std::string const& text) {
