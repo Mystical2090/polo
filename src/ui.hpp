@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Geode/ui/Popup.hpp>
-#include <Geode/ui/ButtonSprite.hpp>
 
 using namespace geode::prelude;
 
