@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $modify(PoloUIlayer, PoloUI) {
+class $modify(PoloUI, PoloUILayer) {
     void onMiscButton(cocos2d::CCObject*);
 };
 
