@@ -17,7 +17,7 @@ protected:
 
     auto miscbutton = CCMenuItemSpriteExtra::create(
         miscbtn,
-        misctbtn,
+        miscbtn,
         this,
         menu_selector(miscButton::onMiscButton)
 );
