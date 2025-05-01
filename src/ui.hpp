@@ -4,7 +4,7 @@
 
 using namespace geode::prelude;
 
-class $modify(MyPopup) {
+class $modify(MyPopupLayer, MyPopup) {
     void onMiscButton(cocos2d::CCObject*);
 };
 
