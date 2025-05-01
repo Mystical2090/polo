@@ -9,19 +9,21 @@ protected:
     bool setup(std::string const& value) override {
         this->setTitle("Polo");
 
-        m_bgLayer->setColor({0, 0, 0});
-        m_bgLayer->setOpacity(255);
+    auto bg = this->getBackgroundLayer(); // get the background layer
+    bg->setColor({0, 0, 0});
+    bg->setOpacity(255);
 
-        auto outline = CCDrawNode::create();
-        auto size = m_bgLayer->getContentSize();
-        ccColor4F borderColor = {0.4f, 0.8f, 1.0f, 1.0f}; // RGBA
-        outline->drawRect({0, 0}, {size.width, size.height}, borderColor);
-        outline->setPosition({0, 0});
-        m_bgLayer->addChild(outline, 999);
+    auto outline = CCDrawNode::create();
+    auto size = bg->getContentSize();
 
-        auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-        label->setColor({100, 200, 255});
-        m_mainLayer->addChildAtPosition(label, Anchor::Center);
+    ccColor4F borderColor = {0.4f, 0.8f, 1.0f, 1.0f};
+    outline->drawRect({0, 0}, {size.width, size.height}, borderColor);
+    outline->setPosition({0, 0});
+    bg->addChild(outline, 999);
+
+    auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
+    label->setColor({100, 200, 255});
+    m_mainLayer->addChildAtPosition(label, Anchor::Top, {0, -20});
 
         return true;
     }
