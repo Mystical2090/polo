@@ -7,42 +7,40 @@ using namespace geode::prelude;
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
-        this->setTitle("Polo Mod Menu");
-        // misc button
-        auto miscbtn = ButtonSprite::create("Misc");
-        miscbtn->setScale(0.9f);
+            this->setTitle("Polo Mod Menu");
 
-        auto miscbutton = CCMenuItemSpriteExtra::create(
-            miscbtn,
-            miscbtn,
-            this,
-            menu_selector(MyPopup::onMiscButton)
-        );
+    auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
 
-        auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-        miscbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 30.f });
+    // Misc button
+    auto miscbtn = ButtonSprite::create("Misc");
+    miscbtn->setScale(0.9f);
+    auto miscbutton = CCMenuItemSpriteExtra::create(
+        miscbtn,
+        miscbtn,
+        this,
+        menu_selector(MyPopup::onMiscButton)
+    );
+    miscbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 });
 
-        auto menu = cocos2d::CCMenu::create();
-        menu->addChild(miscbutton);
-        menu->setPosition({ 0, 0 });
+    // Player button
+    auto playerbtn = ButtonSprite::create("Player");
+    playerbtn->setScale(0.9f);
+    auto playerbutton = CCMenuItemSpriteExtra::create(
+        playerbtn,
+        playerbtn,
+        this,
+        menu_selector(MyPopup::onPlayerButton)
+    );
+    playerbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 50.f });
 
-        this->addChild(menu);
-        // player button 
-        auto playerbtn = ButtonSprite::create("Player");
-        miscbtn->setScale(0.9f);
+    auto menu = cocos2d::CCMenu::create();
+    menu->addChild(miscbutton);
+    menu->addChild(playerbutton);
+    menu->setPosition({ 0, 0 });
 
-        auto playerbutton = CCMenuItemSpriteExtra::create(
-            playerbtn,
-            playerbtn,
-            this,
-            menu_selector(MyPopup::onPlayerButton)
-        );
-
-        playerbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 50.f });
-
-        this->addChild(menu);
-        return true;
-    }
+    this->addChild(menu);
+    return true;
+}
 
     void onMiscButton(cocos2d::CCObject*) {
 // i will add code to show only misc hacks
