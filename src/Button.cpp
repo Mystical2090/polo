@@ -70,5 +70,5 @@ bool MainMenuWithImageButton::init() {
 }
 
 void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
-    geode::openSettingsPopup(Mod::get(), true);
+        MyPopup::create("Polo_UI")->show();
 }
