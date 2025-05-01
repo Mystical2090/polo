@@ -1,17 +1,12 @@
 # Polo
 
 ## Features
-- Noclip
+* Noclip
 - Speedhack
+* Practice Mode bypass
 - And many more! (20+)
-
-## Credits
 
 ### This wouldnt with been possible without:
 
-- speedyfriend67
+* speedyfriend67
 - Gtxripmxt
-- Firee
-- Geode :)
-
-## Hope you enjoy!
