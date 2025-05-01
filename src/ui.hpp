@@ -13,7 +13,8 @@ protected:
     bg->setColor({0, 0, 0});
     bg->setOpacity(255);
 
-    auto outline = CCDrawNode::create();
+    outline->drawRect({0, 0}, {size.width, size.height}, borderColor, borderWidth, fillColor);
+    bg->addChild(outline);
     auto size = bg->getContentSize();
 
     ccColor4F borderColor = {0.4f, 0.8f, 1.0f, 1.0f};
