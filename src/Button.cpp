@@ -70,5 +70,5 @@ bool MainMenuWithImageButton::init() {
 }
 
 void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
-        MyPopup::create("Polo_UI")->show();
+        PoloUI::create("Polo_UI")->show();
 }
