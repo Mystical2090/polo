@@ -20,7 +20,7 @@ protected:
         this,
         menu_selector(MyPopup::onMiscButton)
     );
-    miscbutton->setPosition({ -150.f, 70.f });
+    miscbutton->setPosition({ -150.f, 40.f });
 
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
@@ -31,7 +31,7 @@ protected:
         this,
         menu_selector(MyPopup::onPlayerButton)
     );
-    playerbutton->setPosition({ -150.f, 40.f });
+    playerbutton->setPosition({ -150.f, 90.f });
 
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
