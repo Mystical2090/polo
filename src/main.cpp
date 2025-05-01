@@ -2,7 +2,7 @@
 
 void loadPlayerHacks();
 void loadGlobalHacks();
-
+// hey mystic this file is f=very useless!
 $on_mod(Loaded) {
     // idk why i did void loadGlobalHacks theres no cpp file but cool ig idk also idgaf
 }
