@@ -24,7 +24,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/creator/custom-obj-hack.cpp
     src/hacks/misc/practice-music.cpp
     src/hacks/misc/layout-mode.cpp
-  # src/hacks/misc/safe-mode.cpp
+     # src/hacks/misc/safe-mode.cpp
     
 )
 
