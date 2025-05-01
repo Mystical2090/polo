@@ -13,7 +13,7 @@ public:
     void onSettingsButton(cocos2d::CCObject*);
 };
 
-class $modify(PoloUI, PoloUI) {
+class $modify(PoloUIThing, PoloUI) {
 public:
     void onMiscButton(cocos2d::CCObject*):
 };
