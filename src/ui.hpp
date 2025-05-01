@@ -14,7 +14,9 @@ protected:
         
     auto miscbtn = ButtonSprite::create("Misc");
         miscbtn->setScale(0.9f);
-
+        
+    void onImportButton(cocos2d::CCObject*);
+        
     auto miscbutton = CCMenuItemSpriteExtra::create(
         miscbtn,
         miscbtn,
