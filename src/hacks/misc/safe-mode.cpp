@@ -1,23 +1,15 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/GameManager.hpp>
+#include <Geode/modify/GJGameLevel.hpp>
 
 using namespace geode::prelude;
 
-class $modify(SafeGameManager, GameManager) {
-    void saveGame() {
+class $modify(SafeMode, GJGameLevel) {
+    void levelWasCompleted() {
         if (Mod::get()->getSettingValue<bool>("safe-mode")) {
-            log::info("Safe Mode enabled.");
-            return;
+            log::info("level not complete cus ssafe mode");
+            return; // block level from being marked as completed
         }
-        GameManager::saveGame();
-    }
 
-    void save() {
-        if (Mod::get()->getSettingValue<bool>("safe-mode")) {
-            log::info("Safe Mode enabled");
-            return;
-        }
-        GameManager::save();
+        GJGameLevel::levelWasCompleted(); // allow normal completion
     }
 };
-
