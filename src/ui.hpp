@@ -8,7 +8,7 @@ class MyPopup : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
         this->setTitle("Polo Mod Menu");
-
+        // misc button
         auto miscbtn = ButtonSprite::create("Misc");
         miscbtn->setScale(0.9f);
 
@@ -20,10 +20,30 @@ protected:
         );
 
         auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-        miscbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 50.f });
+        miscbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 30.f });
 
         auto menu = cocos2d::CCMenu::create();
         menu->addChild(miscbutton);
+        menu->setPosition({ 0, 0 });
+
+        this->addChild(menu);
+        return true;
+        // player button 
+        auto playerbtn = ButtonSprite::create("Player");
+        miscbtn->setScale(0.9f);
+
+        auto playerbutton = CCMenuItemSpriteExtra::create(
+            playerbtn,
+            playerbtn,
+            this,
+            menu_selector(MyPopup::onPlayerButton)
+        );
+
+        auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+        playerbutton->setPosition({ winSize.width / 2 - 170.f, winSize.height / 2 - 50.f });
+
+        auto menu = cocos2d::CCMenu::create();
+        menu->addChild(playerbutton);
         menu->setPosition({ 0, 0 });
 
         this->addChild(menu);
@@ -32,6 +52,9 @@ protected:
 
     void onMiscButton(cocos2d::CCObject*) {
 // i will add code to show only misc hacks
+    }
+    void onPlayerButton(cocos2d::CCObject*) {
+// i will add code to show only player hacks
     }
 
 public:
