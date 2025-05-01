@@ -4,6 +4,10 @@
 
 using namespace geode::prelude;
 
+class $modify(PoloUIlayer, PoloUI) {
+    void onMiscButton(cocos2d::CCObject*);
+};
+
 class PoloUI : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
