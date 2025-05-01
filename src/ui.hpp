@@ -9,7 +9,7 @@ protected:
     bool setup(std::string const& value) override {
         this->setTitle("Polo");
 
-    auto bg = this->getBackgroundLayer(); // get the background layer
+    auto bg = this->m_background;
     bg->setColor({0, 0, 0});
     bg->setOpacity(255);
 
