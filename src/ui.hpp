@@ -7,6 +7,9 @@ using namespace geode::prelude;
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
     CCLabelBMFont* nocliplabel = nullptr;
+    CCLabelBMFont* jumphacklabel = nullptr;
+    CCLabelBMFont* ignoreinputslabel = nullptr;
+    CCLabelBMFont* autoclickerlabel = nullptr;
     bool setup(std::string const& value) override {
             this->setTitle("Player");
             this->m_title->setScale(1.2f); 
@@ -20,9 +23,34 @@ protected:
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f }); 
 // noclip label
-        nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
+        nocliplabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         nocliplabel->setScale(1.0f);
+        nocliplabel->setPosition(
+            jumphacklabel->getPositionX(),
+            jumphacklabel->getPositionY() + 30.f
+            );
+            m_mainLayer->addChild(nocliplabel);
+// jump hack label
+        jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
+        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
+        jumphacklabel->setScale(1.0f);
+        m_mainLayer->addChild(jumphacklabel);
+// ignore inputs label
+        ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
+        ignoreinputslabel->setScale(1.0f);
+        ignoreinputslabel->setPosition(
+            jumphacklabel->getPositionX(),
+            jumphacklabel->getPositionY() - 30.f
+            );
+            m_mainLayer->addChild(ignoreinputslabel);
+// autoclicker label 
+        autoclickerlabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
+        autoclickerlabel->setScale(1.0f);
+        autoclickerlabel->setPosition(
+            jumphacklabel->getPositionX(),
+            jumphacklabel->getPositionY() - 60.f
+            );
+            m_mainLayer->addChild(autoclickerlabel);
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -85,21 +113,33 @@ protected:
         this->setTitle("Misc");
         this->m_title->setScale(1.2f);
         nocliplabel->setVisible(false);
+        jumphacklabel->setVisible(false);
+        ignoreinputslabel->setVisible(false);
+        autoclickerlabel->setVisible(false);
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
         this->m_title->setScale(1.2f);
         nocliplabel->setVisible(true);
+        jumphacklabel->setVisible(true);
+        ignoreinputslabel->setVisible(true);
+        autoclickerlabel->setVisible(true);
     }
     void onCreatorButton(cocos2d::CCObject*) {
         this->setTitle("Creator");
         this->m_title->setScale(1.2f);
         nocliplabel->setVisible(false);
+        jumphacklabel->setVisible(false);
+        ignoreinputslabel->setVisible(false);
+        autoclickerlabel->setVisible(false);
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
         this->m_title->setScale(1.2f);
         nocliplabel->setVisible(false);
+        jumphacklabel->setVisible(false);
+        ignoreinputslabel->setVisible(false);
+        autoclickerlabel->setVisible(false);
     }
 
 public:
