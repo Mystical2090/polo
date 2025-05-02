@@ -8,6 +8,7 @@ class MyPopup : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
             this->setTitle("Polo");
+            this->m_title->setScale(1.5f); 
 
     auto popupSize = this->getContentSize();
 
@@ -68,15 +69,19 @@ protected:
 
     void onMiscButton(cocos2d::CCObject*) {
         this->setTitle("Misc");
+        this->m_title->setScale(1.5f); 
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
+        this->m_title->setScale(1.5f); 
     }
     void onCreatorButton(cocos2d::CCObject*) {
         this->setTitle("Creator");
+        this->m_title->setScale(1.5f); 
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
+        this->m_title->setScale(1.5f); 
     }
 
 public:
