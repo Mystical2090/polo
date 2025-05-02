@@ -15,9 +15,9 @@ protected:
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
 
     auto label = CCLabelBMFont::create("Polo v1.0.0", "bigFont.fnt");
-        label->setScale(0.7f);
+        label->setScale(0.3f);
         label->setAnchorPoint({0.5f, 0.5f});
-        label->setPosition({winSize.width - 10.f, 27.f});
+        label->setPosition({winSize.width - 50.f, 40.f});
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
