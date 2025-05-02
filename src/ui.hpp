@@ -13,11 +13,11 @@ protected:
     auto popupSize = this->getContentSize();
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
-
+// polo version label
     auto label = CCLabelBMFont::create("Polo v1.0.0", "goldFont.fnt");
         label->setScale(0.3f);
-        label->setAnchorPoint({0.5f, 0.5f});
-        label->setPosition({winSize.width - 65.f, 40.f});
+        label->setAnchorPoint({1.0f, 0.0f});
+        label->setPosition({ popupSize.width - 10.f, 10.f }); 
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -27,7 +27,7 @@ protected:
         this,
         menu_selector(MyPopup::onMiscButton)
     );
-    miscbutton->setPosition({ 100.f, popupSize.height - 115.f });
+    miscbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.55f });
 
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
@@ -38,7 +38,7 @@ protected:
         this,
         menu_selector(MyPopup::onPlayerButton)
     );
-    playerbutton->setPosition({ 100.f, popupSize.height - 75.f });
+    playerbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.67f });
         // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setScale(0.9f);
@@ -48,7 +48,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreatorButton)
     );
-    creatorbutton->setPosition({ 100.f, popupSize.height - 155.f });
+    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.43f });
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
@@ -58,7 +58,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreditsButton)
     );
-    creditsbutton->setPosition({ 100.f, popupSize.height - 195.f });
+    creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
