@@ -9,7 +9,6 @@ protected:
     bool setup(std::string const& value) override {
             this->setTitle("Polo");
             this->m_title->setScale(1.2f); 
-            this->m_title->setBMFontFile("bigFont.fnt");
         
     auto popupSize = this->getContentSize();
 
