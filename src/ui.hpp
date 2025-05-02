@@ -34,7 +34,7 @@ protected:
         menu_selector(MyPopup::onPlayerButton)
     );
     playerbutton->setPosition({ 100.f, popupSize.height - 75.f });
-        //creator button
+        // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setScale(0.9f);
     auto creatorbutton = CCMenuItemSpriteExtra::create(
@@ -59,6 +59,7 @@ protected:
     menu->addChild(playerbutton);
     menu->addChild(miscbutton);
     menu->addChild(creatorbutton);
+    menu->addChild(creditsbutton);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
