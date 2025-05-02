@@ -18,17 +18,16 @@ protected:
 
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
 // polo version label
-    auto label = CCLabelBMFont::create("Polo v1.0.0", "goldFont.fnt");
+    auto label = CCLabelBMFont::create("Polo v1.0.0", "bigFont.fnt");
         label->setScale(0.3f);
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f });
 // jump hack label
-        jumphacklabel = CCLabelBMFont::create("Jump Hack", "goldFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
+        jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(1.0f);
         m_mainLayer->addChild(jumphacklabel);
 // noclip label
-        nocliplabel = CCLabelBMFont::create("Ignore Inputs", "goldFont.fnt");
+        nocliplabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         nocliplabel->setScale(1.0f);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
@@ -36,7 +35,7 @@ protected:
             );
             m_mainLayer->addChild(nocliplabel)2;
 // ignore inputs label
-        ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "goldFont.fnt");
+        ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         ignoreinputslabel->setScale(1.0f);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
@@ -44,7 +43,7 @@ protected:
             );
             m_mainLayer->addChild(ignoreinputslabel);
 // autoclicker label 
-        autoclickerlabel = CCLabelBMFont::create("Ignore Inputs", "goldFont.fnt");
+        autoclickerlabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         autoclickerlabel->setScale(1.0f);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
