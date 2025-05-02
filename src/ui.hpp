@@ -6,8 +6,8 @@ using namespace geode::prelude;
 
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
-    CCLabelBMFont* nocliplabel = nullptr;
     CCLabelBMFont* jumphacklabel = nullptr;
+    CCLabelBMFont* nocliplabel = nullptr;
     CCLabelBMFont* ignoreinputslabel = nullptr;
     CCLabelBMFont* autoclickerlabel = nullptr;
     bool setup(std::string const& value) override {
@@ -23,20 +23,20 @@ protected:
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f });
 // jump hack label
-        jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
+        jumphacklabel = CCLabelBMFont::create("Jump Hack", "goldFont.fnt");
         m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
         jumphacklabel->setScale(1.0f);
         m_mainLayer->addChild(jumphacklabel);
 // noclip label
-        nocliplabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
+        nocliplabel = CCLabelBMFont::create("Ignore Inputs", "goldFont.fnt");
         nocliplabel->setScale(1.0f);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() + 30.f
             );
-            m_mainLayer->addChild(nocliplabel);
+            m_mainLayer->addChild(nocliplabel)2;
 // ignore inputs label
-        ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
+        ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "goldFont.fnt");
         ignoreinputslabel->setScale(1.0f);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
@@ -44,7 +44,7 @@ protected:
             );
             m_mainLayer->addChild(ignoreinputslabel);
 // autoclicker label 
-        autoclickerlabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
+        autoclickerlabel = CCLabelBMFont::create("Ignore Inputs", "goldFont.fnt");
         autoclickerlabel->setScale(1.0f);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
