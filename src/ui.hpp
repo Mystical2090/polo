@@ -20,10 +20,9 @@ protected:
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f }); 
 // noclip label
-        nocliplabel = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center);
-        nocliplabel->setPosition({0, 0}); 
-        nocliplabel->setScale(0.3f);
+        nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
+        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
+        nocliplabel->setScale(1.5f);
         nocliplabel->setVisible(true);
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
