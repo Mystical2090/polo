@@ -44,7 +44,17 @@ protected:
         menu_selector(MyPopup::onCreatorButton)
     );
     creatorbutton->setPosition({ 100.f, popupSize.height - 155.f });
-        // idk
+        // credits button
+    auto creditsbtn = ButtonSprite::create("Credits");
+    creditsbtn->setScale(0.9f);
+    auto creditsbutton = CCMenuItemSpriteExtra::create(
+        creditsbtn,
+        creditsbtn,
+        this,
+        menu_selector(MyPopup::onCreditsButton)
+    );
+    creditsbutton->setPosition({ 100.f, popupSize.height - 195.f });
+        // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
     menu->addChild(miscbutton);
@@ -62,9 +72,11 @@ protected:
 // i will add code to show only player hacks
     }
     void onCreatorButton(cocos2d::CCObject*) {
-// i will add code to show only player hacks
+// i will add code to show only creator hacks
     }
-
+    void onCreditsButton(cocos2d::CCObject*) {
+// i will add code to show only credits
+    }
 
 public:
     static MyPopup* create(std::string const& text) {
