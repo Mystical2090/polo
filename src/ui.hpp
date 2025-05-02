@@ -75,7 +75,6 @@ protected:
     menu->addChild(creatorbutton);
     menu->addChild(creditsbutton);
     menu->addChild(label);
-    menu->addChild(nocliplabel);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
