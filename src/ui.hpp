@@ -86,37 +86,21 @@ protected:
     void onMiscButton(cocos2d::CCObject*) {
         this->setTitle("Misc");
         this->m_title->setScale(1.2f);
-    auto nocliplabel = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center);
-        nocliplabel->setPosition({0, 0}); 
-        nocliplabel->setScale(0.3f);
         nocliplabel->setVisible(false);
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
         this->m_title->setScale(1.2f);
-    auto nocliplabel = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center);
-        nocliplabel->setPosition({0, 0}); 
-        nocliplabel->setScale(0.3f);
         nocliplabel->setVisible(true);
     }
     void onCreatorButton(cocos2d::CCObject*) {
         this->setTitle("Creator");
         this->m_title->setScale(1.2f);
-    auto nocliplabel = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center);
-        nocliplabel->setPosition({0, 0}); 
-        nocliplabel->setScale(0.3f);
         nocliplabel->setVisible(false);
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
         this->m_title->setScale(1.2f);
-    auto nocliplabel = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center);
-        nocliplabel->setPosition({0, 0}); 
-        nocliplabel->setScale(0.3f);
         nocliplabel->setVisible(false);
     }
 
