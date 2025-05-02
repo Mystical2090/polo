@@ -25,6 +25,7 @@ protected:
 // jump hack label
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(1.0f);
+        jumphacklabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
 // noclip label
         nocliplabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
