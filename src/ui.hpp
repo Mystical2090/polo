@@ -22,7 +22,7 @@ protected:
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
         m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
-        nocliplabel->setScale(1.5f);
+        nocliplabel->setScale(1.0f);
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
