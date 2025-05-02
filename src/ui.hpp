@@ -65,6 +65,7 @@ protected:
     menu->addChild(miscbutton);
     menu->addChild(creatorbutton);
     menu->addChild(creditsbutton);
+    menu->addChild(label);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
