@@ -17,7 +17,7 @@ protected:
     auto label = CCLabelBMFont::create("Polo v1.0.0", "bigFont.fnt");
         label->setScale(0.3f);
         label->setAnchorPoint({0.5f, 0.5f});
-        label->setPosition({winSize.width - 50.f, 40.f});
+        label->setPosition({winSize.width - 65.f, 40.f});
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
