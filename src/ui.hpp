@@ -18,6 +18,11 @@ protected:
         label->setScale(0.3f);
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f }); 
+// noclip label
+    auto nocliplabel = CCLabelBMFont::create("Polo v1.0.0", "goldFont.fnt");
+        nocliplabel->setScale(1.5f);
+        nocliplabel->setAnchorPoint({1.0f, 0.0f});
+        nocliplabel->setPosition({0, 0}); 
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -82,11 +87,14 @@ protected:
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
-        this->m_title->setScale(1.2f); 
+        this->m_title->setScale(1.2f);
+        menu->addChild(nocliplabel);
+        nocliplabel->setVisible(true);
     }
     void onCreatorButton(cocos2d::CCObject*) {
         this->setTitle("Creator");
-        this->m_title->setScale(1.2f); 
+        this->m_title->setScale(1.2f);
+        nocliplabel->setVisible(false);
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
