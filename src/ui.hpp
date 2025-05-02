@@ -67,16 +67,16 @@ protected:
 }
 
     void onMiscButton(cocos2d::CCObject*) {
-// i will add code to show only misc hacks
+        this->setTitle("Misc");
     }
     void onPlayerButton(cocos2d::CCObject*) {
-// i will add code to show only player hacks
+        this->setTitle("Player");
     }
     void onCreatorButton(cocos2d::CCObject*) {
-// i will add code to show only creator hacks
+        this->setTitle("Creator");
     }
     void onCreditsButton(cocos2d::CCObject*) {
-// i will add code to show only credits
+        this->setTitle("Credits");
     }
 
 public:
