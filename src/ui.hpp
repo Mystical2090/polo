@@ -95,8 +95,12 @@ protected:
 
 public:
     static MyPopup* create(std::string const& text) {
+        auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+        float popupWidth = winSize.width * 0.8f;
+        float popupHeight = winSize.height * 0.6f;
+
         auto ret = new MyPopup();
-        if (ret->initAnchored(520.f, 250.f, text)) {
+        if (ret->initAnchored(popupWidth, popupHeight, text)) {
             ret->autorelease();
             return ret;
         }
@@ -104,4 +108,4 @@ public:
         delete ret;
         return nullptr;
     }
-}; 
+};
