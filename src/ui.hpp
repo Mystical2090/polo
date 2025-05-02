@@ -16,12 +16,12 @@ protected:
 // polo version label
     auto label = CCLabelBMFont::create("Polo v1.0.0", "goldFont.fnt");
         label->setScale(0.3f);
-        label->setAnchorPoint({0.5f, 0.5f});
+        label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f }); 
 // noclip label
     auto nocliplabel = CCLabelBMFont::create("Polo v1.0.0", "goldFont.fnt");
         nocliplabel->setScale(1.5f);
-        nocliplabel->setAnchorPoint({1.0f, 0.0f});
+        nocliplabel->setAnchorPoint({0.5f, 0.5f});
         nocliplabel->setPosition({0, 0}); 
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
