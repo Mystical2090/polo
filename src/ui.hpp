@@ -22,7 +22,7 @@ protected:
         this,
         menu_selector(MyPopup::onMiscButton)
     );
-    miscbutton->setPosition({ 100.f, popupSize.height - 120.f });
+    miscbutton->setPosition({ 100.f, popupSize.height - 115.f });
 
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
@@ -33,7 +33,7 @@ protected:
         this,
         menu_selector(MyPopup::onPlayerButton)
     );
-    playerbutton->setPosition({ 100.f, popupSize.height - 80.f });
+    playerbutton->setPosition({ 100.f, popupSize.height - 75.f });
         //creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setScale(0.9f);
@@ -43,7 +43,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreatorButton)
     );
-    creatorbutton->setPosition({ 100.f, popupSize.height - 160.f });
+    creatorbutton->setPosition({ 100.f, popupSize.height - 155.f });
         // idk
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
