@@ -92,3 +92,19 @@ protected:
         this->setTitle("Credits");
         this->m_title->setScale(1.2f); 
     }
+
+public:
+    static MyPopup* create(std::string const& text) {
+       auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
+       float popupWidth = winSize.width * 0.8f;
+       float popupHeight = winSize.height * 0.6f;
+
+        auto ret = new MyPopup();
+        if (ret->initAnchored(popupWidth, popupHeight, text)) {
+            ret->autorelease();
+            return ret;
+        }
+
+        delete ret;
+        return nullptr;
+}
