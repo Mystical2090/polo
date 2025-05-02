@@ -33,7 +33,7 @@ protected:
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() + 30.f
             );
-            m_mainLayer->addChild(nocliplabel)2;
+            m_mainLayer->addChild(nocliplabel);
 // ignore inputs label
         ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         ignoreinputslabel->setScale(1.0f);
