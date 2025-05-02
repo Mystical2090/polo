@@ -21,6 +21,7 @@ protected:
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
+    miscbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto miscbutton = CCMenuItemSpriteExtra::create(
         miscbtn,
         miscbtn,
@@ -32,6 +33,7 @@ protected:
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
     playerbtn->setScale(0.9f);
+    playerbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto playerbutton = CCMenuItemSpriteExtra::create(
         playerbtn,
         playerbtn,
@@ -42,6 +44,7 @@ protected:
         // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setScale(0.9f);
+    creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
         creatorbtn,
         creatorbtn,
@@ -52,6 +55,7 @@ protected:
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
+    creditsbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creditsbutton = CCMenuItemSpriteExtra::create(
         creditsbtn,
         creditsbtn,
