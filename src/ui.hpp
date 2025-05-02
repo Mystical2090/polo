@@ -7,7 +7,7 @@ using namespace geode::prelude;
 class MyPopup : public geode::Popup<std::string const&> {
 protected:
     bool setup(std::string const& value) override {
-            this->setTitle("Polo");
+            this->setTitle("Player");
             this->m_title->setScale(1.2f); 
         
     auto popupSize = this->getContentSize();
@@ -23,6 +23,7 @@ protected:
         m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center);
         nocliplabel->setPosition({0, 0}); 
         nocliplabel->setScale(0.3f);
+        nocliplabel->setVisible(true);
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -75,6 +76,7 @@ protected:
     menu->addChild(creatorbutton);
     menu->addChild(creditsbutton);
     menu->addChild(label);
+    menu->addChild(nocliplabel);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
@@ -84,11 +86,11 @@ protected:
     void onMiscButton(cocos2d::CCObject*) {
         this->setTitle("Misc");
         this->m_title->setScale(1.2f); 
+        nocliplabel->setVisible(false);
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
         this->m_title->setScale(1.2f);
-        menu->addChild(nocliplabel);
         nocliplabel->setVisible(true);
     }
     void onCreatorButton(cocos2d::CCObject*) {
@@ -98,7 +100,8 @@ protected:
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
-        this->m_title->setScale(1.2f); 
+        this->m_title->setScale(1.2f);
+        nocliplabel->setVisible(false);
     }
 
 public:
