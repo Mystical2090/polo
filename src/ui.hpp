@@ -21,7 +21,12 @@ protected:
     auto label = CCLabelBMFont::create("Polo v1.0.0", "goldFont.fnt");
         label->setScale(0.3f);
         label->setAnchorPoint({1.0f, 0.0f});
-        label->setPosition({ popupSize.width - 10.f, 10.f }); 
+        label->setPosition({ popupSize.width - 10.f, 10.f });
+// jump hack label
+        jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
+        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
+        jumphacklabel->setScale(1.0f);
+        m_mainLayer->addChild(jumphacklabel);
 // noclip label
         nocliplabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         nocliplabel->setScale(1.0f);
@@ -30,11 +35,6 @@ protected:
             jumphacklabel->getPositionY() + 30.f
             );
             m_mainLayer->addChild(nocliplabel);
-// jump hack label
-        jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
-        m_mainLayer->addChildAtPosition(nocliplabel, Anchor::Center); 
-        jumphacklabel->setScale(1.0f);
-        m_mainLayer->addChild(jumphacklabel);
 // ignore inputs label
         ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         ignoreinputslabel->setScale(1.0f);
