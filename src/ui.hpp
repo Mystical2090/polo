@@ -100,10 +100,10 @@ protected:
     auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
         playerbackground->setColor({68, 42, 30});
         playerbackground->setOpacity(255);
-        playerbackground->setContentSize({180.f, 60.f});
+        playerbackground->setContentSize({120.f, 400.f});
         playerbackground->setPosition(
-            playerbutton->getPositionX(),
-            playerbutton->getPositionY() + 30.f
+            miscbutton->getPositionX(),
+            miscbutton->getPositionY() + 30.f
             );
         
         // mmm yes
