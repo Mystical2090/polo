@@ -96,6 +96,16 @@ protected:
         menu_selector(MyPopup::onCreditsButton)
     );
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
+        // dark brown background thing
+    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
+        playerbackground->setColor({68, 42, 30});
+        playerbackground->setOpacity(255);
+        playerbackground->setContentSize({180.f, 60.f});
+        playerbackground->setPosition(
+            playerbutton->getPositionX(),
+            playerbutton->getPositionY() + 30.f
+            );
+        
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
@@ -103,6 +113,7 @@ protected:
     menu->addChild(creatorbutton);
     menu->addChild(creditsbutton);
     menu->addChild(label);
+    menu->addChild(playerbackground);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
