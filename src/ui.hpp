@@ -54,6 +54,7 @@ protected:
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
+    miscbtn->setZOrder(5);
     miscbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto miscbutton = CCMenuItemSpriteExtra::create(
         miscbtn,
@@ -66,6 +67,7 @@ protected:
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
     playerbtn->setScale(0.9f);
+    playerbtn->setZOrder(5);
     playerbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto playerbutton = CCMenuItemSpriteExtra::create(
         playerbtn,
@@ -77,6 +79,7 @@ protected:
         // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setScale(0.9f);
+    creatorbtn->setZOrder(5);
     creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
         creatorbtn,
@@ -88,6 +91,7 @@ protected:
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
+    creditsbtn->setZOrder(5);
     creditsbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creditsbutton = CCMenuItemSpriteExtra::create(
         creditsbtn,
@@ -100,6 +104,7 @@ protected:
     auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
         playerbackground->setColor({68, 42, 30});
         playerbackground->setOpacity(255);
+        playerbackground->setZOrder(1);
         playerbackground->setContentSize({120.f, 400.f});
         playerbackground->setPosition(
             miscbutton->getPositionX(),
