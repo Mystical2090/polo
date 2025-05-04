@@ -10,6 +10,7 @@ protected:
     CCLabelBMFont* nocliplabel = nullptr;
     CCLabelBMFont* ignoreinputslabel = nullptr;
     CCLabelBMFont* autoclickerlabel = nullptr;
+    CCLabelBMFont* noclipcheckbox = nullptr;
     bool setup(std::string const& value) override {
             this->setTitle("Player");
             this->m_title->setScale(1.2f); 
@@ -115,7 +116,7 @@ protected:
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
 // noclip checkbox
 bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
-    auto noclipcheckbox = CCMenuItemToggler::create(
+    noclipcheckbox = CCMenuItemToggler::create(
         checkboxOff,
         checkboxOn,
         this,
