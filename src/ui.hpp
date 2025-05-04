@@ -114,6 +114,7 @@ protected:
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
 // noclip checkbox
+bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
     auto noclipcheckbox = CCMenuItemToggler::create(
         checkboxOff,
         checkboxOn,
@@ -125,6 +126,7 @@ protected:
             nocliplabel->getPositionY()
            );
         noclipcheckbox->setScale(0.9f);
+        noclipcheckbox->toggle(noclipEnabled);
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
