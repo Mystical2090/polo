@@ -88,7 +88,7 @@ protected:
         // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setZOrder(0);
-    creatorbtn->setScaleX(0.7f);
+    creatorbtn->setScaleX(0.85f);
     creatorbtn->setScaleY(0.9f);
     creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
