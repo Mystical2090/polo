@@ -118,11 +118,11 @@ protected:
         offSprite,
         onSprite,
         this,
-        menu_selector(MyPopup::onCheckbox)
+        menu_selector(MyPopup::onNoclipCheckbox)
             );
         noclipcheckbox->setPosition(
             nocliplabel->getPositionX() + 30.f,
-            noclilabel->getPositionY()
+            noclilpabel->getPositionY()
            );
         noclipcheckbox->setScale(0.9f);
         // mmm yes
