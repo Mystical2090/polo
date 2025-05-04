@@ -67,7 +67,7 @@ protected:
     auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
         playerbackground->setColor({68, 42, 30});
         playerbackground->setOpacity(255);
-        playerbackground->setZOrder(5);
+        playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 300.f});
         playerbackground->setPosition(
             miscbutton->getPositionX(),
