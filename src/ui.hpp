@@ -122,8 +122,8 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         menu_selector(MyPopup::onNoclipCheckbox)
             );
         noclipcheckbox->setPosition(
-            nocliplabel->getPositionX() + 30.f,
-            nocliplabel->getPositionY()
+            jumphacklabel->getPositionX() + 80.f,
+            jumphacklabel->getPositionY() + 30.f
            );
         noclipcheckbox->setScale(0.9f);
         noclipcheckbox->toggle(noclipEnabled);
@@ -154,6 +154,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         jumphacklabel->setVisible(false);
         ignoreinputslabel->setVisible(false);
         autoclickerlabel->setVisible(false);
+        noclipcheckbox->setVisible(false);
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
@@ -162,6 +163,8 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         jumphacklabel->setVisible(true);
         ignoreinputslabel->setVisible(true);
         autoclickerlabel->setVisible(true);
+        noclipcheckbox->setVisible(true);
+
     }
     void onCreatorButton(cocos2d::CCObject*) {
         this->setTitle("Creator");
@@ -170,6 +173,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         jumphacklabel->setVisible(false);
         ignoreinputslabel->setVisible(false);
         autoclickerlabel->setVisible(false);
+        noclipcheckbox->setVisible(false);
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
@@ -178,6 +182,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         jumphacklabel->setVisible(false);
         ignoreinputslabel->setVisible(false);
         autoclickerlabel->setVisible(false);
+        noclipcheckbox->setVisible(false);
     }
 
 public:
