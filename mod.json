@@ -90,8 +90,8 @@
                     "type": "bool",
                     "description": "Unlocks all the colors.",
                     "default": false
-                }
-              "instant-respawn": {
+                },
+                "instant-respawn": {
                     "name": "Suicide",
                     "type": "bool",
                     "description": "Instant Kills you. WARNING: Dont use noclip with this mod.",
