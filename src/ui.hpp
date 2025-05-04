@@ -115,14 +115,14 @@ protected:
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
 // noclip checkbox
     auto noclipcheckbox = CCMenuItemToggler::create(
-        offSprite,
-        onSprite,
+        checkboxOff,
+        checkboxOn,
         this,
         menu_selector(MyPopup::onNoclipCheckbox)
             );
         noclipcheckbox->setPosition(
             nocliplabel->getPositionX() + 30.f,
-            noclilpabel->getPositionY()
+            nocliplabel->getPositionY()
            );
         noclipcheckbox->setScale(0.9f);
         // mmm yes
