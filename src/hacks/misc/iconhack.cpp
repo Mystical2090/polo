@@ -10,17 +10,3 @@ class $modify(MyMenuLayer, GameManager) {
         if (Mod::get()->getSettingValue<bool>("icon-hack")) {
             return true;
         }
-
-        return result;
-    }
-
-    bool isColorUnlocked(int p0, UnlockType p1) {
-        bool result = GameManager::isColorUnlocked(p0, p1);
-
-        if (Mod::get()->getSettingValue<bool>("icon-hack")) {
-            return true;
-        }
-
-        return result;
-    }
-};
