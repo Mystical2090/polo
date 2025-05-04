@@ -22,16 +22,6 @@ protected:
         label->setScale(0.3f);
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f });
-        // dark brown background thing
-    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
-        playerbackground->setColor({68, 42, 30});
-        playerbackground->setOpacity(255);
-        playerbackground->setZOrder(5);
-        playerbackground->setContentSize({120.f, 300.f});
-        playerbackground->setPosition(
-            miscbutton->getPositionX(),
-            miscbutton->getPositionY() + 30.f
-            );
 // jump hack label
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(1.0f);
@@ -61,6 +51,16 @@ protected:
             jumphacklabel->getPositionY() - 60.f
             );
             m_mainLayer->addChild(autoclickerlabel);
+        // dark brown background thing
+    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
+        playerbackground->setColor({68, 42, 30});
+        playerbackground->setOpacity(255);
+        playerbackground->setZOrder(5);
+        playerbackground->setContentSize({120.f, 300.f});
+        playerbackground->setPosition(
+            miscbutton->getPositionX(),
+            miscbutton->getPositionY() + 30.f
+            );
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
