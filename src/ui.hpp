@@ -123,8 +123,8 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         menu_selector(MyPopup::onNoclipCheckbox)
             );
         noclipcheckbox->setPosition(
-            jumphacklabel->getPositionX() + 80.f,
-            jumphacklabel->getPositionY() + 30.f
+            jumphacklabel->getPositionX() + 90.f,
+            jumphacklabel->getPositionY() + 60.f
            );
         noclipcheckbox->setScale(0.9f);
         noclipcheckbox->toggle(noclipEnabled);
