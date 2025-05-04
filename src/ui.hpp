@@ -88,7 +88,7 @@ protected:
         // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
     creatorbtn->setZOrder(0);
-    creatorbtn->setScaleX(0.85f);
+    creatorbtn->setScaleX(0.9f);
     creatorbtn->setScaleY(0.9f);
     creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
@@ -110,7 +110,21 @@ protected:
         menu_selector(MyPopup::onCreditsButton)
     );
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
-       
+        // checkbox setuo
+    auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
+// noclip checkbox
+    auto checkbox = CCMenuItemToggler::create(
+        offSprite,
+        onSprite,
+        this,
+        menu_selector(MyPopup::onCheckbox)
+            );
+        checkbox->setPosition(
+            nocliplabel->getPositionX() + 30.f,
+            noclilabel->getPositionY()
+           );
+        checkbox->setScale(0.9f);
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
