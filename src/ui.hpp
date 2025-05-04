@@ -66,12 +66,12 @@ protected:
         // dark brown background thing
     auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
         playerbackground->setColor({68, 42, 30});
-        playerbackground->setOpacity(255);
+        playerbackground->setOpacity(100);
         playerbackground->setZOrder(-1);
-        playerbackground->setContentSize({120.f, 300.f});
+        playerbackground->setContentSize({120.f, 200.f});
         playerbackground->setPosition(
             miscbutton->getPositionX(),
-            miscbutton->getPositionY() + 30.f
+            miscbutton->getPositionY() + 10.f
             );
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
