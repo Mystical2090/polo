@@ -140,6 +140,11 @@ protected:
     return true;
 }
 
+    void onNoclipCheckbox(cocos2d::CCObject* sender) {
+        auto checkbox = static_cast<CCMenuItemToggler*>(sender);
+        bool toggled = checkbox->isToggled();
+        Mod::get()->setSavedValue("enable-noclip", toggled);
+   }
     void onMiscButton(cocos2d::CCObject*) {
         this->setTitle("Misc");
         this->m_title->setScale(1.2f);
