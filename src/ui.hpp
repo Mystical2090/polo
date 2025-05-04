@@ -114,17 +114,17 @@ protected:
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
 // noclip checkbox
-    auto checkbox = CCMenuItemToggler::create(
+    auto noclipcheckbox = CCMenuItemToggler::create(
         offSprite,
         onSprite,
         this,
         menu_selector(MyPopup::onCheckbox)
             );
-        checkbox->setPosition(
+        noclipcheckbox->setPosition(
             nocliplabel->getPositionX() + 30.f,
             noclilabel->getPositionY()
            );
-        checkbox->setScale(0.9f);
+        noclipcheckbox->setScale(0.9f);
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
@@ -133,6 +133,7 @@ protected:
     menu->addChild(creditsbutton);
     menu->addChild(label);
     menu->addChild(playerbackground);
+    menu->addChild(noclipcheckbox);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
