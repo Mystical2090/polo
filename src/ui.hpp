@@ -87,8 +87,9 @@ protected:
     playerbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.67f });
         // creator button
     auto creatorbtn = ButtonSprite::create("Creator");
-    creatorbtn->setScale(0.9f);
     creatorbtn->setZOrder(0);
+    creatorbtn->setScaleX(0.7f);
+    creatorbtn->setScaleY(0.9f);
     creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
         creatorbtn,
