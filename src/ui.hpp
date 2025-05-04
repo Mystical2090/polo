@@ -22,6 +22,16 @@ protected:
         label->setScale(0.3f);
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f });
+        // dark brown background thing
+    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
+        playerbackground->setColor({68, 42, 30});
+        playerbackground->setOpacity(255);
+        playerbackground->setZOrder(5);
+        playerbackground->setContentSize({120.f, 300.f});
+        playerbackground->setPosition(
+            miscbutton->getPositionX(),
+            miscbutton->getPositionY() + 30.f
+            );
 // jump hack label
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(1.0f);
@@ -100,17 +110,7 @@ protected:
         menu_selector(MyPopup::onCreditsButton)
     );
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
-        // dark brown background thing
-    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
-        playerbackground->setColor({68, 42, 30});
-        playerbackground->setOpacity(255);
-        playerbackground->setZOrder(5);
-        playerbackground->setContentSize({120.f, 300.f});
-        playerbackground->setPosition(
-            miscbutton->getPositionX(),
-            miscbutton->getPositionY() + 30.f
-            );
-        
+       
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
     menu->addChild(playerbutton);
