@@ -51,16 +51,6 @@ protected:
             jumphacklabel->getPositionY() - 60.f
             );
             m_mainLayer->addChild(autoclickerlabel);
-        // dark brown background thing
-    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
-        playerbackground->setColor({68, 42, 30});
-        playerbackground->setOpacity(255);
-        playerbackground->setZOrder(5);
-        playerbackground->setContentSize({120.f, 300.f});
-        playerbackground->setPosition(
-            miscbutton->getPositionX(),
-            miscbutton->getPositionY() + 30.f
-            );
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -73,7 +63,16 @@ protected:
         menu_selector(MyPopup::onMiscButton)
     );
     miscbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.55f });
-
+        // dark brown background thing
+    auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
+        playerbackground->setColor({68, 42, 30});
+        playerbackground->setOpacity(255);
+        playerbackground->setZOrder(5);
+        playerbackground->setContentSize({120.f, 300.f});
+        playerbackground->setPosition(
+            miscbutton->getPositionX(),
+            miscbutton->getPositionY() + 30.f
+            );
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
     playerbtn->setScale(0.9f);
