@@ -85,6 +85,12 @@
                     "description": "Unlocks all the icons.",
                     "default": false
                 },
+                "color-hack": {
+                    "name": "Color Hack",
+                    "type": "bool",
+                    "description": "Unlocks all the colors.",
+                    "default": false
+                }
               "instant-respawn": {
                     "name": "Suicide",
                     "type": "bool",
