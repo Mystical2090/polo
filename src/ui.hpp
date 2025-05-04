@@ -10,7 +10,7 @@ protected:
     CCLabelBMFont* nocliplabel = nullptr;
     CCLabelBMFont* ignoreinputslabel = nullptr;
     CCLabelBMFont* autoclickerlabel = nullptr;
-    CCLabelBMFont* noclipcheckbox = nullptr;
+    CCMenuItemToggler* noclipcheckbox = nullptr;
     bool setup(std::string const& value) override {
             this->setTitle("Player");
             this->m_title->setScale(1.2f); 
