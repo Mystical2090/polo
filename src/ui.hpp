@@ -70,7 +70,7 @@ protected:
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 150.f});
         playerbackground->setPosition(
-            miscbutton->getPositionX() + 5.f
+            miscbutton->getPositionX() + 5.f,
             miscbutton->getPositionY() - 30.f
             );
     // Player button
