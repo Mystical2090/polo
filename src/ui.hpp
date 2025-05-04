@@ -70,8 +70,8 @@ protected:
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 200.f});
         playerbackground->setPosition(
-            miscbutton->getPositionX(),
-            miscbutton->getPositionY() + 10.f
+            miscbutton->getPositionX() + 5.f
+            miscbutton->getPositionY() - 30.f
             );
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
