@@ -68,10 +68,10 @@ protected:
         playerbackground->setColor({68, 42, 30});
         playerbackground->setOpacity(100);
         playerbackground->setZOrder(-1);
-        playerbackground->setContentSize({120.f, 150.f});
+        playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
             miscbutton->getPositionX() + 5.f,
-            miscbutton->getPositionY() - 30.f
+            miscbutton->getPositionY() - 20.f
             );
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
