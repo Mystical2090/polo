@@ -3,10 +3,11 @@
 ## Features
 * Noclip
 - Speedhack
-* Practice Mode bypass
+* Practice Mode music bypass
 - And many more! (20+)
 
 ### This wouldnt with been possible without:
 
+- Mystical
 * speedyfriend67
 - Gtxripmxt
