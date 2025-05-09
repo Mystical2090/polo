@@ -10,7 +10,14 @@ protected:
     CCLabelBMFont* nocliplabel = nullptr;
     CCLabelBMFont* ignoreinputslabel = nullptr;
     CCLabelBMFont* autoclickerlabel = nullptr;
+    CCLabelBMFont* instantrespawnlabel = nullptr;
+    CCLabelBMFont* layoutmodelabel = nullptr;
+    CCLabelBMFont* practicemusichacklabel = nullptr;
+    CCLabelBMFont* iconhacklabel = nullptr;
+    CCLabelBMFont* colorhacklabel = nullptr;
+    CCLabelBMFont* speedhacklabel = nullptr;
     CCMenuItemToggler* noclipcheckbox = nullptr;
+
     bool setup(std::string const& value) override {
             this->setTitle("Player");
             this->m_title->setScale(1.2f); 
@@ -23,7 +30,7 @@ protected:
         label->setScale(0.3f);
         label->setAnchorPoint({1.0f, 0.0f});
         label->setPosition({ popupSize.width - 10.f, 10.f });
-// jump hack label
+// jump hack label 00000
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(1.0f);
         jumphacklabel->setPosition(popupSize.width / 2, popupSize.height / 2);
@@ -52,6 +59,51 @@ protected:
             jumphacklabel->getPositionY() - 60.f
             );
             m_mainLayer->addChild(autoclickerlabel);
+// layout mode label 11111
+        layoutmodelabel = CCLabelBMFont::create("Layout Mode", "bigFont.fnt");
+        layoutmodelabel->setScale(1.0f);
+        layoutmodelabel->setPosition(popupSize.width / 2, popupSize.height / 2);
+        m_mainLayer->addChild(layoutmodelabel);
+// practice music hack label
+        practicemusichacklabel = CCLabelBMFont::create("Practice Music Hack", "bigFont.fnt");
+        practicemusichacklabel->setScale(1.0f);
+        practicemusichacklabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() + 30.f
+            );
+            m_mainLayer->addChild(practicemusichacklabel);
+// icon hack label
+        iconhacklabel = CCLabelBMFont::create("Icon Hack", "bigFont.fnt");
+        iconhacklabel->setScale(1.0f);
+        iconhacklabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() - 30.f
+            );
+            m_mainLayer->addChild(iconhacklabel);
+// color hack label 
+        colorhacklabel = CCLabelBMFont::create("Color Hack", "bigFont.fnt");
+        colorhacklabel->setScale(1.0f);
+        colorhacklabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() - 60.f
+            );
+            m_mainLayer->addChild(colorhacklabel);
+// instant respawn label 
+        instantrespawnlabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
+        instantrespawnlabel->setScale(1.0f);
+        instantrespawnlabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() - 90.f
+            );
+            m_mainLayer->addChild(instantrespawnlabel);
+// speedhack label 
+        speedhacklabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        speedhacklabel->setScale(1.0f);
+        speedhacklabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() - 120.f
+            );
+            m_mainLayer->addChild(speedhacklabel);
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -74,6 +126,13 @@ protected:
             miscbutton->getPositionX() + 5.f,
             miscbutton->getPositionY() - 20.f
             );
+    // thing so it wont show the labels from misc when opening the menu
+        layoutmodelabel->setVisible(false);
+        practicemusichacklabel->setVisible(false);
+        instantrespawnlabel->setVisible(false);
+        speedhacklabel->setVisible(false);
+        iconhacklabel->setVisible(false);
+        colorhacklabel->setVisible(false);
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
     playerbtn->setScale(0.9f);
@@ -111,7 +170,7 @@ protected:
         menu_selector(MyPopup::onCreditsButton)
     );
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
-        // checkbox setuo
+        // checkbox setup
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
 // noclip checkbox
@@ -156,6 +215,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         ignoreinputslabel->setVisible(false);
         autoclickerlabel->setVisible(false);
         noclipcheckbox->setVisible(false);
+        layoutmodelabel->setVisible(true);
+        practicemusichacklabel->setVisible(true);
+        instantrespawnlabel->setVisible(true);
+        speedhacklabel->setVisible(true);
+        iconhacklabel->setVisible(true);
+        colorhacklabel->setVisible(true);
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
@@ -165,6 +230,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         ignoreinputslabel->setVisible(true);
         autoclickerlabel->setVisible(true);
         noclipcheckbox->setVisible(true);
+        layoutmodelabel->setVisible(false);
+        practicemusichacklabel->setVisible(false);
+        instantrespawnlabel->setVisible(false);
+        speedhacklabel->setVisible(false);
+        iconhacklabel->setVisible(false);
+        colorhacklabel->setVisible(false);
 
     }
     void onCreatorButton(cocos2d::CCObject*) {
@@ -175,6 +246,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         ignoreinputslabel->setVisible(false);
         autoclickerlabel->setVisible(false);
         noclipcheckbox->setVisible(false);
+        layoutmodelabel->setVisible(false);
+        practicemusichacklabel->setVisible(false);
+        instantrespawnlabel->setVisible(false);
+        speedhacklabel->setVisible(false);
+        iconhacklabel->setVisible(false);
+        colorhacklabel->setVisible(false);
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
@@ -184,6 +261,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         ignoreinputslabel->setVisible(false);
         autoclickerlabel->setVisible(false);
         noclipcheckbox->setVisible(false);
+        layoutmodelabel->setVisible(false);
+        practicemusichacklabel->setVisible(false);
+        instantrespawnlabel->setVisible(false);
+        speedhacklabel->setVisible(false);
+        iconhacklabel->setVisible(false);
+        colorhacklabel->setVisible(false);
     }
 
 public:
