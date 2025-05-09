@@ -13,8 +13,9 @@
 ## Support
 - You can support us by boosting our [discord](https://discord.gg/RaS9c7MEzc)
 
-## For bug reports you can send reports in issues on [github](https://github.com/Gtxripmxt/not-a-mod-menu) or you can submit them to our [discord](https://discord.gg/RaS9c7MEzc)
-
+# Bugs/Suggestions
+-  For bug reports you can send reports in issues on [github](https://github.com/Gtxripmxt/not-a-mod-menu) or you can submit them to our [discord](https://discord.gg/RaS9c7MEzc)
+* For suggestions feel free to submit them to our github or discord (on github submit them on issues.)
 
 ### This wouldnt with been possible without:
 
