@@ -206,7 +206,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         noclipcheckbox->toggle(noclipEnabled);
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
-    menu->addChild(hacksbackground);
+    menu->addChild(hacksbackground, -1);
     menu->addChild(playerbutton);
     menu->addChild(miscbutton);
     menu->addChild(creatorbutton);
