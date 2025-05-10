@@ -142,7 +142,7 @@ protected:
     auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
         hacksbackground->setColor({68, 43, 30});
         hacksbackground->setOpacity(100);
-        hacksbackground->setZOrder(-1);
+        hacksbackground->setZOrder(-10);
         hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
             jumphacklabel->getPositionX() + 70.f,
