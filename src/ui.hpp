@@ -32,41 +32,44 @@ protected:
         label->setPosition({ popupSize.width - 10.f, 10.f });
 // jump hack label 00000
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
-        jumphacklabel->setScale(1.0f);
+        jumphacklabel->setScale(0.7f);
         jumphacklabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
-        nocliplabel->setScale(1.0f);
+        nocliplabel->setScale(0.7f);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() + 30.f
             );
             m_mainLayer->addChild(nocliplabel);
+        nocliplabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // ignore inputs label
         ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
-        ignoreinputslabel->setScale(1.0f);
+        ignoreinputslabel->setScale(0.7f);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() - 30.f
             );
             m_mainLayer->addChild(ignoreinputslabel);
+        ignoreinputslabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // autoclicker label 
         autoclickerlabel = CCLabelBMFont::create("AutoClicker", "bigFont.fnt");
-        autoclickerlabel->setScale(1.0f);
+        autoclickerlabel->setScale(0.7f);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() - 60.f
             );
             m_mainLayer->addChild(autoclickerlabel);
+        autoclickerlabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // layout mode label 11111
         layoutmodelabel = CCLabelBMFont::create("Layout Mode", "bigFont.fnt");
-        layoutmodelabel->setScale(1.0f);
+        layoutmodelabel->setScale(0.7f);
         layoutmodelabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(layoutmodelabel);
 // practice music hack label
         practicemusichacklabel = CCLabelBMFont::create("Practice Music Hack", "bigFont.fnt");
-        practicemusichacklabel->setScale(1.0f);
+        practicemusichacklabel->setScale(0.7f);
         practicemusichacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() + 30.f
@@ -74,7 +77,7 @@ protected:
             m_mainLayer->addChild(practicemusichacklabel);
 // icon hack label
         iconhacklabel = CCLabelBMFont::create("Icon Hack", "bigFont.fnt");
-        iconhacklabel->setScale(1.0f);
+        iconhacklabel->setScale(0.7f);
         iconhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 30.f
@@ -82,7 +85,7 @@ protected:
             m_mainLayer->addChild(iconhacklabel);
 // color hack label 
         colorhacklabel = CCLabelBMFont::create("Color Hack", "bigFont.fnt");
-        colorhacklabel->setScale(1.0f);
+        colorhacklabel->setScale(0.7f);
         colorhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 60.f
@@ -90,7 +93,7 @@ protected:
             m_mainLayer->addChild(colorhacklabel);
 // instant respawn label 
         instantrespawnlabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
-        instantrespawnlabel->setScale(1.0f);
+        instantrespawnlabel->setScale(0.7f);
         instantrespawnlabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 90.f
@@ -98,7 +101,7 @@ protected:
             m_mainLayer->addChild(instantrespawnlabel);
 // speedhack label 
         speedhacklabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
-        speedhacklabel->setScale(1.0f);
+        speedhacklabel->setScale(0.7f);
         speedhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 120.f
@@ -146,10 +149,9 @@ protected:
     );
     playerbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.67f });
         // creator button
-    auto creatorbtn = ButtonSprite::create("Creator");
+    auto creatorbtn = ButtonSprite::create("Editor");
+    playerbtn->setScale(0.9f);
     creatorbtn->setZOrder(0);
-    creatorbtn->setScaleX(0.9f);
-    creatorbtn->setScaleY(0.9f);
     creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
         creatorbtn,
