@@ -145,7 +145,7 @@ protected:
         hacksbackground->setZOrder(-10);
         hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 70.f,
+            jumphacklabel->getPositionX() + 130.f,
             jumphacklabel->getPositionY() - 3.f
             );
     // thing so it wont show the labels from misc when opening the menu
