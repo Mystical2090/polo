@@ -160,7 +160,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreatorButton)
     );
-    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height });
+    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.43f });
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
