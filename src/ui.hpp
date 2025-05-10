@@ -135,7 +135,7 @@ protected:
         hacksbackground->setColor({68, 42, 30});
         hacksbackground->setOpacity(100);
         hacksbackground->setZOrder(-1);
-        hacksrbackground->setContentSize({400.f, 170.f});
+        hacksbackground->setContentSize({400.f, 170.f});
         hacksbackground->setPosition(
             jumphacklabel->getPositionX() + 5.f,
             jumphacklabel->getPositionY() - 20.f
