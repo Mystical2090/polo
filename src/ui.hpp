@@ -127,7 +127,7 @@ protected:
         // dark brown background thing
     auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
         playerbackground->setColor({68, 42, 30});
-        playerbackground->setOpacity(255);
+        playerbackground->setOpacity(100);
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
@@ -136,8 +136,8 @@ protected:
             );
         // another brown background thing!
     auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
-        hacksbackground->setColor({68, 42, 30});
-        hacksbackground->setOpacity(100);
+        hacksbackground->setColor({130, 64, 33});
+        hacksbackground->setOpacity(255);
         hacksbackground->setZOrder(-1);
         hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
