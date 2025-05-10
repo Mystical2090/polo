@@ -118,7 +118,7 @@ protected:
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 120.f
             );
-            m_mainLayer->addChild(instantrespawnlabel);
+            m_mainLayer->addChild(speedhacklabel);
         speedhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // instant respawn label 
         instantrespawnlabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
@@ -127,7 +127,7 @@ protected:
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() + 40.f
             );
-            m_mainLayer->addChild(speedhacklabel);
+            m_mainLayer->addChild(instantrespawnlabel);
         instantrespawnlabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // show trajectory label 
         showtrajectorylabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
@@ -136,7 +136,7 @@ protected:
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() + 80.f
             );
-            m_mainLayer->addChild(speedhacklabel);
+            m_mainLayer->addChild(showtrajectorylabel);
         showtrajectorylabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // rgb icons label 
         rgbiconslabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
@@ -145,7 +145,7 @@ protected:
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() + 120.f
             );
-            m_mainLayer->addChild(speedhacklabel);
+            m_mainLayer->addChild(rgbiconslabel);
         rgbiconslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
