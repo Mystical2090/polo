@@ -242,7 +242,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
 
     }
     void onCreatorButton(cocos2d::CCObject*) {
-        this->setTitle("Creator");
+        this->setTitle("Editor");
         this->m_title->setScale(1.2f);
         nocliplabel->setVisible(false);
         jumphacklabel->setVisible(false);
