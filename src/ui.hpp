@@ -35,6 +35,7 @@ protected:
         jumphacklabel->setScale(0.7f);
         jumphacklabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
+        jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
         nocliplabel->setScale(0.7f);
@@ -159,7 +160,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreatorButton)
     );
-    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.43f });
+    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height });
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
