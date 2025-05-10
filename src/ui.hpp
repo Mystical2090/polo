@@ -261,7 +261,7 @@ protected:
         hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
         hacksbackground->getPositionY()
     );
-    auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
+    auto leftmiscarrowbutton = CCMenuItemSpriteExtra::create(
         leftmiscarrowbtn,
         leftmiscarrowbtn,
         this,
@@ -302,6 +302,9 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
     menu->addChild(playerbackground);
     menu->addChild(noclipcheckbox);
     menu->addChild(rightplayerarrowbutton);
+    menu->addChild(leftplayerarrowbutton);
+    menu->addChild(rightmiscarrowbutton);
+    menu->addChild(leftmiscarrowbutton);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
