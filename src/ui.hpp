@@ -127,7 +127,7 @@ protected:
         // dark brown background thing
     auto playerbackground = CCScale9Sprite::create("GJ_square01.png");
         playerbackground->setColor({68, 42, 30});
-        playerbackground->setOpacity(100);
+        playerbackground->setOpacity(255);
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
