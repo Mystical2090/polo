@@ -130,6 +130,16 @@ protected:
             miscbutton->getPositionX() + 5.f,
             miscbutton->getPositionY() - 20.f
             );
+        // another brown background thing!
+    auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
+        hacksbackground->setColor({68, 42, 30});
+        hacksbackground->setOpacity(100);
+        hacksbackground->setZOrder(-1);
+        hacksrbackground->setContentSize({400.f, 170.f});
+        hacksbackground->setPosition(
+            jumphacklabel->getPositionX() + 5.f,
+            jumphacklabel->getPositionY() - 20.f
+            );
     // thing so it wont show the labels from misc when opening the menu
         layoutmodelabel->setVisible(false);
         practicemusichacklabel->setVisible(false);
