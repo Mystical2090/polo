@@ -131,17 +131,17 @@ protected:
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
-            miscbutton->getPositionX() + 10.f,
+            miscbutton->getPositionX() + 7.f,
             miscbutton->getPositionY() - 19.f
             );
         // another brown background thing!
     auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
-        hacksbackground->setColor({130, 64, 33});
-        hacksbackground->setOpacity(255);
+        hacksbackground->setColor({68, 43, 30});
+        hacksbackground->setOpacity(100);
         hacksbackground->setZOrder(-1);
         hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 60.f,
+            jumphacklabel->getPositionX() + 75.f,
             jumphacklabel->getPositionY() - 2.f
             );
     // thing so it wont show the labels from misc when opening the menu
