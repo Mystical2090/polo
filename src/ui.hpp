@@ -170,7 +170,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreatorButton)
     );
-    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.43f });
+    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.45f });
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
@@ -208,6 +208,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
     menu->addChild(creditsbutton);
     menu->addChild(label);
     menu->addChild(playerbackground);
+    menu->addChild(hacksbackground);
     menu->addChild(noclipcheckbox);
     menu->setPosition({ 0, 0 });
 
