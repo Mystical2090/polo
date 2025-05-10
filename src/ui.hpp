@@ -218,10 +218,10 @@ protected:
         // right arrow for the player menu
     rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     rightplayerarrowbtn->setFlipX(false);
-    rightplayerarrowbtn->setPosition(
+    rightplayerarrowbtn->setPosition(ccp(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
-    );
+    ));
     auto rightplayerarrowbutton = CCMenuItemSpriteExtra::create(
         rightplayerarrowbtn,
         rightplayerarrowbtn,
@@ -231,10 +231,10 @@ protected:
         // left arrow for the player menu
     leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     leftplayerarrowbtn->setFlipX(true);
-    leftplayerarrowbtn->setPosition(
-        hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
+    leftplayerarrowbtn->setPosition(ccp(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 - 10.f,
         hacksbackground->getPositionY()
-    );
+    ));
     auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
         leftplayerarrowbtn,
         leftplayerarrowbtn,
@@ -244,10 +244,10 @@ protected:
         // right arrow for the misc menu
     rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     rightmiscarrowbtn->setFlipX(false);
-    rightmiscarrowbtn->setPosition(
+    rightmiscarrowbtn->setPosition(ccp(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
-    );
+    ));
     auto rightmiscarrowbutton = CCMenuItemSpriteExtra::create(
         rightmiscarrowbtn,
         rightmiscarrowbtn,
@@ -257,10 +257,10 @@ protected:
         // left arrow for the misc menu
     leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     leftmiscarrowbtn->setFlipX(true);
-    leftmiscarrowbtn->setPosition(
-        hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
+    leftmiscarrowbtn->setPosition(ccp(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
-    );
+    ));
     auto leftmiscarrowbutton = CCMenuItemSpriteExtra::create(
         leftmiscarrowbtn,
         leftmiscarrowbtn,
