@@ -33,14 +33,14 @@ protected:
 // jump hack label 00000
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(0.5f);
-        jumphacklabel->setZOrder(0);
+        jumphacklabel->setZOrder(1);
         jumphacklabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
         jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
         nocliplabel->setScale(0.5f);
-        nocliplabel->setZOrder(0);
+        nocliplabel->setZOrder(1);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() + 30.f
@@ -50,7 +50,7 @@ protected:
 // ignore inputs label
         ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         ignoreinputslabel->setScale(0.5f);
-        ignoreinputslabel->setZOrder(0);
+        ignoreinputslabel->setZOrder(1);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() - 30.f
@@ -60,7 +60,7 @@ protected:
 // autoclicker label 
         autoclickerlabel = CCLabelBMFont::create("AutoClicker", "bigFont.fnt");
         autoclickerlabel->setScale(0.5);
-        autoclickerlabel->setZOrder(0);
+        autoclickerlabel->setZOrder(1);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() - 60.f
@@ -206,13 +206,13 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         noclipcheckbox->toggle(noclipEnabled);
         // mmm yes
     auto menu = cocos2d::CCMenu::create();
+    menu->addChild(hacksbackground);
     menu->addChild(playerbutton);
     menu->addChild(miscbutton);
     menu->addChild(creatorbutton);
     menu->addChild(creditsbutton);
     menu->addChild(label);
     menu->addChild(playerbackground);
-    menu->addChild(hacksbackground);
     menu->addChild(noclipcheckbox);
     menu->setPosition({ 0, 0 });
 
