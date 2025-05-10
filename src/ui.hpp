@@ -32,13 +32,15 @@ protected:
         label->setPosition({ popupSize.width - 10.f, 10.f });
 // jump hack label 00000
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
-        jumphacklabel->setScale(0.7f);
+        jumphacklabel->setScale(0.5f);
+        jumphacklabel->setZOrder(0);
         jumphacklabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
         jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
-        nocliplabel->setScale(0.7f);
+        nocliplabel->setScale(0.5f);
+        nocliplabel->setZOrder(0);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() + 30.f
@@ -47,7 +49,8 @@ protected:
         nocliplabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // ignore inputs label
         ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
-        ignoreinputslabel->setScale(0.7f);
+        ignoreinputslabel->setScale(0.5f);
+        ignoreinputslabel->setZOrder(0);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() - 30.f
@@ -56,7 +59,8 @@ protected:
         ignoreinputslabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // autoclicker label 
         autoclickerlabel = CCLabelBMFont::create("AutoClicker", "bigFont.fnt");
-        autoclickerlabel->setScale(0.7f);
+        autoclickerlabel->setScale(0.5);
+        autoclickerlabel->setZOrder(0);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
             jumphacklabel->getPositionY() - 60.f
@@ -65,12 +69,12 @@ protected:
         autoclickerlabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // layout mode label 11111
         layoutmodelabel = CCLabelBMFont::create("Layout Mode", "bigFont.fnt");
-        layoutmodelabel->setScale(0.7f);
+        layoutmodelabel->setScale(0.5f);
         layoutmodelabel->setPosition(popupSize.width / 2, popupSize.height / 2);
         m_mainLayer->addChild(layoutmodelabel);
 // practice music hack label
         practicemusichacklabel = CCLabelBMFont::create("Practice Music Hack", "bigFont.fnt");
-        practicemusichacklabel->setScale(0.7f);
+        practicemusichacklabel->setScale(0.5f);
         practicemusichacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() + 30.f
@@ -78,7 +82,7 @@ protected:
             m_mainLayer->addChild(practicemusichacklabel);
 // icon hack label
         iconhacklabel = CCLabelBMFont::create("Icon Hack", "bigFont.fnt");
-        iconhacklabel->setScale(0.7f);
+        iconhacklabel->setScale(0.5f);
         iconhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 30.f
@@ -86,7 +90,7 @@ protected:
             m_mainLayer->addChild(iconhacklabel);
 // color hack label 
         colorhacklabel = CCLabelBMFont::create("Color Hack", "bigFont.fnt");
-        colorhacklabel->setScale(0.7f);
+        colorhacklabel->setScale(0.5f);
         colorhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 60.f
@@ -94,7 +98,7 @@ protected:
             m_mainLayer->addChild(colorhacklabel);
 // instant respawn label 
         instantrespawnlabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
-        instantrespawnlabel->setScale(0.7f);
+        instantrespawnlabel->setScale(0.5);
         instantrespawnlabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 90.f
@@ -102,7 +106,7 @@ protected:
             m_mainLayer->addChild(instantrespawnlabel);
 // speedhack label 
         speedhacklabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
-        speedhacklabel->setScale(0.7f);
+        speedhacklabel->setScale(0.5f);
         speedhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 120.f
