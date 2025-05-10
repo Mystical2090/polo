@@ -131,8 +131,8 @@ protected:
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
-            miscbutton->getPositionX() + 5.f,
-            miscbutton->getPositionY() - 20.f
+            miscbutton->getPositionX() + 15.f,
+            miscbutton->getPositionY() - 18.f
             );
         // another brown background thing!
     auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
