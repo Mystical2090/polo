@@ -21,6 +21,8 @@ protected:
     CCMenuItemToggler* noclipcheckbox = nullptr;
     CCSprite* rightplayerarrowbtn = nullptr;
     CCSprite* leftplayerarrowbtn = nullptr;
+    CCSprite* rightmiscarrowbtn = nullptr;
+    CCSprite* leftmiscarrowbtn = nullptr;
 
     bool setup(std::string const& value) override {
             this->setTitle("Player");
