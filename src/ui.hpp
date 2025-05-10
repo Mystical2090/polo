@@ -217,7 +217,7 @@ protected:
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
         // right arrow for the player menu
     rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
-    rightplayerarrowbtn->setFlipX(false)
+    rightplayerarrowbtn->setFlipX(false);
     rightplayerarrowbtn->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
@@ -230,7 +230,7 @@ protected:
     );
         // left arrow for the player menu
     leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
-    leftplayerarrowbtn->setFlipX(true)
+    leftplayerarrowbtn->setFlipX(true);
     leftplayerarrowbtn->setPosition(
         hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
         hacksbackground->getPositionY()
@@ -243,7 +243,7 @@ protected:
     );
         // right arrow for the misc menu
     rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
-    rightmiscarrowbtn->setFlipX(false)
+    rightmiscarrowbtn->setFlipX(false);
     rightmiscarrowbtn->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
@@ -256,7 +256,7 @@ protected:
     );
         // left arrow for the misc menu
     leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
-    leftmiscarrowbtn->setFlipX(true)
+    leftmiscarrowbtn->setFlipX(true);
     leftmiscarrowbtn->setPosition(
         hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
         hacksbackground->getPositionY()
