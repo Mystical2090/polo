@@ -131,7 +131,7 @@ protected:
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
-            miscbutton->getPositionX() + 20.f,
+            miscbutton->getPositionX() + 15.f,
             miscbutton->getPositionY() - 19.f
             );
         // another brown background thing!
@@ -141,8 +141,8 @@ protected:
         hacksbackground->setZOrder(-1);
         hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 5.f,
-            jumphacklabel->getPositionY() - 0.f
+            jumphacklabel->getPositionX() + 30.f,
+            jumphacklabel->getPositionY() - 2.f
             );
     // thing so it wont show the labels from misc when opening the menu
         layoutmodelabel->setVisible(false);
