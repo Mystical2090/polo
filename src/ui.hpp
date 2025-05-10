@@ -33,6 +33,7 @@ protected:
 // jump hack label 00000
         jumphacklabel = CCLabelBMFont::create("Jump Hack", "bigFont.fnt");
         jumphacklabel->setScale(0.5f);
+        jumphacklabel->setColor({255, 255, 255});
         jumphacklabel->setZOrder(1);
         jumphacklabel->setPosition(popupSize.width / 2 - 80.f, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
@@ -40,6 +41,7 @@ protected:
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
         nocliplabel->setScale(0.5f);
+        nocliplabel->setColor({255, 255, 255});
         nocliplabel->setZOrder(1);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
@@ -50,6 +52,7 @@ protected:
 // ignore inputs label
         ignoreinputslabel = CCLabelBMFont::create("Ignore Inputs", "bigFont.fnt");
         ignoreinputslabel->setScale(0.5f);
+        ignoreinputslabel->setColor({255, 255, 255});
         ignoreinputslabel->setZOrder(1);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
@@ -60,6 +63,7 @@ protected:
 // autoclicker label 
         autoclickerlabel = CCLabelBMFont::create("AutoClicker", "bigFont.fnt");
         autoclickerlabel->setScale(0.5);
+        autoclickerlabel->setColor({255, 255, 255});
         autoclickerlabel->setZOrder(1);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
