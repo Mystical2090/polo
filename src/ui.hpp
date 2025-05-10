@@ -141,8 +141,8 @@ protected:
         hacksbackground->setZOrder(-1);
         hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 75.f,
-            jumphacklabel->getPositionY() - 2.f
+            jumphacklabel->getPositionX() + 15.f,
+            jumphacklabel->getPositionY() - 3.f
             );
     // thing so it wont show the labels from misc when opening the menu
         layoutmodelabel->setVisible(false);
