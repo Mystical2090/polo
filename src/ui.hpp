@@ -131,7 +131,7 @@ protected:
         playerbackground->setZOrder(-1);
         playerbackground->setContentSize({120.f, 170.f});
         playerbackground->setPosition(
-            miscbutton->getPositionX() + 7.f,
+            miscbutton->getPositionX() + 100.f,
             miscbutton->getPositionY() - 19.f
             );
         // another brown background thing!
