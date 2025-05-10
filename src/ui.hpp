@@ -16,7 +16,11 @@ protected:
     CCLabelBMFont* iconhacklabel = nullptr;
     CCLabelBMFont* colorhacklabel = nullptr;
     CCLabelBMFont* speedhacklabel = nullptr;
+    CCLabelBMFont* showtrajectorylabel = nullptr;
+    CCLabelBMFont* rgbiconslabel = nullptr;
     CCMenuItemToggler* noclipcheckbox = nullptr;
+    CCSprite* rightplayerarrowbtn = nullptr;
+    CCSprite* leftplayerarrowbtn = nullptr;
 
     bool setup(std::string const& value) override {
             this->setTitle("Player");
@@ -45,7 +49,7 @@ protected:
         nocliplabel->setZOrder(1);
         nocliplabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() + 30.f
+            jumphacklabel->getPositionY() + 40.f
             );
             m_mainLayer->addChild(nocliplabel);
         nocliplabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
@@ -56,7 +60,7 @@ protected:
         ignoreinputslabel->setZOrder(1);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() - 30.f
+            jumphacklabel->getPositionY() - 40.f
             );
             m_mainLayer->addChild(ignoreinputslabel);
         ignoreinputslabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
@@ -67,55 +71,80 @@ protected:
         autoclickerlabel->setZOrder(1);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() - 60.f
+            jumphacklabel->getPositionY() - 80.f
             );
             m_mainLayer->addChild(autoclickerlabel);
         autoclickerlabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // layout mode label 11111
         layoutmodelabel = CCLabelBMFont::create("Layout Mode", "bigFont.fnt");
         layoutmodelabel->setScale(0.5f);
-        layoutmodelabel->setPosition(popupSize.width / 2, popupSize.height / 2);
+        layoutmodelabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2);
         m_mainLayer->addChild(layoutmodelabel);
+        layoutmodelabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
+
 // practice music hack label
         practicemusichacklabel = CCLabelBMFont::create("Practice Music Hack", "bigFont.fnt");
         practicemusichacklabel->setScale(0.5f);
         practicemusichacklabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() + 30.f
+            layoutmodelabel->getPositionY() + 40.f
             );
             m_mainLayer->addChild(practicemusichacklabel);
+        ignoreinputslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // icon hack label
         iconhacklabel = CCLabelBMFont::create("Icon Hack", "bigFont.fnt");
         iconhacklabel->setScale(0.5f);
         iconhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() - 30.f
+            layoutmodelabel->getPositionY() - 40.f
             );
             m_mainLayer->addChild(iconhacklabel);
+        ignoreinputslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // color hack label 
         colorhacklabel = CCLabelBMFont::create("Color Hack", "bigFont.fnt");
         colorhacklabel->setScale(0.5f);
         colorhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() - 60.f
+            layoutmodelabel->getPositionY() - 80.f
             );
             m_mainLayer->addChild(colorhacklabel);
-// instant respawn label 
-        instantrespawnlabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
-        instantrespawnlabel->setScale(0.5);
-        instantrespawnlabel->setPosition(
-            layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() - 90.f
-            );
-            m_mainLayer->addChild(instantrespawnlabel);
+        colorhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // speedhack label 
-        speedhacklabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
-        speedhacklabel->setScale(0.5f);
+        speedhacklabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
+        speedhacklabel->setScale(0.5);
         speedhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
             layoutmodelabel->getPositionY() - 120.f
             );
+            m_mainLayer->addChild(instantrespawnlabel);
+        speedhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
+// instant respawn label 
+        instantrespawnlabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        instantrespawnlabel->setScale(0.5f);
+        instantrespawnlabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() + 40.f
+            );
             m_mainLayer->addChild(speedhacklabel);
+        instantrespawnlabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
+// show trajectory label 
+        showtrajectorylabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        showtrajectorylabel->setScale(0.5f);
+        showtrajectorylabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() + 80.f
+            );
+            m_mainLayer->addChild(speedhacklabel);
+        showtrajectorylabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
+// rgb icons label 
+        rgbiconslabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        rgbiconslabel->setScale(0.5f);
+        rgbiconslabel->setPosition(
+            layoutmodelabel->getPositionX(),
+            layoutmodelabel->getPositionY() + 120.f
+            );
+            m_mainLayer->addChild(speedhacklabel);
+        rgbiconslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
     // Misc button
     auto miscbtn = ButtonSprite::create(" Misc  ");
     miscbtn->setScale(0.9f);
@@ -140,21 +169,14 @@ protected:
             );
         // another brown background thing!
     auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
-        hacksbackground->setColor({68, 43, 30});
-        hacksbackground->setOpacity(100);
+        hacksbackground->setColor({0, 0, 0});
+        hacksbackground->setOpacity(75);
         hacksbackground->setZOrder(-10);
         hacksbackground->setContentSize({300.f, 210.f});
         hacksbackground->setPosition(
             jumphacklabel->getPositionX() + 130.f,
             jumphacklabel->getPositionY() - 3.f
             );
-    // thing so it wont show the labels from misc when opening the menu
-        layoutmodelabel->setVisible(false);
-        practicemusichacklabel->setVisible(false);
-        instantrespawnlabel->setVisible(false);
-        speedhacklabel->setVisible(false);
-        iconhacklabel->setVisible(false);
-        colorhacklabel->setVisible(false);
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
     playerbtn->setScale(0.9f);
@@ -191,6 +213,65 @@ protected:
         menu_selector(MyPopup::onCreditsButton)
     );
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
+        // right arrow for the player menu
+    rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    rightplayerarrowbtn->setFlipX(false)
+    rightplayerarrowbtn->setPosition(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
+        hacksbackground->getPositionY()
+    );
+    auto rightplayerarrowbutton = CCMenuItemSpriteExtra::create(
+        rightplayerarrowbtn,
+        rightplayerarrowbtn,
+        this,
+        menu_selector(MyPopup::onRightPlayerArrowButton)
+    );
+        // left arrow for the player menu
+    leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    leftplayerarrowbtn->setFlipX(true)
+    leftplayerarrowbtn->setPosition(
+        hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
+        hacksbackground->getPositionY()
+    );
+    auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
+        leftplayerarrowbtn,
+        leftplayerarrowbtn,
+        this,
+        menu_selector(MyPopup::onLeftPlayerArrowButton)
+    );
+        // right arrow for the misc menu
+    rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    rightmiscarrowbtn->setFlipX(false)
+    rightmiscarrowbtn->setPosition(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
+        hacksbackground->getPositionY()
+    );
+    auto rightmiscarrowbutton = CCMenuItemSpriteExtra::create(
+        rightmiscarrowbtn,
+        rightmiscarrowbtn,
+        this,
+        menu_selector(MyPopup::onRightMiscArrowButton)
+    );
+        // left arrow for the misc menu
+    leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    leftmiscarrowbtn->setFlipX(true)
+    leftmiscarrowbtn->setPosition(
+        hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
+        hacksbackground->getPositionY()
+    );
+    auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
+        leftmiscarrowbtn,
+        leftmiscarrowbtn,
+        this,
+        menu_selector(MyPopup::onLeftMiscArrowButton)
+    );
+    // thing so it wont show the labels from misc when opening the menu
+        layoutmodelabel->setVisible(false);
+        practicemusichacklabel->setVisible(false);
+        instantrespawnlabel->setVisible(false);
+        speedhacklabel->setVisible(false);
+        iconhacklabel->setVisible(false);
+        colorhacklabel->setVisible(false);
         // checkbox setup
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
@@ -218,6 +299,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
     menu->addChild(label);
     menu->addChild(playerbackground);
     menu->addChild(noclipcheckbox);
+    menu->addChild(rightplayerarrowbutton);
     menu->setPosition({ 0, 0 });
 
     this->addChild(menu);
@@ -229,6 +311,36 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         bool toggled = checkbox->isToggled();
         Mod::get()->setSavedValue("enable-noclip", toggled);
    }
+    void onRightPlayerArrowButton(cocos2d::CCObject* sender) {
+        nocliplabel->setVisible(false);
+        jumphacklabel->setVisible(false);
+        ignoreinputslabel->setVisible(false);
+        autoclickerlabel->setVisible(false);
+        noclipcheckbox->setVisible(false);   
+   }
+    void onLeftPlayerArrowButton(cocos2d::CCObject* sender) {
+        nocliplabel->setVisible(true);
+        jumphacklabel->setVisible(true);
+        ignoreinputslabel->setVisible(true);
+        autoclickerlabel->setVisible(true);
+        noclipcheckbox->setVisible(true);   
+   }
+    void onRightMiscArrowButton(cocos2d::CCObject* sender) {
+        practicemusichacklabel->setVisible(false);
+        speedhacklabel->setVisible(false);
+        iconhacklabel->setVisible(false);
+        colorhacklabel->setVisible(false);
+        rgbiconslabel->setVisible(true);
+        showtrajectorylabel->setVisible(true);
+   }
+    void onLeftMiscArrowButton(cocos2d::CCObject* sender) {
+        practicemusichacklabel->setVisible(true);
+        speedhacklabel->setVisible(true);
+        iconhacklabel->setVisible(true);
+        colorhacklabel->setVisible(true);
+        rgbiconslabel->setVisible(false);
+        showtrajectorylabel->setVisible(false);
+   }
     void onMiscButton(cocos2d::CCObject*) {
         this->setTitle("Misc");
         this->m_title->setScale(1.2f);
@@ -239,10 +351,16 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         noclipcheckbox->setVisible(false);
         layoutmodelabel->setVisible(true);
         practicemusichacklabel->setVisible(true);
-        instantrespawnlabel->setVisible(true);
         speedhacklabel->setVisible(true);
         iconhacklabel->setVisible(true);
         colorhacklabel->setVisible(true);
+        instantrespawnlabel->setVisible(false);
+        rgbiconslabel->setVisible(false);
+        showtrajectorylabel->setVisible(false);
+        leftplayerarrowbtn->setVisible(false);
+        rightplayerarrowbtn->setVisible(false);
+        rightmiscarrowbtn->setVisible(true);
+        leftmiscarrowbtn->setVisible(true);
     }
     void onPlayerButton(cocos2d::CCObject*) {
         this->setTitle("Player");
@@ -258,7 +376,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         speedhacklabel->setVisible(false);
         iconhacklabel->setVisible(false);
         colorhacklabel->setVisible(false);
-
+        rgbiconslabel->setVisible(false);
+        showtrajectorylabel->setVisible(false);
+        leftplayerarrowbtn->setVisible(true);
+        rightplayerarrowbtn->setVisible(true);
+        rightmiscarrowbtn->setVisible(false);
+        leftmiscarrowbtn->setVisible(false);
     }
     void onCreatorButton(cocos2d::CCObject*) {
         this->setTitle("Editor");
@@ -274,6 +397,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         speedhacklabel->setVisible(false);
         iconhacklabel->setVisible(false);
         colorhacklabel->setVisible(false);
+        rgbiconslabel->setVisible(false);
+        showtrajectorylabel->setVisible(false);
+        leftplayerarrowbtn->setVisible(false);
+        rightplayerarrowbtn->setVisible(false);
+        rightmiscarrowbtn->setVisible(false);
+        leftmiscarrowbtn->setVisible(false);
     }
     void onCreditsButton(cocos2d::CCObject*) {
         this->setTitle("Credits");
@@ -289,6 +418,12 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         speedhacklabel->setVisible(false);
         iconhacklabel->setVisible(false);
         colorhacklabel->setVisible(false);
+        rgbiconslabel->setVisible(false);
+        showtrajectorylabel->setVisible(false);
+        leftplayerarrowbtn->setVisible(false);
+        rightplayerarrowbtn->setVisible(false);
+        rightmiscarrowbtn->setVisible(false);
+        leftmiscarrowbtn->setVisible(false);
     }
 
 public:
