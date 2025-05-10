@@ -135,10 +135,10 @@ protected:
         hacksbackground->setColor({68, 42, 30});
         hacksbackground->setOpacity(100);
         hacksbackground->setZOrder(-1);
-        hacksbackground->setContentSize({400.f, 170.f});
+        hacksbackground->setContentSize({300.f, 170.f});
         hacksbackground->setPosition(
             jumphacklabel->getPositionX() + 5.f,
-            jumphacklabel->getPositionY() - 20.f
+            jumphacklabel->getPositionY() - 0.f
             );
     // thing so it wont show the labels from misc when opening the menu
         layoutmodelabel->setVisible(false);
@@ -161,7 +161,7 @@ protected:
     playerbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.67f });
         // creator button
     auto creatorbtn = ButtonSprite::create("Editor");
-    playerbtn->setScale(0.9f);
+    creatorbtn->setScale(0.9f);
     creatorbtn->setZOrder(0);
     creatorbtn->setContentSize({ 100.f, miscbtn->getContentSize().height });
     auto creatorbutton = CCMenuItemSpriteExtra::create(
@@ -170,7 +170,7 @@ protected:
         this,
         menu_selector(MyPopup::onCreatorButton)
     );
-    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.45f });
+    creatorbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.43f });
         // credits button
     auto creditsbtn = ButtonSprite::create("Credits");
     creditsbtn->setScale(0.9f);
