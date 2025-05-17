@@ -216,12 +216,12 @@ protected:
     );
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
         // right arrow for the player menu
-    rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     rightplayerarrowbtn->setFlipX(false);
-    rightplayerarrowbtn->setPosition(ccp(
+    rightplayerarrowbtn->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
-    ));
+    );
     auto rightplayerarrowbutton = CCMenuItemSpriteExtra::create(
         rightplayerarrowbtn,
         rightplayerarrowbtn,
@@ -229,12 +229,12 @@ protected:
         menu_selector(MyPopup::onRightPlayerArrowButton)
     );
         // left arrow for the player menu
-    leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     leftplayerarrowbtn->setFlipX(true);
-    leftplayerarrowbtn->setPosition(ccp(
+    leftplayerarrowbtn->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 - 10.f,
         hacksbackground->getPositionY()
-    ));
+    );
     auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
         leftplayerarrowbtn,
         leftplayerarrowbtn,
@@ -242,12 +242,12 @@ protected:
         menu_selector(MyPopup::onLeftPlayerArrowButton)
     );
         // right arrow for the misc menu
-    rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     rightmiscarrowbtn->setFlipX(false);
-    rightmiscarrowbtn->setPosition(ccp(
+    rightmiscarrowbtn->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
-    ));
+    );
     auto rightmiscarrowbutton = CCMenuItemSpriteExtra::create(
         rightmiscarrowbtn,
         rightmiscarrowbtn,
@@ -255,12 +255,12 @@ protected:
         menu_selector(MyPopup::onRightMiscArrowButton)
     );
         // left arrow for the misc menu
-    leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
+    leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     leftmiscarrowbtn->setFlipX(true);
-    leftmiscarrowbtn->setPosition(ccp(
+    leftmiscarrowbtn->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
-    ));
+    );
     auto leftmiscarrowbutton = CCMenuItemSpriteExtra::create(
         leftmiscarrowbtn,
         leftmiscarrowbtn,
