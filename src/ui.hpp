@@ -278,6 +278,8 @@ protected:
         speedhacklabel->setVisible(false);
         iconhacklabel->setVisible(false);
         colorhacklabel->setVisible(false);
+        leftmiscarrowbtn->setVisible(false);
+        rightmiscarrowbtn->setVisible(true);
         // checkbox setup
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
@@ -330,7 +332,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
     void onLeftPlayerArrowButton(cocos2d::CCObject* sender) {
         nocliplabel->setVisible(true);
         jumphacklabel->setVisible(true);
-        ignoreinputslabel    ->setVisible(true);
+        ignoreinputslabel->setVisible(true);
         autoclickerlabel->setVisible(true);
         noclipcheckbox->setVisible(true);   
    }
