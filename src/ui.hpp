@@ -174,7 +174,7 @@ protected:
         hacksbackground->setColor({0, 0, 0});
         hacksbackground->setOpacity(75);
         hacksbackground->setZOrder(-10);
-        hacksbackground->setContentSize({300.f, 210.f});
+        hacksbackground->setContentSize({300.f, 190.f});
         hacksbackground->setPosition(
             jumphacklabel->getPositionX() + 130.f,
             jumphacklabel->getPositionY() - 3.f
