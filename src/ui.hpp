@@ -121,20 +121,20 @@ protected:
             m_mainLayer->addChild(speedhacklabel);
         speedhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // instant respawn label 
-        instantrespawnlabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        instantrespawnlabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
         instantrespawnlabel->setScale(0.5f);
         instantrespawnlabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() + 40.f
+            layoutmodelabel->getPositionY()
             );
             m_mainLayer->addChild(instantrespawnlabel);
         instantrespawnlabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // show trajectory label 
-        showtrajectorylabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        showtrajectorylabel = CCLabelBMFont::create("Show Trajectory", "bigFont.fnt");
         showtrajectorylabel->setScale(0.5f);
         showtrajectorylabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() + 80.f
+            layoutmodelabel->getPositionY() + 40.f
             );
             m_mainLayer->addChild(showtrajectorylabel);
         showtrajectorylabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
@@ -174,9 +174,9 @@ protected:
         hacksbackground->setColor({0, 0, 0});
         hacksbackground->setOpacity(75);
         hacksbackground->setZOrder(-10);
-        hacksbackground->setContentSize({280.f, 200.f});
+        hacksbackground->setContentSize({300.f, 175.f});
         hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 150.f,
+            jumphacklabel->getPositionX() + 135.f,
             jumphacklabel->getPositionY() - 3.f
             );
     // Player button
@@ -279,7 +279,7 @@ protected:
         iconhacklabel->setVisible(false);
         colorhacklabel->setVisible(false);
         leftmiscarrowbtn->setVisible(false);
-        rightmiscarrowbtn->setVisible(true);
+        rightmiscarrowbtn->setVisible(false);
         // checkbox setup
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
@@ -341,6 +341,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         speedhacklabel->setVisible(false);
         iconhacklabel->setVisible(false);
         colorhacklabel->setVisible(false);
+        layoutmodelabel->setVisible(false);
         rgbiconslabel->setVisible(true);
         showtrajectorylabel->setVisible(true);
    }
@@ -348,6 +349,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
         practicemusichacklabel->setVisible(true);
         speedhacklabel->setVisible(true);
         iconhacklabel->setVisible(true);
+        layoutmodelabel->setVisible(true);
         colorhacklabel->setVisible(true);
         rgbiconslabel->setVisible(false);
         showtrajectorylabel->setVisible(false);
