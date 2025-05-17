@@ -41,7 +41,7 @@ protected:
         jumphacklabel->setScale(0.5f);
         jumphacklabel->setColor({255, 255, 255});
         jumphacklabel->setZOrder(1);
-        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2) - 10.f;
+        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2 - 10.f);
         m_mainLayer->addChild(jumphacklabel);
         jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // noclip label
