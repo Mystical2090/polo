@@ -174,9 +174,9 @@ protected:
         hacksbackground->setColor({0, 0, 0});
         hacksbackground->setOpacity(75);
         hacksbackground->setZOrder(-10);
-        hacksbackground->setContentSize({300.f, 190.f});
+        hacksbackground->setContentSize({280.f, 200.f});
         hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 130.f,
+            jumphacklabel->getPositionX() + 150.f,
             jumphacklabel->getPositionY() - 3.f
             );
     // Player button
@@ -217,7 +217,7 @@ protected:
     creditsbutton->setPosition({ popupSize.width * 0.18f, popupSize.height * 0.31f });
         // right arrow for the player menu
     rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
-    rightplayerarrowbtn->setFlipX(false);
+    rightplayerarrowbtn->setFlipX(true);
 
     auto rightplayerarrowbutton = CCMenuItemSpriteExtra::create(
         rightplayerarrowbtn,
@@ -231,7 +231,7 @@ protected:
     );
         // left arrow for the player menu
     leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
-    leftplayerarrowbtn->setFlipX(true);
+    leftplayerarrowbtn->setFlipX(false);
 
     auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
         leftplayerarrowbtn,
@@ -240,12 +240,12 @@ protected:
         menu_selector(MyPopup::onLeftPlayerArrowButton)
     );
     leftplayerarrowbutton->setPosition(
-        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 - 10.f,
+        hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 - 10.f,
         hacksbackground->getPositionY()
     );
         // right arrow for the misc menu
     rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
-    rightmiscarrowbtn->setFlipX(false);
+    rightmiscarrowbtn->setFlipX(true);
 
     auto rightmiscarrowbutton = CCMenuItemSpriteExtra::create(
         rightmiscarrowbtn,
@@ -259,7 +259,7 @@ protected:
     );
         // left arrow for the misc menu
     leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
-    leftmiscarrowbtn->setFlipX(true);
+    leftmiscarrowbtn->setFlipX(false);
 
     auto leftmiscarrowbutton = CCMenuItemSpriteExtra::create(
         leftmiscarrowbtn,
@@ -268,7 +268,7 @@ protected:
         menu_selector(MyPopup::onLeftMiscArrowButton)
     );
     leftmiscarrowbutton->setPosition(
-        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
+        hacksbackground->getPositionX() - hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
     );
     // thing so it wont show the labels from misc when opening the menu
@@ -330,7 +330,7 @@ bool noclipEnabled = Mod::get()->getSavedValue<bool>("enable-noclip", false);
     void onLeftPlayerArrowButton(cocos2d::CCObject* sender) {
         nocliplabel->setVisible(true);
         jumphacklabel->setVisible(true);
-        ignoreinputslabel->setVisible(true);
+        ignoreinputslabel    ->setVisible(true);
         autoclickerlabel->setVisible(true);
         noclipcheckbox->setVisible(true);   
    }
