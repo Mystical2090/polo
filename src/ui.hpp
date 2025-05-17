@@ -218,54 +218,58 @@ protected:
         // right arrow for the player menu
     rightplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     rightplayerarrowbtn->setFlipX(false);
-    rightplayerarrowbtn->setPosition(
-        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
-        hacksbackground->getPositionY()
-    );
+
     auto rightplayerarrowbutton = CCMenuItemSpriteExtra::create(
         rightplayerarrowbtn,
         rightplayerarrowbtn,
         this,
         menu_selector(MyPopup::onRightPlayerArrowButton)
     );
+     rightplayerarrowbutton->setPosition(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
+        hacksbackground->getPositionY()
+    );
         // left arrow for the player menu
     leftplayerarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     leftplayerarrowbtn->setFlipX(true);
-    leftplayerarrowbtn->setPosition(
-        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 - 10.f,
-        hacksbackground->getPositionY()
-    );
+
     auto leftplayerarrowbutton = CCMenuItemSpriteExtra::create(
         leftplayerarrowbtn,
         leftplayerarrowbtn,
         this,
         menu_selector(MyPopup::onLeftPlayerArrowButton)
     );
+    leftplayerarrowbutton->setPosition(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 - 10.f,
+        hacksbackground->getPositionY()
+    );
         // right arrow for the misc menu
     rightmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
     rightmiscarrowbtn->setFlipX(false);
-    rightmiscarrowbtn->setPosition(
-        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
-        hacksbackground->getPositionY()
-    );
+
     auto rightmiscarrowbutton = CCMenuItemSpriteExtra::create(
         rightmiscarrowbtn,
         rightmiscarrowbtn,
         this,
         menu_selector(MyPopup::onRightMiscArrowButton)
     );
-        // left arrow for the misc menu
-    leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
-    leftmiscarrowbtn->setFlipX(true);
-    leftmiscarrowbtn->setPosition(
+    rightmiscarrowbutton->setPosition(
         hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
         hacksbackground->getPositionY()
     );
+        // left arrow for the misc menu
+    leftmiscarrowbtn = CCSprite::createWithSpriteFrameName("GJ_arrow_02_001.png");
+    leftmiscarrowbtn->setFlipX(true);
+
     auto leftmiscarrowbutton = CCMenuItemSpriteExtra::create(
         leftmiscarrowbtn,
         leftmiscarrowbtn,
         this,
         menu_selector(MyPopup::onLeftMiscArrowButton)
+    );
+    leftmiscarrowbutton->setPosition(
+        hacksbackground->getPositionX() + hacksbackground->getContentSize().width / 2 + 10.f,
+        hacksbackground->getPositionY()
     );
     // thing so it wont show the labels from misc when opening the menu
         layoutmodelabel->setVisible(false);
