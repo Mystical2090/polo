@@ -41,7 +41,7 @@ protected:
         jumphacklabel->setScale(0.5f);
         jumphacklabel->setColor({255, 255, 255});
         jumphacklabel->setZOrder(1);
-        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2);
+        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2) - 10.f;
         m_mainLayer->addChild(jumphacklabel);
         jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // noclip label
@@ -62,7 +62,7 @@ protected:
         ignoreinputslabel->setZOrder(1);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() - 40.f
+            jumphacklabel->getPositionY() - 50.f
             );
             m_mainLayer->addChild(ignoreinputslabel);
         ignoreinputslabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
@@ -73,14 +73,14 @@ protected:
         autoclickerlabel->setZOrder(1);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() - 80.f
+            jumphacklabel->getPositionY() - 100.f
             );
             m_mainLayer->addChild(autoclickerlabel);
         autoclickerlabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // layout mode label 11111
         layoutmodelabel = CCLabelBMFont::create("Layout Mode", "bigFont.fnt");
         layoutmodelabel->setScale(0.5f);
-        layoutmodelabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2);
+        layoutmodelabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2 - 10.f);
         m_mainLayer->addChild(layoutmodelabel);
         layoutmodelabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 
@@ -92,31 +92,31 @@ protected:
             layoutmodelabel->getPositionY() + 40.f
             );
             m_mainLayer->addChild(practicemusichacklabel);
-        ignoreinputslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
+        practicemusichacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // icon hack label
         iconhacklabel = CCLabelBMFont::create("Icon Hack", "bigFont.fnt");
         iconhacklabel->setScale(0.5f);
         iconhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() - 40.f
+            layoutmodelabel->getPositionY() - 50.f
             );
             m_mainLayer->addChild(iconhacklabel);
-        ignoreinputslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
+        iconhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // color hack label 
         colorhacklabel = CCLabelBMFont::create("Color Hack", "bigFont.fnt");
         colorhacklabel->setScale(0.5f);
         colorhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() - 80.f
+            layoutmodelabel->getPositionY() - 100.f
             );
             m_mainLayer->addChild(colorhacklabel);
         colorhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // speedhack label 
-        speedhacklabel = CCLabelBMFont::create("Instant Respawn", "bigFont.fnt");
+        speedhacklabel = CCLabelBMFont::create("Speed Hack", "bigFont.fnt");
         speedhacklabel->setScale(0.5);
         speedhacklabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() - 120.f
+            layoutmodelabel->getPositionY() - 100.f
             );
             m_mainLayer->addChild(speedhacklabel);
         speedhacklabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
@@ -139,7 +139,7 @@ protected:
             m_mainLayer->addChild(showtrajectorylabel);
         showtrajectorylabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
 // rgb icons label 
-        rgbiconslabel = CCLabelBMFont::create("Speedhack", "bigFont.fnt");
+        rgbiconslabel = CCLabelBMFont::create("Rgb Icons", "bigFont.fnt");
         rgbiconslabel->setScale(0.5f);
         rgbiconslabel->setPosition(
             layoutmodelabel->getPositionX(),
