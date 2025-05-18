@@ -41,7 +41,7 @@ protected:
         jumphacklabel->setScale(0.5f);
         jumphacklabel->setColor({255, 255, 255});
         jumphacklabel->setZOrder(1);
-        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2 + 10.f);
+        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2);
         m_mainLayer->addChild(jumphacklabel);
         jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
 // another brown background thing!
@@ -52,7 +52,7 @@ protected:
         hacksbackground->setContentSize({300.f, 175.f});
         hacksbackground->setPosition(
             jumphacklabel->getPositionX() + 135.f,
-            jumphacklabel->getPositionY() + 5.f
+            jumphacklabel->getPositionY()
             );
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
