@@ -41,9 +41,19 @@ protected:
         jumphacklabel->setScale(0.5f);
         jumphacklabel->setColor({255, 255, 255});
         jumphacklabel->setZOrder(1);
-        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2 - 10.f);
+        jumphacklabel->setPosition(popupSize.width / 2 - 70.f, popupSize.height / 2 + 10.f);
         m_mainLayer->addChild(jumphacklabel);
         jumphacklabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
+// another brown background thing!
+    auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
+        hacksbackground->setColor({0, 0, 0});
+        hacksbackground->setOpacity(75);
+        hacksbackground->setZOrder(-10);
+        hacksbackground->setContentSize({300.f, 175.f});
+        hacksbackground->setPosition(
+            jumphacklabel->getPositionX() + 135.f,
+            jumphacklabel->getPositionY() + 5.f
+            );
 // noclip label
         nocliplabel = CCLabelBMFont::create("Noclip", "bigFont.fnt");
         nocliplabel->setScale(0.5f);
@@ -62,7 +72,7 @@ protected:
         ignoreinputslabel->setZOrder(1);
         ignoreinputslabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() - 50.f
+            jumphacklabel->getPositionY() - 80.f
             );
             m_mainLayer->addChild(ignoreinputslabel);
         ignoreinputslabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
@@ -73,7 +83,7 @@ protected:
         autoclickerlabel->setZOrder(1);
         autoclickerlabel->setPosition(
             jumphacklabel->getPositionX(),
-            jumphacklabel->getPositionY() - 100.f
+            jumphacklabel->getPositionY() - 800.f
             );
             m_mainLayer->addChild(autoclickerlabel);
         autoclickerlabel->setContentSize({ 100.f, jumphacklabel->getContentSize().height });
@@ -143,7 +153,7 @@ protected:
         rgbiconslabel->setScale(0.5f);
         rgbiconslabel->setPosition(
             layoutmodelabel->getPositionX(),
-            layoutmodelabel->getPositionY() + 120.f
+            layoutmodelabel->getPositionY()
             );
             m_mainLayer->addChild(rgbiconslabel);
         rgbiconslabel->setContentSize({ 100.f, layoutmodelabel->getContentSize().height });
@@ -168,16 +178,6 @@ protected:
         playerbackground->setPosition(
             miscbutton->getPositionX() + 7.f,
             miscbutton->getPositionY() - 19.f
-            );
-        // another brown background thing!
-    auto hacksbackground = CCScale9Sprite::create("GJ_square01.png");
-        hacksbackground->setColor({0, 0, 0});
-        hacksbackground->setOpacity(75);
-        hacksbackground->setZOrder(-10);
-        hacksbackground->setContentSize({300.f, 175.f});
-        hacksbackground->setPosition(
-            jumphacklabel->getPositionX() + 135.f,
-            jumphacklabel->getPositionY() - 3.f
             );
     // Player button
     auto playerbtn = ButtonSprite::create("Player");
@@ -280,6 +280,8 @@ protected:
         colorhacklabel->setVisible(false);
         leftmiscarrowbtn->setVisible(false);
         rightmiscarrowbtn->setVisible(false);
+        showtrajectorylabel->setVisible(false);
+        rgbiconslabel->setVisible(false);
         // checkbox setup
     auto checkboxOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
     auto checkboxOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
