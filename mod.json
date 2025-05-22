@@ -97,6 +97,18 @@
                     "description": "Instant Kills you. WARNING: Dont use noclip with this mod.",
                     "default": false
                 },
+                "show-hitboxes": {
+                    "name": "Show hitboxes",
+                    "type": "bool",
+                    "description": "Shows hitboxes.",
+                    "default": false
+                },
+                "show-hitboxes-on-death": {
+                    "name": "Show hitboxes on death",
+                    "type": "bool",
+                    "description": "Shows hitboxes on death.",
+                    "default": false
+                },
         "creator": {
             "type": "title",
             "name": "Creator"
