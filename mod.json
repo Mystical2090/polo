@@ -109,6 +109,12 @@
                     "description": "Shows hitboxes on death.",
                     "default": false
                 },
+                "instant-complete": {
+                    "name": "Instant Complete",
+                    "type": "bool",
+                    "description": "Allows you instant complete levels.",
+                    "default": false
+                },
         "creator": {
             "type": "title",
             "name": "Creator"
