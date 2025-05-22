@@ -26,6 +26,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/layout-mode.cpp
     src/hacks/misc/colorhack.cpp
     src/hacks/misc/show-hitboxes.cpp
+    src/hacks/misc/instantrespawn.cpp
      # src/hacks/misc/safe-mode.cpp
     
 )
