@@ -5,16 +5,19 @@ using namespace geode::prelude;
 
 class $modify(GJBaseGameLayer) {
     struct Fields {
-        bool fix = false;
+        bool hasCompleted = false;
     };
 
     void update(float dt) override {
         GJBaseGameLayer::update(dt);
+        
+        if (!Mod::get()->getSettingValue<bool>("instant-complete"))
+            return;
 
-        if (auto playLayer = as<PlayLayer*>(this)) {
-            if (!m_fields->fix) {
-                playLayer->playPlatformerEndAnimationToPos(ccp(2, 2), false);
-                m_fields->fix = true;
+        if (auto playLayer = typeinfo_cast<PlayLayer*>(this)) {
+            if (!m_fields->hasCompleted) {
+                playLayer->playPlatformerEndAnimationToPos({2.f, 2.f}, false);
+                m_fields->hasCompleted = true;
             }
         }
     }
