@@ -2,6 +2,7 @@
 #include <Geode/modify/SecretLayer2.hpp>
 
 using namespace geode::prelude;
+using geode::Hook;
 
 class $modify(SecretLayer2) {
 public:
@@ -9,7 +10,7 @@ public:
         if (!Mod::get()->getSettingValue<bool>("thechan")) {
             return;
         }
-        getHook("SecretLayer2::onSecretLevel")->setPriority(99999999);
+        Hook::get("SecretLayer2::onSecretLevel")->setPriority(99999999);
     }
 
     void onSecretLevel(cocos2d::CCObject* sender) {
