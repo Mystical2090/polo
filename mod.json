@@ -121,6 +121,12 @@
                     "description": "Allows you to enter the basement.",
                     "default": false
                 },
+                "thechan": {
+                    "name": "The Challenge Bypass",
+                    "type": "bool",
+                    "description": "Allows you to pass the limit for the challenge.",
+                    "default": false
+                },
         "creator": {
             "type": "title",
             "name": "Creator"
