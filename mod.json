@@ -114,6 +114,12 @@
                     "type": "bool",
                     "description": "Allows you instant complete levels.",
                     "default": false
+                "basement-bypass": {
+                    "name": "Basement Bypass",
+                    "type": "bool",
+                    "description": "Allows you to enter the basement.",
+                    "default": false
+                },
                 },
         "creator": {
             "type": "title",
