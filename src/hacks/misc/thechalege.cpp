@@ -5,16 +5,18 @@ using namespace geode::prelude;
 
 class $modify(SecretLayer2) {
 public:
-    static void onModify(SecretLayer2& self) {
+    static void onModify() {
         if (!Mod::get()->getSettingValue<bool>("thechan")) {
             return;
         }
 
-        self.setHookPriority("SecretLayer2::onSecretLevel", 99999999);
+        auto& modify = get();
+
+        modify.setHookPriority("SecretLayer2::onSecretLevel", 99999999);
     }
 
     void onSecretLevel(cocos2d::CCObject* sender) {
-        if (!Mod::get()->getSettingValue<bool>("enable-noclip")) {
+        if (!Mod::get()->getSettingValue<bool>("thechan")) {
             return;
         }
 
