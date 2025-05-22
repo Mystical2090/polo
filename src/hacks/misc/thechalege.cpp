@@ -25,3 +25,9 @@ public:
         CCDirector::get()->replaceScene(scene);
     }
 }; */
+
+
+
+
+
+// fuck it i give up
