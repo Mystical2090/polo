@@ -3,7 +3,7 @@
 # Polo
 
 > [!warning]
-> Me gtxripmxt and sp67 are not responsible of you getting leaderboard banned.
+> Mystical  gtxripmxt and sp67 are not responsible of you getting leaderboard banned.
 # Features
 * Noclip
 - Speedhack
