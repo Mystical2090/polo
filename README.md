@@ -42,7 +42,5 @@ Additionally, thank you to our testers!
 > If you are leaderboard banned because of our mod, we do NOT TAKE RESPONSIBILITY
 > therefore always proceed with caution
 
-## Features
-
 ## License
 This project is licensed by the "MIT license"
