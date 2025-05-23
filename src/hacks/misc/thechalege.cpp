@@ -1,22 +1,16 @@
-/* #include <Geode/Geode.hpp>
+#include <Geode/Geode.hpp> // polo ui when 
 #include <Geode/modify/SecretLayer2.hpp>
+#include <Geode/utils/cocos.hpp>
+#include <Geode/loader/Setting.hpp>
 
 using namespace geode::prelude;
-using geode::Hook;
 
-class $modify(SecretLayer2) {
-public:
-    static void onModify() {
-        if (!Mod::get()->getSettingValue<bool>("thechan")) {
-            return;
-        }
-        Hook::get("SecretLayer2::onSecretLevel")->setPriority(99999999);
-    }
-
+class $modify(TheChallegeHook, SecretLayer2) {
     void onSecretLevel(cocos2d::CCObject* sender) {
         if (!Mod::get()->getSettingValue<bool>("thechan")) {
-            return;
+            return SecretLayer2::onSecretLevel(sender);
         }
+
         GameManager::get()->m_sceneEnum = 12;
         auto scene = CCTransitionFade::create(
             0.5f,
@@ -24,10 +18,8 @@ public:
         );
         CCDirector::get()->replaceScene(scene);
     }
-}; */
 
-
-
-
-
-// fuck it i give up
+    void onModify() override {
+        setHookPriority("onSecretLevel", 99999999);
+    }
+};
