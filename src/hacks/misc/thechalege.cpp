@@ -1,4 +1,4 @@
-#include <Geode/Geode.hpp> // polo ui when 
+/* #include <Geode/Geode.hpp> // polo ui when 
 #include <Geode/modify/SecretLayer2.hpp>
 #include <Geode/utils/cocos.hpp>
 #include <Geode/loader/Setting.hpp>
@@ -22,4 +22,4 @@ class $modify(TheChallegeHook, SecretLayer2) {
     void onModify() override {
         setHookPriority("onSecretLevel", 99999999);
     }
-};
+}; maybe i should commit suicide*/
