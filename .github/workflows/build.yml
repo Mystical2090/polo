@@ -1,4 +1,4 @@
-name: Build Geode Mod
+name: build polo
 
 on:
   workflow_dispatch:
@@ -12,21 +12,21 @@ jobs:
       fail-fast: false
       matrix:
         config:
-        - name: Windows
+        - name: win
           os: windows-latest
 
-        - name: macOS
+        - name: mac 
           os: macos-latest
 
-        - name: iOS
+        - name: ios
           os: macos-latest
           target: iOS
 
-        - name: Android32
+        - name: android32
           os: ubuntu-latest
           target: Android32
 
-        - name: Android64
+        - name: android64
           os: ubuntu-latest
           target: Android64
 
