@@ -1,24 +1,32 @@
 # Polo
+A **superior** mod menu for Geometry Dash.
 
-# Features
-* Noclip
+## How to use 
+1. On PC, press the `settings` icon to open the mod menu. 
+2. For any questions or general support, join our [Support Discord Server](https://discord.gg/JNN9vXAYfJ)!
+3. Have fun using our mod!
+
+## Features
+- 20+ hacks
+- Show Hitboxes (with show hitboxes on death!)
+- Fully built ui made by [Gtxripmxt](https://github.com/gtxripmxt)
+- Noclip
 - Speedhack
-* Practice Mode music bypass
-- Instant Respawn
-* Autoclicker
-- Verify Bypass
-* Custom obj bypass
-- And **many** more!
+- Instant Complete
+- Two ui(s)!
+- Crossplatform support (Linux (Through Wine), iOS, Windows, macOS, Android)
 
-## Support
-- You can support us by boosting our [discord](https://discord.gg/RaS9c7MEzc)
+## Credits
+This mod menu would not be possible without the developers from other mod menus teaming up together!
+- [Mystical](https://github.com/mystical2090) (Ultimate Mod Menu)
+- [Speedyfriend67](https://github.com/speedyfriend433) (Flero)
+- [gtxripmxt](https://github.com/gtxripmxt)
 
-# Bugs/Suggestions
--  For bug reports you can send reports in issues on [github](https://github.com/Gtxripmxt/not-a-mod-menu) or you can submit them to our [discord](https://discord.gg/RaS9c7MEzc)
-* For suggestions feel free to submit them to our github or discord (on github submit them on issues.)
+Additionally, thank you to our testers!
+- [Daisuke](https://github.com/daisuke) - Tester
+- [Mystical](https://github.com/Mystical2090) - Tester, Owner, Developer
+- [Gtxripmxt](https://github.com/gtxripmxt) - Tester, Owner, Developer
+- [speedyfriend67](https://github.com/speedyfriend433) - Tester, Developer, Owner
 
-### This wouldnt with been possible without:
-
-- [Mystical](https://github.com/Mystical2090)
-* [speedyfriend67](https://github.com/speedyfriend433)
-- [Gtxripmxt](https://github.com/Gtxripmxt)
+# License
+This project is licensed by the "MIT license"
