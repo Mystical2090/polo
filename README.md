@@ -1,33 +1,48 @@
-<img src="logo.png" width="150" alt="the mod's logo" />
-
 # Polo
+A **superior** mod menu for Geometry Dash.
 
-> [!warning]
-> Mystical  gtxripmxt and sp67 are not responsible of you getting leaderboard banned.
+## How to use
+1. On PC/Mobile, press the settings icon to open the mod menu.
+2. For any questions or general support, join our Support Discord Server!
+3. Have fun using our mod!
 
-# Hi!
-We are Polo a mod menu for geometry dash. Here's some info below.
-
-
-# Features
-* Noclip
+## Features
+- 20+ hacks
+- Show Hitboxes (with show hitboxes on death!)
+- Fully built ui made by [Gtxripmxt[(https://github.com/gtxripmxt)
+- Noclip
 - Speedhack
-* Practice Mode music bypass
-- Instant Respawn
-* Autoclicker
-- Verify Bypass
-* Custom obj bypass
-- And **many** more!
+- Instant Complete
+- Two ui(s)!
+- Crossplatform support (Linux (Through Wine), iOS, Windows, macOS, Android)
 
-## Support
-- You can support us by boosting our [discord](https://discord.gg/RaS9c7MEzc)
+## Build Instructions
+1. You must have the following: `CMake`, `MSVC / Clang`, `Git`, `Geode CLI`, `Geode SDK`
+```bash
+git clone https://github.com/gtxripmxt/not-a-mod-menu
+cd not-a-mod-menu
+cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake --build build --config RelWithDebInfo
+```
 
-# Bugs/Suggestions
--  For bug reports you can send reports in issues on [github](https://github.com/Gtxripmxt/not-a-mod-menu) or you can submit them to our [discord](https://discord.gg/RaS9c7MEzc)
-* For suggestions feel free to submit them to our github or discord (on github submit them on issues.)
+## This mod menu would not be possible without the developers from other mod menus teaming up together!
 
-### This wouldnt with been possible without:
+[Mystical[(https://github.com/mystical2090) (Ultimate Mod Menu)
+[Speedyfriend67](https://github.com/speedyfriend67) (Flero)
+[gtxripmxt](https://github.com/gtxripmxt)
 
-- [Mystical](https://github.com/Mystical2090)
-* [speedyfriend67](https://github.com/speedyfriend433)
-- [Gtxripmxt](https://github.com/Gtxripmxt)
+Additionally, thank you to our testers!
+[Daisuke](https://github.com/daisuke) - Tester
+[Mystical(https://github.com/mystical2090) - Tester, Owner, Developer
+[gtxripmxt](https://github.com/gtxripmxt)- Tester, Owner, Developer
+[Speedyfriend67](https://github.com/speedyfriend67) - Tester, Developer, Owner
+
+## DISCLAIMER
+> [!WARN]
+> If you are leaderboard banned because of our mod, we do NOT TAKE RESPONSIBILITY
+> therefore always proceed with caution
+
+## Features
+
+## License
+This project is licensed by the "MIT license"
