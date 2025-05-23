@@ -38,7 +38,7 @@ Additionally, thank you to our testers!
 [Speedyfriend67](https://github.com/speedyfriend67) - Tester, Developer, Owner
 
 ## DISCLAIMER
-> [!WARN]
+> [!NOTE]
 > If you are leaderboard banned because of our mod, we do NOT TAKE RESPONSIBILITY
 > therefore always proceed with caution
 
