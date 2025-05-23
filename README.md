@@ -4,6 +4,11 @@
 
 > [!warning]
 > Mystical  gtxripmxt and sp67 are not responsible of you getting leaderboard banned.
+
+# Hi!
+We are Polo a mod menu for geometry dash. Here's some info below.
+
+
 # Features
 * Noclip
 - Speedhack
