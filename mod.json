@@ -16,7 +16,7 @@
             "community": "https://discord.gg/gMRKR9m7KK",
             "homepage": "https://polomodmenu.netlify.app/"
     },
-    "tags": ["customization", "gameplay", "cheat"],
+    "tags": ["customization", "gameplay", "cheat", "utility", "interface"],
     "settings": {
         "player": {
             "type": "title",
