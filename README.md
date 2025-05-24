@@ -27,15 +27,15 @@ cmake --build build --config RelWithDebInfo
 
 ## This mod menu would not be possible without the developers from other mod menus teaming up together!
 
-[Mystical](https://github.com/mystical2090) (Ultimate Mod Menu)
-[Speedyfriend67](https://github.com/speedyfriend67) (Flero)]
-[gtxripmxt](https://github.com/gtxripmxt)
+- [Mystical433](https://github.com/mystical2090) (Ultimate Mod Menu)
+- [Speedyfriend67](https://github.com/speedyfriend67) (Flero)
+- [gtxripmxt](https://github.com/gtxripmxt)
 
 Additionally, thank you to our testers!
-[Daisuke](https://github.com/daisuke) - Tester\n
-[Mystical](https://github.com/mystical2090) - Tester, Owner, Lead Developer
-[gtxripmxt](https://github.com/gtxripmxt) - Tester, Owner, Lead Developer
-[Speedyfriend67](https://github.com/speedyfriend67) - Tester, Developer, Owner, Backend-Developer
+- [Daisuke433](https://github.com/daisuke) - Tester
+- [Mystical](https://github.com/mystical2090) - Tester, Owner, Lead Developer
+- [gtxripmxt](https://github.com/gtxripmxt) - Tester, Owner, Lead Developer
+- [Speedyfriend67](https://github.com/speedyfriend67) - Tester, Developer, Owner, Backend-Developer
 
 ## DISCLAIMER
 > [!NOTE]
