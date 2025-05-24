@@ -16,15 +16,6 @@ A **superior** mod menu for Geometry Dash.
 - Two ui(s)!
 - Crossplatform support (Linux (Through Wine), iOS, Windows, macOS, Android)
 
-## Build Instructions
-1. You must have the following: `CMake`, `MSVC / Clang`, `Git`, `Geode CLI`, `Geode SDK`
-```bash
-git clone https://github.com/gtxripmxt/not-a-mod-menu
-cd not-a-mod-menu
-cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
-cmake --build build --config RelWithDebInfo
-```
-
 ## This mod menu would not be possible without the developers from other mod menus teaming up together!
 
 [Mystical](https://github.com/mystical2090) (Ultimate Mod Menu)
@@ -36,11 +27,6 @@ Additionally, thank you to our testers!
 [Mystical](https://github.com/mystical2090) - Tester, Owner, Lead Developer
 [gtxripmxt](https://github.com/gtxripmxt) - Tester, Owner, Lead Developer
 [Speedyfriend67](https://github.com/speedyfriend67) - Tester, Developer, Owner, Backend-Developer
-
-## DISCLAIMER
-> [!NOTE]
-> If you are leaderboard banned because of our mod, we do NOT TAKE RESPONSIBILITY
-> therefore always proceed with caution
 
 ## License
 This project is licensed by the "MIT license"
