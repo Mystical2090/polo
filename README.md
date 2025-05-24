@@ -27,7 +27,7 @@ cmake --build build --config RelWithDebInfo
 
 ## This mod menu would not be possible without the developers from other mod menus teaming up together!
 
-[Mystical[(https://github.com/mystical2090) (Ultimate Mod Menu)
+[Mystical](https://github.com/mystical2090) (Ultimate Mod Menu)
 [Speedyfriend67](https://github.com/speedyfriend67) (Flero)
 [gtxripmxt](https://github.com/gtxripmxt)
 
