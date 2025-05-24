@@ -9,7 +9,7 @@ A **superior** mod menu for Geometry Dash.
 ## Features
 - 20+ hacks
 - Show Hitboxes (with show hitboxes on death!)
-- Fully built ui made by [Gtxripmxt[(https://github.com/gtxripmxt)
+- Fully built ui made by [Gtxripmxt](https://github.com/gtxripmxt)
 - Noclip
 - Speedhack
 - Instant Complete
