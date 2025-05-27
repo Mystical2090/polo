@@ -2,9 +2,7 @@
 #include <Geode/modify/PlayLayer.hpp>
 #include <Geode/modify/GameObject.hpp>
 #include <Geode/modify/GJGameLevel.hpp>
-#include <Geode/modify/CCSprite.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
-#include <Geode/modify/CCApplication.hpp>
 
 using namespace geode::prelude;
 
