@@ -3,7 +3,7 @@
 #include <Geode/modify/GameObject.hpp>
 #include <Geode/modify/GJGameLevel.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
-
+// hey mystic whats up with all those chatgpt ahh includes
 using namespace geode::prelude;
 
 class $modify(GameObject) {
