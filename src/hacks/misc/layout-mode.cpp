@@ -4,6 +4,7 @@
 #include <Geode/modify/GJGameLevel.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
 // hey mystic whats up with all those chatgpt ahh includes
+// maybe it's my stupid brain at least it works and no I didn't use ChatGPT stop accusing me
 using namespace geode::prelude;
 
 class $modify(GameObject) {
