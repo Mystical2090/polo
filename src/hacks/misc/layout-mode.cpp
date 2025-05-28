@@ -5,6 +5,7 @@
 #include <Geode/modify/GJBaseGameLayer.hpp>
 // hey mystic whats up with all those chatgpt ahh includes
 // maybe it's my stupid brain at least it works and no I didn't use ChatGPT stop accusing me
+// yes you did 😭😭😭 if no then why did you put all these stupid includes when youre only hooking one??? 🦅🦅🦅
 using namespace geode::prelude;
 
 class $modify(GameObject) {
