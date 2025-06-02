@@ -128,6 +128,12 @@
                     "description": "Allows you to pass the limit for the challenge.",
                     "default": false
                 },
+                "secret-thing": {
+                    "name": "Secret (type the code to unlock)",
+                    "type": "string",
+                    "description": "Type the code to unlock.",
+                    "default": type it
+                },
         "creator": {
             "type": "title",
             "name": "Creator"
