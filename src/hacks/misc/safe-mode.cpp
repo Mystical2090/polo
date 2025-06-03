@@ -13,7 +13,7 @@ class $modify(SafeModeStatsBlocker, GameStatsManager) {
             (std::string_view(key) == "LevelComplete" ||
              std::string_view(key) == "Orbs" ||
              std::string_view(key) == "Stars")) {
-            log::info("Safe Mode: Blocking stat increment for '{}'", key);
+            log::info("Safe mode haha '{}'", key);
             return;
         }
 
