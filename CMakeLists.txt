@@ -8,7 +8,7 @@ else()
 endif()
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(polo VERSION 1.0.0)
+project(cheatcheatthatsbadcheatcheatpolocilentfr VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
@@ -29,7 +29,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/show-hitboxes.cpp
     src/hacks/misc/instantcomplete.cpp
     src/hacks/misc/basementbypass.cpp
-    # src/hacks/misc/safe-mode.cpp
+    src/hacks/misc/safe-mode.cpp
     
 )
 
