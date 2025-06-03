@@ -1,33 +1,45 @@
-// i dont expect this to work im drunk rn
+/* i drunk rn idk
+basdkfuh
+*/
 #include <Geode/Geode.hpp>
+#include <Geode/modify/PlayLayer.hpp>
 #include <Geode/modify/GameStatsManager.hpp>
-#include <Geode/modify/GJGameLevel.hpp>
 
 using namespace geode::prelude;
 
 class $modify(SafeModeStatsBlocker, GameStatsManager) {
-    void incrementStat(StatType type, int value) {
-        if (Mod::get()->getSettingValue<bool>("safe-mode") && type == StatType::LevelComplete) {
-            log::info("Safe Mode active: Blocking stat increment for LevelComplete.");
+    void incrementStat(const char* key, int value) {
+        if (Mod::get()->getSettingValue<bool>("safe-mode") &&
+            (std::string_view(key) == "LevelComplete" ||
+             std::string_view(key) == "Orbs" ||
+             std::string_view(key) == "Stars")) {
+            log::info("Safe Mode: Blocking stat increment for '{}'", key);
             return;
         }
-        GameStatsManager::incrementStat(type, value);
+
+        GameStatsManager::incrementStat(key, value);
     }
 };
 
-class $modify(SafeModeLevelBlocker, GJGameLevel) {
-    void levelWasCompleted() {
+class $modify(SafeModePlayLayer, PlayLayer) {
+    void levelComplete() {
+        PlayLayer::levelComplete();
+
         if (Mod::get()->getSettingValue<bool>("safe-mode")) {
-            log::info("Safe Mode active: Blocking level completion for {}", this->m_levelName);
+            log::info("Safe Mode: Blocking saved progress after completion");
 
-            this->m_normalPercent = 0;
-            this->m_isVerified = false;
-            this->m_isCompleted = false;
+            if (this->m_level) {
+                this->m_level->m_normalPercent = 0;
 
-            return;
+                this->m_level->m_isVerified = false;
+
+                this->m_level->m_orbCompletion = false;
+
+                this->m_level->m_practicePercent = 0;
+                this->m_level->m_coins = 0;
+                
+            }
         }
-
-        GJGameLevel::levelWasCompleted();
     }
 };
 
