@@ -122,10 +122,10 @@
                     "description": "Allows you to enter the basement.",
                     "default": false
                 },
-                "thechan": {
-                    "name": "The Challenge Bypass",
+                "safe-mode": {
+                    "name": "Safe Mode",
                     "type": "bool",
-                    "description": "Allows you to pass the limit for the challenge.",
+                    "description": "prevents completing a level.",
                     "default": false
                 },
                 "secret-thing": {
