@@ -4,7 +4,7 @@ basdkfuh
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayLayer.hpp>
 #include <Geode/modify/GameStatsManager.hpp>
-
+// I hate this
 using namespace geode::prelude;
 
 class $modify(SafeModeStatsBlocker, GameStatsManager) {
