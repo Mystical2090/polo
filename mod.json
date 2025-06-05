@@ -4,7 +4,7 @@
         "mac": "2.2074",
         "win": "2.2074",
         "android": "2.2074",
-        "ios": "2.2074"
+        // no ios support // "ios": "2.2074"
     },
     "version": "v1.0.0",
     "id": "mystical433.gtxripmxt.sp67.polo",
@@ -128,15 +128,9 @@
                     "description": "prevents completing a level.",
                     "default": false
                 },
-                "secret-thing": {
-                    "name": "Secret (type the code to unlock)",
-                    "type": "string",
-                    "description": "Type the code to unlock.",
-                    "default": "Type it."
-                },
         "creator": {
             "type": "title",
-            "name": "Creator"
+            "name": "Editor"
         },   
             "verify-hack": {
                 "name": "Verify Hack",
