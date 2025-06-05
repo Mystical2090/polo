@@ -4,7 +4,7 @@
         "mac": "2.2074",
         "win": "2.2074",
         "android": "2.2074",
-        // no ios support // "ios": "2.2074"
+        "ios": "2.2074"
     },
     "version": "v1.0.0",
     "id": "mystical433.gtxripmxt.sp67.polo",
