@@ -1,12 +1,40 @@
+/* hmm this is a comment i added for no reason i dont know why i added this so i will spam this emoji:😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁😁
+😁😁😁😁😁😁😁😁😁
+lets stop */
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayLayer.hpp>
 #include <Geode/modify/GameObject.hpp>
 #include <Geode/modify/GJGameLevel.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
-// hey mystic whats up with all those chatgpt ahh includes
-// maybe it's my stupid brain at least it works and no I didn't use ChatGPT stop accusing me
-// yes you did 😭😭😭 if no then why did you put all these stupid includes when youre only hooking one??? 🦅🦅
-// no I didn't ill commit suicide if I did I saw prism menu code and got the idea
 using namespace geode::prelude;
 
 class $modify(GameObject) {
