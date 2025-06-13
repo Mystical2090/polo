@@ -6,7 +6,7 @@ using namespace geode::prelude;
 class $modify(ProfilePage) {
 public:
     void loadPageFromUserInfo(GJUserScore* p0) {
-        if (Mod::get()->getSettings()->getValue<bool>("disable_comment_history")) {
+        if (Mod::get()->getSettings()->getValue<bool>("commenthistory")) {
             auto state = p0->m_commentHistoryStatus;
             p0->m_commentHistoryStatus = 0;
 
