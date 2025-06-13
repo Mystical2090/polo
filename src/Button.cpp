@@ -69,5 +69,5 @@ bool MainMenuWithImageButton::init() {
 }
 
 void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
-    MyPopup::create("MyPopup")->show();
+     geode::openSettingsPopup(Mod::get(), true);
 }
