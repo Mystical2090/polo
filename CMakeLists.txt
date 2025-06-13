@@ -33,6 +33,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/creator/nocmark.cpp
     src/hacks/misc/main-levels.cpp
     src/hacks/misc/rainbow-icons.cpp
+    src/hacks/misc/nowavepulse.cpp
    # src/hacks/misc/safe-mode.cpp
     
 )
