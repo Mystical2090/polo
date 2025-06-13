@@ -144,6 +144,12 @@
                     "description": "Allows you to copy any level.",
                     "default": false
                 },
+                "noc": {
+                    "name": "No C mark",
+                    "type": "bool",
+                    "description": "this easy.",
+                    "default": false
+                },
             "custum-obj-bypass": {
                 "name": "Custom Objects Bypass",
                 "type": "bool",
