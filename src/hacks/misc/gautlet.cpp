@@ -25,7 +25,7 @@ class $modify(GauntletLayer) {
             return false;
         }
 
-        if (!Mod::get()->getSetting<bool>("enabled")) {
+        if (!Mod::get()->getSetting<bool>("gautlet")) {
             return true;
         }
 
