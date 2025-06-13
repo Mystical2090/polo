@@ -54,7 +54,7 @@ void SteppedBaseGameLayer::update(float dt) {
 
 void SteppedBaseGameLayer::stepFrame() {
     m_fields->steppingUpdate = true;
-    GJBaseGameLayer::update(1.0f / 240.0f);  // Fixed 240 FPS step
+    GJBaseGameLayer::update(1.0f / 240.0f);
     m_fields->steppingUpdate = false;
 }
 
