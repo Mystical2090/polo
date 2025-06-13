@@ -31,7 +31,6 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/basementbypass.cpp
     src/hacks/misc/level-edit-on-pause-menu.cpp
     src/hacks/creator/nocmark.cpp
-    src/hacks/misc/FrameStepper/framestepper.cpp
    # src/hacks/misc/safe-mode.cpp
     
 )
