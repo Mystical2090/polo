@@ -1,4 +1,5 @@
-#pragma once
+/*
+ #pragma once (shit this whole thing was waste)
 
 #include <Geode/ui/Popup.hpp>
 
@@ -457,3 +458,4 @@ public:
         return nullptr;
     }
 };
+*/ 
