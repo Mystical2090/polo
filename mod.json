@@ -122,12 +122,6 @@
                     "description": "Allows you to enter the basement.",
                     "default": false
                 },
-                "safe-mode": {
-                    "name": "Safe Mode",
-                    "type": "bool",
-                    "description": "prevents completing a level.",
-                    "default": false
-                },
         "creator": {
             "type": "title",
             "name": "Editor"
