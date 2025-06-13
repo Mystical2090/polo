@@ -169,6 +169,12 @@
                     "description": "i love you sometimes",
                     "default": false
                 },
+                "noglow": {
+                    "name": "No Glow",
+                    "type": "bool",
+                    "description": ".....",
+                    "default": false
+                },
         "creator": {
             "type": "title",
             "name": "Editor"
