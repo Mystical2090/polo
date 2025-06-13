@@ -4,10 +4,12 @@
 using namespace geode::prelude;
 
 class $modify(GauntletLayer) {
-    void loadLevelsFinished(cocos2d::CCArray* p0, const char* p1, int p2) override {
+    void loadLevelsFinished(cocos2d::CCArray* p0, const char* p1, int p2) {
         GauntletLayer::loadLevelsFinished(p0, p1, p2);
 
-        if (!Mod::get()->getSetting<bool>("gautlet")) {
+        auto setting = Mod::get()->getSetting("gautlet");
+        auto boolSetting = std::dynamic_pointer_cast<geode::SettingBool>(setting);
+        if (!boolSetting || !boolSetting->value()) {
             return;
         }
 
@@ -25,7 +27,9 @@ class $modify(GauntletLayer) {
             return false;
         }
 
-        if (!Mod::get()->getSetting<bool>("gautlet")) {
+        auto setting = Mod::get()->getSetting("gautlet");
+        auto boolSetting = std::dynamic_pointer_cast<geode::SettingBool>(setting);
+        if (!boolSetting || !boolSetting->value()) {
             return true;
         }
 
