@@ -5,13 +5,13 @@ using namespace geode::prelude;
 
 class $modify(PauseLayer) {
     void customSetup() override {
+        PauseLayer::customSetup();
+
         auto a = PlayLayer::get()->m_level->m_levelType;
 
         if (Mod::get()->getSettingValue<bool>("level-edit")) {
             PlayLayer::get()->m_level->m_levelType = GJLevelType::Editor;
         }
-
-        PauseLayer::customSetup();
 
         PlayLayer::get()->m_level->m_levelType = a;
     }
