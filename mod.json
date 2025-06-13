@@ -97,12 +97,6 @@
                 "description": "Bypasses practice music checkmark in settings.",
                 "default": false
                 },
-                "gautlet": {
-                    "name": "Gautlet bypass",
-                    "type": "bool",
-                    "description": "hi.",
-                    "default": false
-                },
                 "layout-mode": {
                     "name": "Layout Mode",
                     "type": "bool",
