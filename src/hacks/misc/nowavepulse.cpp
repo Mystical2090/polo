@@ -5,7 +5,7 @@ using namespace geode::prelude;
 
 class $modify(HardStreak) {
     void updateStroke(float p0) {
-        float pulseValue = Mod::get()->getSettingValue<float>("pulse-size");
+        float pulseValue = Mod::get()->getSettingValue<float>("wave-pulse-size");
 
         m_pulseSize = pulseValue + 0.5f;
 
