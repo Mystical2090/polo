@@ -103,6 +103,12 @@
                     "description": "Shows the layout of the level.",
                     "default": false
                 },
+                "commenthistory": {
+                    "name": "Comment History bypass",
+                    "type": "bool",
+                    "description": "sdsds.",
+                    "default": false
+                }
                 "icon-hack": {
                     "name": "Icon Hack",
                     "type": "bool",
