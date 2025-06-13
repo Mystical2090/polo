@@ -110,6 +110,12 @@
                     "description": "Shows hitboxes on death.",
                     "default": false
                 },
+                "rainbow": {
+                    "name": "Rainbow icons",
+                    "type": "bool",
+                    "description": "rainbow.",
+                    "default": false
+                },
                 "instant-complete": {
                     "name": "Instant Complete",
                     "type": "bool",
