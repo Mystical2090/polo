@@ -109,6 +109,12 @@
                     "description": "sdsds.",
                     "default": false
                 },
+                "auto-practice": {
+                    "name": "Auto Practice",
+                    "type": "bool",
+                    "description": "sssss.",
+                    "default": false
+                },
                 "icon-hack": {
                     "name": "Icon Hack",
                     "type": "bool",
