@@ -128,13 +128,13 @@
                     "description": "i love you.",
                     "default": false
                 },
-                "main-levels" {
+                "main-levels": {
                     "name": "Main Levels bypass",
                     "type": "bool",
                     "description": "i love you sometimes",
                     "default": false
                 },
-                "tower-levels" {
+                "tower-levels": {
                     "name": "Tower Levels bypass",
                     "type": "bool",
                     "description": "i love you sometimes",
