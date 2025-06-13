@@ -122,6 +122,12 @@
                     "description": "Allows you to enter the basement.",
                     "default": false
                 },
+                "level-edit": {
+                    "name": "Level Edit",
+                    "type": "bool",
+                    "description": "i love you.",
+                    "default": false
+                },
         "creator": {
             "type": "title",
             "name": "Editor"
