@@ -68,6 +68,29 @@
                 "input": false
                     }
                 },
+                "nowavepulse": {
+                    "name": "No wave Pulse",
+                    "type": "bool",
+                    "description": "yes.",
+                    "default": false
+                },
+                "wave-pulse-size": {
+                    "name": "Wave Pulse Size",
+                    "type": "float",
+                    "min": 0.0001,
+                    "max": 1000.0,
+                    "default": 1.0,
+                    "enable-if": "nowavepulse",
+                    "controls": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": false,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": false
+                    }
+                },
                 "practice-music": {
                 "name": "Practice Music Hack",
                 "type": "bool",
