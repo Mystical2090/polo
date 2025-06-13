@@ -20,7 +20,7 @@ class $modify(GauntletLayer) {
         }
     }
 
-    bool init(GauntletType p0) override {
+    bool init(GauntletType p0) {
         if (!GauntletLayer::init(p0)) {
             return false;
         }
