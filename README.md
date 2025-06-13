@@ -7,7 +7,7 @@ A **superior** mod menu for Geometry Dash.
 3. Have fun using our mod!
 
 ## Features
-- 20+ hacks
+- 30+ hacks
 - Show Hitboxes (with show hitboxes on death!)
 - Fully built ui made by [Gtxripmxt](https://github.com/gtxripmxt)
 - Noclip
