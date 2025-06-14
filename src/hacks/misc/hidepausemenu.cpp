@@ -5,10 +5,22 @@ using namespace geode::prelude;
 
 class $modify(PauseLayer) {
     void customSetup() {
-        PauseLayer::customSetup();
-
-        if (Mod::get()->getSavedValue<bool>("hide-pause-menu")) {
-            this->setVisible(false);
+        if (!Mod::get()->getSavedValue<bool>("hide-pause-menu")) {
+            PauseLayer::customSetup();
         }
     }
 };
+
+$execute {
+    Loader::get()->queueInMainThread([] {
+        if (auto mod = Mod::get()) {
+            mod->onSettingChanged("hide-pause-menu", [](bool enabled) {
+                if (auto scene = CCDirector::get()->getRunningScene()) {
+                    if (auto p = typeinfo_cast<PauseLayer*>(scene->getChildByType<PauseLayer>(0))) {
+                        p->setVisible(!enabled);
+                    }
+                }
+            });
+        }
+    });
+}
