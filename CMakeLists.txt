@@ -12,6 +12,7 @@ project(polo VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
+    src/hacks/misc/everytinghurtsandnosolids.cpp
     src/hacks/misc/commenthistory.cpp
     src/Button.cpp
     src/hacks/Player/Noclip.cpp
