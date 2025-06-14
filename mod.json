@@ -97,8 +97,8 @@
                 "description": "Bypasses practice music checkmark in settings.",
                 "default": false
                 },
-                "hide-pause-menu": {
-                    "name": "Hide Pause Menu",
+                "disable-platformer-jump-anim": {
+                    "name": "disable platformer animations",
                     "type": "bool",
                     "description": "speedy help.",
                     "default": false
