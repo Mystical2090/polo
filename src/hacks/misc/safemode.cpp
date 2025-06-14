@@ -11,6 +11,8 @@
 #include <Geode/modify/CCApplication.hpp>
 #include <Geode/Geode.hpp>
 
+using namespace geode::prelude;
+
 class $modify(GJGameLevel) {
     void savePercentage(int p0, bool p1, int p2, int p3, bool p4) {
         if (!Mod::get()->getSettingValue<bool>("safe-mode")) {
