@@ -29,6 +29,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/noglow.cpp
     src/hacks/misc/colorhack.cpp
     src/hacks/misc/show-hitboxes.cpp
+    src/hacks/misc/hidepausemenu.cpp
     src/hacks/misc/instantcomplete.cpp
     src/hacks/misc/basementbypass.cpp
     src/hacks/misc/level-edit-on-pause-menu.cpp
