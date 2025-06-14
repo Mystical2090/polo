@@ -13,11 +13,11 @@ class $modify(PauseLayer) {
 
 $execute {
     Loader::get()->queueInMainThread([] {
-        if (auto mod = Mod::get()) {
-            mod->onSettingChanged("hide-pause-menu", [](bool enabled) {
+        if (auto setting = Mod::get()->getSetting("hide-pause-menu")) {
+            setting->onChange([](bool enabled) {
                 if (auto scene = CCDirector::get()->getRunningScene()) {
-                    if (auto p = typeinfo_cast<PauseLayer*>(scene->getChildByType<PauseLayer>(0))) {
-                        p->setVisible(!enabled);
+                    if (auto pause = typeinfo_cast<PauseLayer*>(scene->getChildByType<PauseLayer>(0))) {
+                        pause->setVisible(!enabled);
                     }
                 }
             });
