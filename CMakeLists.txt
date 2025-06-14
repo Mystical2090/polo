@@ -18,6 +18,7 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/Player/jumphack.cpp
     src/hacks/Player/ignore-inputs.cpp
     src/hacks/misc/speedhack.cpp
+    src/hacks/misc/fontpercentage.cpp
     src/hacks/misc/iconhack.cpp
     src/hacks/misc/autopractice.cpp
     src/hacks/misc/suicide.cpp
