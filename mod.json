@@ -163,6 +163,12 @@
                     "description": "rainbow.",
                     "default": false
                 },
+                "safe-mode": {
+                    "name": "Safe Mode",
+                    "type": "bool",
+                    "description": ".",
+                    "default": false
+                },
                 "instant-complete": {
                     "name": "Instant Complete",
                     "type": "bool",
