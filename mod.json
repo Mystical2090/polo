@@ -97,6 +97,12 @@
                 "description": "Bypasses practice music checkmark in settings.",
                 "default": false
                 },
+                "hide-pause-button": {
+                    "name": "Hide Pause button",
+                    "type": "bool",
+                    "description": "Allows you to die",
+                    "default": false
+                },
                 "disable-platformer-jump-anim": {
                     "name": "disable platformer animations",
                     "type": "bool",
