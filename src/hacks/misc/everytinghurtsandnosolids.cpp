@@ -3,6 +3,7 @@
 #include <Geode/modify/GameStatsManager.hpp>
 #include <Geode/modify/PlayLayer.hpp>
 #include <Geode/modify/GameObject.hpp>
+#include <Geode/modify/PlayerObject.hpp>
 #include <Geode/modify/GJGameLevel.hpp>
 #include <Geode/modify/FMODAudioEngine.hpp>
 #include <Geode/modify/CCScheduler.hpp>
