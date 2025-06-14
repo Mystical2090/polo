@@ -139,6 +139,12 @@
                     "description": "Unlocks all the colors.",
                     "default": false
                 },
+                "no-solids": {
+                    "name": "No solids",
+                    "type": "bool",
+                    "description": "dfkhgsd.",
+                    "default": false
+                },
                 "instant-respawn": {
                     "name": "Suicide",
                     "type": "bool",
