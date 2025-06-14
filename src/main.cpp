@@ -14,7 +14,7 @@ $on_mod(Loaded) {
 
 }
 
-class $modify(MyMenuLayer, MenuLayer) {
+class $modify(pololayer, MenuLayer) {
     void onMoreGames(CCObject* sender) {
         geode::createQuickPopup(
             "Polo",
