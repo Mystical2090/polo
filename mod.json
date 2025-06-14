@@ -103,12 +103,6 @@
                     "description": "Allows you to die",
                     "default": false
                 },
-                "disable-platformer-jump-anim": {
-                    "name": "disable platformer animations",
-                    "type": "bool",
-                    "description": "speedy help.",
-                    "default": false
-                },
                 "layout-mode": {
                     "name": "Layout Mode",
                     "type": "bool",
