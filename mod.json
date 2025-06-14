@@ -97,6 +97,12 @@
                 "description": "Bypasses practice music checkmark in settings.",
                 "default": false
                 },
+                "hide-pause-menu": {
+                    "name": "Hide Pause Menu",
+                    "type": "bool",
+                    "description": "speedy help.",
+                    "default": false
+                },
                 "layout-mode": {
                     "name": "Layout Mode",
                     "type": "bool",
