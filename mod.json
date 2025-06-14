@@ -97,6 +97,12 @@
                 "description": "Bypasses practice music checkmark in settings.",
                 "default": false
                 },
+                 "percentage": {
+                    "name": "Font Percentage",
+                    "type": "bool",
+                    "description": "wow.",
+                    "default": false
+                },
                 "layout-mode": {
                     "name": "Layout Mode",
                     "type": "bool",
