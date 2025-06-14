@@ -32,7 +32,6 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/hidepausebutton.cpp
     src/hacks/misc/colorhack.cpp
     src/hacks/misc/show-hitboxes.cpp
-    src/hacks/misc/noplatjump.cpp
     src/hacks/misc/instantcomplete.cpp
     src/hacks/misc/basementbypass.cpp
     src/hacks/misc/level-edit-on-pause-menu.cpp
