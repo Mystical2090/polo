@@ -13,7 +13,7 @@
 
 using namespace geode::prelude;
 
-class $modify(POPlayerHacks, PlayerObject) {
+class $modify(dick, PlayerObject) {
     void collidedWithObject(float p0, GameObject* obj, cocos2d::CCRect p2, bool p3) {
         if (Mod::get()->getSettingValue<bool>("everything-hurts")) {
             if (auto playLayer = PlayLayer::get()) {
