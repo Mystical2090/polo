@@ -8,7 +8,7 @@ else()
 endif()
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(cheatcheatthatsbadcheatcheatpolocilentfr VERSION 1.0.0)
+project(polo VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
@@ -37,7 +37,6 @@ add_library(${PROJECT_NAME} SHARED
     src/hacks/misc/main-levels.cpp
     src/hacks/misc/rainbow-icons.cpp
     src/hacks/misc/nowavepulse.cpp
-   # src/hacks/misc/safe-mode.cpp
     
 )
 
