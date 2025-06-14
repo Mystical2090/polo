@@ -1,8 +1,15 @@
 #include <Geode/Geode.hpp>
 
 void loadPlayerHacks();
-void loadGlobalHacks(); // hey gtx this file should get deleted tbh!
-// hey mystic this file is f=very useless!
+void loadGlobalHacks();
+void loadMiscHacks();
+void loadEditorHacks();
+void loadHacks();
+void Hacks();
+
 $on_mod(Loaded) {
-    // idk why i did void loadGlobalHacks theres no cpp file but cool ig idk also idgaf
+geode::log::info("Polo loaded");
+geode::log::info("Killing mystical433");
+geode::log::info("Killing gtxripmxt");
+geode::log::info("Killing speedyfriend67");
 }
