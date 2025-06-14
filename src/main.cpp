@@ -22,8 +22,12 @@ class $modify(MyMenuLayer, MenuLayer) {
             "Yippie", "Noooo!",
             [](auto popup, bool btn2) {
                 if (btn2) {
-                    int* crash = nullptr;
-                    *crash = 1337;
+                    FLAlertLayer::create (
+                    "Ok but im sad...",
+                    "Next time can you click yippie?",
+                    "Ok i will!"
+                )->show();
+
                 } else {
                     geode::createQuickPopup(
                         "Thanks!",
