@@ -1,4 +1,3 @@
-// time for hell!
-#include <Geode/Geode.hpp>
-using namespace geode::prelude;
+#include "fpsbypass.hpp"
 
+using namespace geode::prelude;
