@@ -9,7 +9,7 @@ void loadMiscHacks();
 void loadEditorHacks();
 void loadHacks();
 void Hacks();
-
+// the above functions are useless 
 $on_mod(Loaded) {
 
 }
