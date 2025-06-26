@@ -70,5 +70,5 @@ bool MainMenuWithImageButton::init() {
 }
 
 void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
-     MyPopup:: create ("MyPopup")->show() ;
+     MyPopup::create("MyPopup")->show();
 }
