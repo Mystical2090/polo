@@ -3,6 +3,7 @@
 #include <Geode/ui/GeodeUI.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/utils/cocos.hpp>
+#include "ui.hpp"
 
 using namespace geode::prelude;
 
@@ -69,5 +70,5 @@ bool MainMenuWithImageButton::init() {
 }
 
 void MainMenuWithImageButton::onSettingsButton(cocos2d::CCObject*) {
-     geode::openSettingsPopup(Mod::get(), true);
+     MyPopup:: create ("MyPopup")->show() ;
 }
