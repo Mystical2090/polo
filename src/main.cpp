@@ -1,5 +1,6 @@
 // i copied the excat code from geode docs
 // this doesnt really do anything
+// exccept for make it take a longer time to compile
 #include <Geode/loader/SettingV3.hpp>
 #include <Geode/loader/Mod.hpp>
 
