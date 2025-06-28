@@ -34,8 +34,6 @@
 #include <Geode/modify/GameManager.hpp>
 #include <Geode/modify/GameStatsManager.hpp>
 #include <Geode/modify/GameLevelManager.hpp>
-#include <Geode/modify/GameSoundManager.hpp>
-#include <Geode/modify/LocalLevelManager.hpp>
 #include <Geode/modify/GJGameLevel.hpp>
 #include <Geode/modify/LevelInfoLayer.hpp>
 #include <Geode/modify/LevelSearchLayer.hpp>
