@@ -6,12 +6,27 @@
 using namespace geode::prelude;
 
 enum class MyCustomEnum {
-    ValidEnumValue,
-    OtherValidEnumValue,
+    ValidEnumValue = 0,
+    OtherValidEnumValue = 1,
 };
 
 template <>
 struct matjson::Serialize<MyCustomEnum> {
+    static matjson::Value toJson(MyCustomEnum value) {
+        return matjson::Value(static_cast<int>(value));
+    }
+
+    static MyCustomEnum fromJson(const matjson::Value& val) {
+        if (!val.isInt()) {
+            throw std::runtime_error("Expected int for MyCustomEnum");
+        }
+        int v = val.asInt();
+        switch (v) {
+            case 0: return MyCustomEnum::ValidEnumValue;
+            case 1: return MyCustomEnum::OtherValidEnumValue;
+            default: throw std::runtime_error("Invalid MyCustomEnum value");
+        }
+    }
 };
 
 class MyCustomSettingV3 : public SettingBaseValueV3<MyCustomEnum> {
@@ -66,7 +81,7 @@ protected:
             toggle->m_notClickable = true;
             toggle->setTag(static_cast<int>(value.first));
             m_toggles.push_back(toggle);
-            
+
             this->getButtonMenu()->addChild(toggle);
         }
 
@@ -74,10 +89,10 @@ protected:
         this->getButtonMenu()->setLayout(RowLayout::create());
 
         this->updateState(nullptr);
-        
+
         return true;
     }
-    
+
     void updateState(CCNode* invoker) override {
         SettingValueNodeV3::updateState(invoker);
 
@@ -119,7 +134,6 @@ SettingNodeV3* MyCustomSettingV3::createNode(float width) {
     );
 }
 
-$execute {
-    // errors
-    (void)Mod::get()->registerCustomSettingType("my-awesome-type", &MyCustomSettingV3::parse);
+void registerMyCustomSetting() {
+    Mod::get()->registerCustomSettingType("my-awesome-type", &MyCustomSettingV3::parse);
 }
