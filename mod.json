@@ -212,6 +212,16 @@
                     "description": ".....",
                     "default": false
                 },
+        "yes": {
+            "type": "title",
+            "name": "Other...."
+        },  
+            "my-setting": {
+                "type": "custom:my-awesome-type",
+                "name": "Useless!",
+                "default": "my-custom-enum-value"
+        },
+
         "creator": {
             "type": "title",
             "name": "Editor"
