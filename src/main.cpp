@@ -6,8 +6,8 @@
 using namespace geode::prelude;
 
 enum class MyCustomEnum {
-    ValidEnumValue = 0,
-    OtherValidEnumValue = 1,
+    ValidEnumValue,
+    OtherValidEnumValue,
 };
 
 template <>
@@ -17,14 +17,15 @@ struct matjson::Serialize<MyCustomEnum> {
     }
 
     static MyCustomEnum fromJson(const matjson::Value& val) {
-        if (!val.isInt()) {
-            throw std::runtime_error("Expected int for MyCustomEnum");
+        auto res = val.tryGet<int>();
+        if (!res) {
+            throw std::runtime_error("Failed to parse MyCustomEnum: not an int");
         }
-        int v = val.asInt();
+        int v = *res;
         switch (v) {
             case 0: return MyCustomEnum::ValidEnumValue;
             case 1: return MyCustomEnum::OtherValidEnumValue;
-            default: throw std::runtime_error("Invalid MyCustomEnum value");
+            default: throw std::runtime_error("Invalid value for MyCustomEnum");
         }
     }
 };
@@ -134,6 +135,6 @@ SettingNodeV3* MyCustomSettingV3::createNode(float width) {
     );
 }
 
-void registerMyCustomSetting() {
-    Mod::get()->registerCustomSettingType("my-awesome-type", &MyCustomSettingV3::parse);
+$execute {
+    (void)Mod::get()->registerCustomSettingType("my-awesome-type", &MyCustomSettingV3::parse);
 }
