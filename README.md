@@ -37,7 +37,7 @@ Additionally, thank you to our testers!
   ) - Tester
 - [Mystical433](https://github.com/mystical2090) - Tester, Owner, Lead Developer
 - [gtxripmxt](https://github.com/gtxripmxt) - Tester, Owner, Lead Developer
-- [Speedyfriend67](https://github.com/speedyfriend67) - Tester, Developer, Owner, Backend-Developer
+- [Speedyfriend67](https://github.com/speedyfriend67) - Tester, ~~Developer~~, ~~Owner~~, ~~Backend-Developer~~
 
 ## DISCLAIMER
 > [!NOTE]
