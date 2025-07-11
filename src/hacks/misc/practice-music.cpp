@@ -3,9 +3,11 @@
 
 using namespace geode::prelude;
 
+extern bool practiceMusicHackEnabled;
+
 class $modify(GameStatsManager) {
     bool isItemUnlocked(UnlockType type, int itemID) {
-        if (Mod::get()->getSettingValue<bool>("practice-music")) {
+        if (practiceMusicHackEnabled) {
             if (type == UnlockType::GJItem && itemID == 17) {
                 return true;
             }
