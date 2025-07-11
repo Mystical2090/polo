@@ -3,6 +3,10 @@
 
 using namespace geode::prelude;
 
+extern bool showHitboxesEnabled;
+
+extern bool showHitboxesOnDeathEnabled;
+
 class $modify(PlayLayer) {
     static void onModify(auto& self) {
         (void)self.setHookPriority("PlayLayer::updateVisibility", -6969);
@@ -14,8 +18,8 @@ class $modify(PlayLayer) {
         if (!m_debugDrawNode)
             return;
 
-        bool showAlways = Mod::get()->getSettingValue<bool>("show-hitboxes");
-        bool showOnDeath = Mod::get()->getSettingValue<bool>("show-hitboxes-on-death");
+        bool showAlways = showHitboxesEnabled;
+        bool showOnDeath = showHitboxesOnDeathEnabled;
 
         bool shouldVis =
             (GameManager::sharedState()->getGameVariable("0166") && m_isPracticeMode) ||
