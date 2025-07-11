@@ -3,6 +3,7 @@
 
 using namespace geode::prelude;
 
+extern bool instantCompleteEnabled;
 class $modify(GJBaseGameLayer) {
     struct Fields {
         bool hasCompleted = false;
@@ -11,7 +12,7 @@ class $modify(GJBaseGameLayer) {
     void update(float dt) override {
         GJBaseGameLayer::update(dt);
         
-        if (!Mod::get()->getSettingValue<bool>("instant-complete"))
+        if (!instantCompleteEnabled)
             return;
 
         if (auto playLayer = typeinfo_cast<PlayLayer*>(this)) {
