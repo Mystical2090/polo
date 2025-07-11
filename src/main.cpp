@@ -1,149 +1,49 @@
 #include <Geode/Geode.hpp>
 #include <imgui-cocos.hpp>
-#include <fstream>
-#include <sstream>
 
 using namespace geode::prelude;
 
 // player
-bool noclipEnabled = false;
-bool ignoreInputsEnabled = false;
-bool jumpHackEnabled = false;
-bool autoclickerEnabled = false;
+bool noclipEnabled = Mod::get()->getSavedValue<bool>("noclip-enabled", false);
+bool ignoreInputsEnabled = Mod::get()->getSavedValue<bool>("ignore-inputs-enabled", false);
+bool jumpHackEnabled = Mod::get()->getSavedValue<bool>("jump-hack-emabled", false);
+bool autoclickerEnabled = Mod::get()->getSavedValue<bool>("auto-clicker-enabled", false);
 
 // editor
-bool verifyHackEnabled = false;
-bool copyHackEnabled = false;
-bool noCMarkEnabled = false;
-bool customObjectsBypassEnabled = false;
+bool verifyHackEnabled = Mod::get()->getSavedValue<bool>("verify-hack-enabled", false);
+bool copyHackEnabled = Mod::get()->getSavedValue<bool>("copy-hack-enabled", false);
+bool noCMarkEnabled = Mod::get()->getSavedValue<bool>("no-c-mark-enabled", false);
+bool customObjectsBypassEnabled = Mod::get()->getSavedValue<bool>("custom-objects-bypass-enabled", false);
 
 // misc
-float speedhackValue = 1.0f;
-float noWavePulseValue = 1.0f;
-bool practiceMusicHackEnabled = false;
-bool hidePauseButtonEnabled = false;
-bool layoutModeEnabled = false;
-bool commentHistoryBypassEnabled = false;
-bool autoPracticeEnabled = false;
-bool iconHackEnabled = false;
-bool colorHackEnabled = false;
-bool noSolidsEnabled = false;
-bool suicideEnabled = false;
-bool showHitboxesEnabled = false;
-bool yes = false;
-bool showHitboxesOnDeathEnabled = false;
-bool rainbowIconsEnabled = false;
-bool everythingKillsYouEnabled = false;
-bool safeModeEnabled = false;
-bool instantCompleteEnabled = false;
-bool basementBypassEnabled = false;
-bool levelEditEnabled = false;
-bool mainLevelBypassEnabled = false;
-bool towerBypassEnabled = false;
-bool noGlowEnabled = false;
-
-std::string getSettingsPath() {
-    return (Mod::get()->getConfigDir() / "polo_settings.txt").string();
-}
-
-void saveSettings() {
-    std::ofstream file(getSettingsPath());
-    if (file.is_open()) {
-        file << "noclip=" << noclipEnabled << "\n";
-        file << "ignoreInputs=" << ignoreInputsEnabled << "\n";
-        file << "jumpHack=" << jumpHackEnabled << "\n";
-        file << "autoclicker=" << autoclickerEnabled << "\n";
-
-        file << "verifyHack=" << verifyHackEnabled << "\n";
-        file << "copyHack=" << copyHackEnabled << "\n";
-        file << "noCMark=" << noCMarkEnabled << "\n";
-        file << "customObjectsBypass=" << customObjectsBypassEnabled << "\n";
-
-        file << "speedhackValue=" << speedhackValue << "\n";
-        file << "noWavePulseValue=" << noWavePulseValue << "\n";
-        file << "practiceMusicHack=" << practiceMusicHackEnabled << "\n";
-        file << "hidePauseButton=" << hidePauseButtonEnabled << "\n";
-        file << "layoutMode=" << layoutModeEnabled << "\n";
-        file << "commentHistoryBypass=" << commentHistoryBypassEnabled << "\n";
-        file << "autoPractice=" << autoPracticeEnabled << "\n";
-        file << "iconHack=" << iconHackEnabled << "\n";
-        file << "colorHack=" << colorHackEnabled << "\n";
-        file << "noSolids=" << noSolidsEnabled << "\n";
-        file << "suicide=" << suicideEnabled << "\n";
-        file << "showHitboxes=" << showHitboxesEnabled << "\n";
-        file << "showHitboxesOnDeath=" << showHitboxesOnDeathEnabled << "\n";
-        file << "rainbowIcons=" << rainbowIconsEnabled << "\n";
-        file << "everythingKillsYou=" << everythingKillsYouEnabled << "\n";
-        file << "safeMode=" << safeModeEnabled << "\n";
-        file << "instantComplete=" << instantCompleteEnabled << "\n";
-        file << "basementBypass=" << basementBypassEnabled << "\n";
-        file << "levelEdit=" << levelEditEnabled << "\n";
-        file << "mainLevelBypass=" << mainLevelBypassEnabled << "\n";
-        file << "towerBypass=" << towerBypassEnabled << "\n";
-        file << "noGlow=" << noGlowEnabled << "\n";
-        
-        file.close();
-    }
-}
-
-void loadSettings() {
-    std::ifstream file(getSettingsPath());
-    if (!file.is_open()) {
-        return;
-    }
-    
-    std::string line;
-    while (std::getline(file, line)) {
-        size_t pos = line.find('=');
-        if (pos != std::string::npos) {
-            std::string key = line.substr(0, pos);
-            std::string value = line.substr(pos + 1);
-            
-            if (key == "noclip") noclipEnabled = (value == "1");
-            else if (key == "ignoreInputs") ignoreInputsEnabled = (value == "1");
-            else if (key == "jumpHack") jumpHackEnabled = (value == "1");
-            else if (key == "autoclicker") autoclickerEnabled = (value == "1");
-            
-            else if (key == "verifyHack") verifyHackEnabled = (value == "1");
-            else if (key == "copyHack") copyHackEnabled = (value == "1");
-            else if (key == "noCMark") noCMarkEnabled = (value == "1");
-            else if (key == "customObjectsBypass") customObjectsBypassEnabled = (value == "1");
-            
-            else if (key == "speedhackValue") speedhackValue = std::stof(value);
-            else if (key == "noWavePulseValue") noWavePulseValue = std::stof(value);
-            else if (key == "practiceMusicHack") practiceMusicHackEnabled = (value == "1");
-            else if (key == "hidePauseButton") hidePauseButtonEnabled = (value == "1");
-            else if (key == "layoutMode") layoutModeEnabled = (value == "1");
-            else if (key == "commentHistoryBypass") commentHistoryBypassEnabled = (value == "1");
-            else if (key == "autoPractice") autoPracticeEnabled = (value == "1");
-            else if (key == "iconHack") iconHackEnabled = (value == "1");
-            else if (key == "colorHack") colorHackEnabled = (value == "1");
-            else if (key == "noSolids") noSolidsEnabled = (value == "1");
-            else if (key == "suicide") suicideEnabled = (value == "1");
-            else if (key == "showHitboxes") showHitboxesEnabled = (value == "1");
-            else if (key == "showHitboxesOnDeath") showHitboxesOnDeathEnabled = (value == "1");
-            else if (key == "rainbowIcons") rainbowIconsEnabled = (value == "1");
-            else if (key == "everythingKillsYou") everythingKillsYouEnabled = (value == "1");
-            else if (key == "safeMode") safeModeEnabled = (value == "1");
-            else if (key == "instantComplete") instantCompleteEnabled = (value == "1");
-            else if (key == "basementBypass") basementBypassEnabled = (value == "1");
-            else if (key == "levelEdit") levelEditEnabled = (value == "1");
-            else if (key == "mainLevelBypass") mainLevelBypassEnabled = (value == "1");
-            else if (key == "towerBypass") towerBypassEnabled = (value == "1");
-            else if (key == "noGlow") noGlowEnabled = (value == "1");
-        }
-    }
-    file.close();
-}
+float speedhackValue = Mod::get()->getSavedValue<float>("speedhack-value");
+float noWavePulseValue = Mod::get()->getSavedValue<float>("no-wave-pulse-value");
+bool practiceMusicHackEnabled = Mod::get()->getSavedValue<bool>("practice-music-hack-enabled", false);
+bool hidePauseButtonEnabled = Mod::get()->getSavedValue<bool>("hide-pause-button-enabled", false);
+bool layoutModeEnabled = Mod::get()->getSavedValue<bool>("layout-mode-enabled", false);
+bool commentHistoryBypassEnabled = Mod::get()->getSavedValue<bool>("comment-history-bypass-enabled", false);
+bool autoPracticeEnabled = Mod::get()->getSavedValue<bool>("auto-practice-enabled", false);
+bool iconHackEnabled = Mod::get()->getSavedValue<bool>("icon-hack-enabled", false);
+bool colorHackEnabled = Mod::get()->getSavedValue<bool>("color-hack-enabled", false);
+bool noSolidsEnabled = Mod::get()->getSavedValue<bool>("no-solids-enabled", false);
+bool suicideEnabled = Mod::get()->getSavedValue<bool>("suicide-enabled", false);
+bool showHitboxesEnabled = Mod::get()->getSavedValue<bool>("show-hitboxes-enabled", false);
+bool yes = Mod::get()->getSavedValue<bool>("yes-btw-hi", false);
+bool showHitboxesOnDeathEnabled = Mod::get()->getSavedValue<bool>("show-hitboxes-on-death-enabled", false);
+bool rainbowIconsEnabled = Mod::get()->getSavedValue<bool>("rainbow-icons-enabled", false);
+bool everythingKillsYouEnabled = Mod::get()->getSavedValue<bool>("everything-kills-you-enabled", false);
+bool safeModeEnabled = Mod::get()->getSavedValue<bool>("safe-mode-enabled", false);
+bool instantCompleteEnabled = Mod::get()->getSavedValue<bool>("instant-complete-enabled", false);
+bool basementBypassEnabled = Mod::get()->getSavedValue<bool>("basement-bypass-enabled", false);
+bool levelEditEnabled = Mod::get()->getSavedValue<bool>("level-edit-bypass-enabled", false);
+bool mainLevelBypassEnabled = Mod::get()->getSavedValue<bool>("main-level-bypass-enabled", false);
+bool towerBypassEnabled = Mod::get()->getSavedValue<bool>("tower-bypass-enabled", false);
+bool noGlowEnabled = Mod::get()->getSavedValue<bool>("no-glow-enabled", false);
 
 $on_mod(Loaded) {
-    loadSettings();
-    
     ImGuiCocos::get().setup([] {
         ImGui::StyleColorsDark();
-    }).draw([]() {
-        bool settingsChanged = false;
-        
+    }).draw([]() {        
         ImGui::Begin("Polo", nullptr, ImGuiWindowFlags_NoCollapse);
         if (ImGui::BeginTabBar("Polo")) {
             if (ImGui::BeginTabItem("Misc")) {
@@ -151,11 +51,11 @@ $on_mod(Loaded) {
                 ImGui::SameLine();
 #ifdef GEODE_IS_IOS
                 if (ImGui::InputFloat("##speedhack", &speedhackValue, 0.0f, 0.0f, "%.5f", ImGuiInputTextFlags_CharsDecimal)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("speedhack-value", speedhackValue);
                 }
 #else
                 if (ImGui::InputFloat("##speedhack", &speedhackValue, 0.0f, 0.0f, "%.5f")) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("speedhack-value", speedhackValue);
                 }
 #endif
                 
@@ -163,132 +63,132 @@ $on_mod(Loaded) {
                 ImGui::SameLine();
 #ifdef GEODE_IS_IOS
                 if (ImGui::InputFloat("##nowavepulse", &noWavePulseValue, 0.0f, 0.0f, "%.5f", ImGuiInputTextFlags_CharsDecimal)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("no-wave-pulse-value", noWavePulseValue);
                 }
 #else
                 if (ImGui::InputFloat("##nowavepulse", &noWavePulseValue, 0.0f, 0.0f, "%.5f")) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("no-wave-pulse-value", noWavePulseValue);
                 }
 #endif
                 
                 ImGui::Text("practice music hack");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##practicemusichack", &practiceMusicHackEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("practice-music-hack-enabled", practiceMusicHackEnabled);
                 }
                 
                 ImGui::Text("hide pause button");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##hidepausebutton", &hidePauseButtonEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("hide-pause-button-enabled", hidePauseButtonEnabled);                
                 }
                 
                 ImGui::Text("layout mode");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##layoutmode", &layoutModeEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("layout-mode-enabled", layoutModeEnabled);
                 }
                 
                 ImGui::Text("comment history bypass");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##commenthistorybypass", &commentHistoryBypassEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("comment-history-bypass", commentHistoryBypassEnabled);
                 }
                 
                 ImGui::Text("auto practice");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##autopractice", &autoPracticeEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("auto-practice-enabled", autoPracticeEnabled);
                 }
                 
                 ImGui::Text("icon hack");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##iconhack", &iconHackEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("icon-hack-enabled", iconHackEnabled);
                 }
                 
                 ImGui::Text("color hack");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##colorhack", &colorHackEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("color-hack-enabled", colorHackEnabled);
                 }
                 
                 ImGui::Text("no solids");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##nosolids", &noSolidsEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("no-solids-enabled", noSolidsEnabled);
                 }
                 
                 ImGui::Text("suicide");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##suicide", &suicideEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("suicide-enabled", suicideEnabled);
                 }
                 
                 ImGui::Text("show hitboxes");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##showhitboxes", &showHitboxesEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("show-hitboxes-enabled", showHitboxesEnabled);
                 }
                 
                 ImGui::Text("show hitboxes on death");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##showhitboxesondeath", &showHitboxesOnDeathEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("show-hitboxes-on-death-enabled", showHitboxesOnDeathEnabled);
                 }
                 
                 ImGui::Text("rainbow icons");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##rainbowicons", &rainbowIconsEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("raindow-icons-enabled", rainbowIconsEnabled);
                 }
                 
                 ImGui::Text("everything kills you");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##everythingkillsyou", &everythingKillsYouEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("everything-kills-you", everythingKillsYouEnabled);
                 }
                 
                 ImGui::Text("safe mode");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##safemode", &safeModeEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("safe-mode-enabled", safeModeEnabled);
                 }
                 
                 ImGui::Text("instant complete");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##instantcomplete", &instantCompleteEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("instant-complete-enabled", instantCompleteEnabled);
                 }
                 
                 ImGui::Text("basement bypass");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##basementbypass", &basementBypassEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("basement-bypass-enabled", basementBypassEnabled);
                 }
                 
                 ImGui::Text("level edit");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##leveledit", &levelEditEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("level-edit-enabled", levelEditEnabled);
                 }
                 
                 ImGui::Text("main level bypass");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##mainlevelbypass", &mainLevelBypassEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("main-level-bypass-enabled", mainLevelBypassEnabled);
                 }
                 
                 ImGui::Text("tower bypass");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##towerbypass", &towerBypassEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("tower-bypass-enabled", towerBypassEnabled);
                 }
                 
                 ImGui::Text("no glow");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##noglow", &noGlowEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("no-glow-enabled", noGlowEnabled);
                 }
                 
                 ImGui::EndTabItem();
@@ -297,25 +197,25 @@ $on_mod(Loaded) {
                 ImGui::Text("verify hack");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##verifyhack", &verifyHackEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("verify-hack-enabled", verifyHackEnabled);
                 }
                 
                 ImGui::Text("copy hack");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##copyhack", &copyHackEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("copy-hack-enabled", copyHackEnabled);
                 }
                 
                 ImGui::Text("no c mark");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##nocmark", &noCMarkEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("no-c-mark-enabled", noCMarkEnabled);
                 }
                 
                 ImGui::Text("custom objects bypass");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##customobjectsbypass", &customObjectsBypassEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("custom-object-bypass", customObjectsBypassEnabled);
                 }
                 
                 ImGui::EndTabItem();
@@ -325,31 +225,31 @@ $on_mod(Loaded) {
                 ImGui::Text("noclip");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##noclip", &noclipEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("noclip-enabled", noclipEnabled);
                 }
                 
                 ImGui::Text("ignore inputs");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##ignoreinputs", &ignoreInputsEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("ignore-inputs-enabled", ignoreInputsEnabled);
                 }
                 
                 ImGui::Text("jump hack");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##jumphack", &jumpHackEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("jump-hack-enabled", jumpHackEnabled);
                 }
                 
                 ImGui::Text("autoclicker");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##autoclicker", &autoclickerEnabled)) {
-                    settingsChanged = true;
+                    Mod::get()->setSavedValue("auto-clicker-enabled", autoclickerEnabled);
                 }
                 ImGui::EndTabItem();
             }
                 
             if (ImGui::BeginTabItem("Credits")) {
-                ImGui::Text("Gtxx9003, Developer, Features, more..");
+                ImGui::Text("gtxx9003, Developer, Features, more..");
                 ImGui::Text("Mystical433, Leader Developer, Features, ui, more...");
                 ImGui::Text("Speedyfriend67, Developer, Bug fixes");
                 ImGui::EndTabItem();
@@ -363,24 +263,15 @@ $on_mod(Loaded) {
                 
                 ImGui::Separator();
                 
-                if (ImGui::Button("Save Settings")) {
-                    saveSettings();
-                }
+                if (ImGui::Button("Export Settings")) {}
                 ImGui::SameLine();
-                if (ImGui::Button("Load Settings")) {
-                    loadSettings();
-                }
+                if (ImGui::Button("Load Settings")) {}
                 
                 ImGui::EndTabItem();
             }
             ImGui::EndTabBar();
         }
         ImGui::End();
-        
-        // Auto-save when settings change
-        if (settingsChanged) {
-            saveSettings();
-        }
     });
 }
 
