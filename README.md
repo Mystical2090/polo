@@ -1,6 +1,5 @@
 # Polo
 A **superior** mod menu for Geometry Dash.
-Also very dogshit (Many bugs stupid never will be released etc..)
 
 ## How to use
 1. On PC/Mobile, press the settings icon to open the mod menu.
