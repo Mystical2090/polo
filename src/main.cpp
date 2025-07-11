@@ -40,6 +40,7 @@ bool mainLevelBypassEnabled = Mod::get()->getSavedValue<bool>("main-level-bypass
 bool towerBypassEnabled = Mod::get()->getSavedValue<bool>("tower-bypass-enabled", false);
 bool noGlowEnabled = Mod::get()->getSavedValue<bool>("no-glow-enabled", false);
 bool SolidWave = Mod::get()->getSavedValue<bool>("SolidWave", false);
+bool noWavePulse = Mod::get()->getSavedValue<bool>("noWavePulse", false);
 $on_mod(Loaded) {
     ImGuiCocos::get().setup([] {
         ImGui::StyleColorsDark();
@@ -178,7 +179,13 @@ $on_mod(Loaded) {
                 if (ImGui::Checkbox("##mainlevelbypass", &mainLevelBypassEnabled)) {
                     Mod::get()->setSavedValue("main-level-bypass-enabled", mainLevelBypassEnabled);
                 }
-                
+
+                ImGui::Text("No Wave Pulse");
+                ImGui::SameLine();
+                if (ImGui::Checkbox("##noWavePulse", &noWavePulse)) {
+                     Mod::get()->getSavedValue<bool>("noWavePulse", noWavePulse);
+                }
+
                 ImGui::Text("tower bypass");
                 ImGui::SameLine();
                 if (ImGui::Checkbox("##towerbypass", &towerBypassEnabled)) {
