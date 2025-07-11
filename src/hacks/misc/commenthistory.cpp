@@ -3,10 +3,12 @@
 
 using namespace geode::prelude;
 
+extern bool commentHistoryBypassEnabled;
+
 class $modify(ProfilePage) {
 public:
     void loadPageFromUserInfo(GJUserScore* p0) {
-        if (Mod::get()->getSettingValue<bool>("commenthistory")) {
+        if (commentHistoryBypassEnabled) {
             auto state = p0->m_commentHistoryStatus;
             p0->m_commentHistoryStatus = 0;
 
