@@ -3,14 +3,15 @@
 
 using namespace geode::prelude;
 
+extern float speedhackValue;
+
 class $modify(Speedhack, GJBaseGameLayer) {
 public:
-    void update(float dt) { // delta time is bad
-        if (Mod::get()->getSettingValue<bool>("speedhack-bool")) {
-            float multiplier = Mod::get()->getSettingValue<float>("speedhack");
-            GJBaseGameLayer::update(dt * multiplier);
+    void update(float dt) {
+        if (speedhackValue != 1.0f) {
+            GJBaseGameLayer::update(dt * speedhackValue);
         } else {
             GJBaseGameLayer::update(dt);
         }
     }
-};   // dinno if itll work or not but migjt eork dhdnn
+};
