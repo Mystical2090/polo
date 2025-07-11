@@ -4,12 +4,14 @@
 
 using namespace geode::prelude;
 
+extern bool basementBypassEnabled;
+
 class $modify(SecretLayer2) {
 public:
     void onDoor(cocos2d::CCObject* sender) {
         auto originalUGV = GameManager::get()->getUGV("4");
 
-        if (Mod::get()->getSettingValue<bool>("basement-bypass")) {
+        if (basementBypassEnabled) {
             GameManager::get()->setUGV("4", true);
         }
 
