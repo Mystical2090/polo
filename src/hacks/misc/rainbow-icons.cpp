@@ -5,16 +5,15 @@
 
 using namespace geode::prelude;
 
-// Simplified structure
+extern bool rainbowIconsEnabled;
+
 struct RainbowSettings {
     bool enable;
 };
 
-// Only fetch the enable flag
 RainbowSettings getModSettings() {
-    auto mod = Mod::get();
     return {
-        mod->getSettingValue<bool>("rainbow"),
+        rainbowIconsEnabled
     };
 }
 
