@@ -49,19 +49,16 @@ std::string getSettingsPath() {
 void saveSettings() {
     std::ofstream file(getSettingsPath());
     if (file.is_open()) {
-        // Player settings
         file << "noclip=" << noclipEnabled << "\n";
         file << "ignoreInputs=" << ignoreInputsEnabled << "\n";
         file << "jumpHack=" << jumpHackEnabled << "\n";
         file << "autoclicker=" << autoclickerEnabled << "\n";
-        
-        // Editor settings
+
         file << "verifyHack=" << verifyHackEnabled << "\n";
         file << "copyHack=" << copyHackEnabled << "\n";
         file << "noCMark=" << noCMarkEnabled << "\n";
         file << "customObjectsBypass=" << customObjectsBypassEnabled << "\n";
-        
-        // Misc settings
+
         file << "speedhackValue=" << speedhackValue << "\n";
         file << "noWavePulseValue=" << noWavePulseValue << "\n";
         file << "practiceMusicHack=" << practiceMusicHackEnabled << "\n";
@@ -92,7 +89,7 @@ void saveSettings() {
 void loadSettings() {
     std::ifstream file(getSettingsPath());
     if (!file.is_open()) {
-        return; // File doesn't exist, use defaults
+        return;
     }
     
     std::string line;
@@ -102,19 +99,16 @@ void loadSettings() {
             std::string key = line.substr(0, pos);
             std::string value = line.substr(pos + 1);
             
-            // Player settings
             if (key == "noclip") noclipEnabled = (value == "1");
             else if (key == "ignoreInputs") ignoreInputsEnabled = (value == "1");
             else if (key == "jumpHack") jumpHackEnabled = (value == "1");
             else if (key == "autoclicker") autoclickerEnabled = (value == "1");
             
-            // Editor settings
             else if (key == "verifyHack") verifyHackEnabled = (value == "1");
             else if (key == "copyHack") copyHackEnabled = (value == "1");
             else if (key == "noCMark") noCMarkEnabled = (value == "1");
             else if (key == "customObjectsBypass") customObjectsBypassEnabled = (value == "1");
             
-            // Misc settings
             else if (key == "speedhackValue") speedhackValue = std::stof(value);
             else if (key == "noWavePulseValue") noWavePulseValue = std::stof(value);
             else if (key == "practiceMusicHack") practiceMusicHackEnabled = (value == "1");
@@ -143,7 +137,7 @@ void loadSettings() {
 }
 
 $on_mod(Loaded) {
-    loadSettings(); // Load settings on mod startup
+    loadSettings();
     
     ImGuiCocos::get().setup([] {
         ImGui::StyleColorsDark();
