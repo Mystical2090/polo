@@ -7,7 +7,7 @@ extern bool customObjectsBypassEnabled;
 
 class $modify(CustumObjectBypass, EditorUI) {
     void onNewCustomItem(CCObject* pSender) {
-        if (!customObjectsBypassEnabled)) return EditorUI::onNewCustomItem(pSender);
+        if (!customObjectsBypassEnabled) return EditorUI::onNewCustomItem(pSender);
         if (m_selectedObjects && m_selectedObjects->count() > 0) {
             if (auto gameManager = GameManager::sharedState()) {
                 CCArray* objectsToCopy = m_selectedObjects->count() == 0 
