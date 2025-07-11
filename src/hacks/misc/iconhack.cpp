@@ -2,7 +2,7 @@
 #include <Geode/modify/GameManager.hpp>
 using namespace geode::prelude;
 
-extern bool colorHackEnabled;
+extern bool iconHackEnabled;
 
 class $modify(MyMenuLayer, GameManager) {
     bool isIconUnlocked(int p0, IconType p1) {
