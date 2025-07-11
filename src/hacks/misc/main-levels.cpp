@@ -4,11 +4,13 @@
 
 using namespace geode::prelude;
 
+extern bool mainLevelBypassEnabled;
+
 class $modify(LevelPage) {
     void onPlay(cocos2d::CCObject* sender) {
         auto v = m_level->m_requiredCoins;
 
-        if (Mod::get()->getSettingValue<bool>("main-levels"))
+        if (mainLevelBypassEnabled)
             m_level->m_requiredCoins = 0;
 
         LevelPage::onPlay(sender);
@@ -22,7 +24,7 @@ class $modify(LevelAreaInnerLayer) {
         if (!LevelAreaInnerLayer::init(p0))
             return false;
 
-        if (!Mod::get()->getSettingValue<bool>("tower-levels"))
+        if (!mainLevelBypassEnabled)
             return true;
 
         auto x = this->getChildByType<CCNode>(1);
