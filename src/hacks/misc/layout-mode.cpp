@@ -37,9 +37,11 @@ lets stop */
 #include <Geode/modify/GJBaseGameLayer.hpp>
 using namespace geode::prelude;
 
+extern bool layoutModeEnabled;
+
 class $modify(GameObject) {
     void setVisible(bool v) {
-        if (Mod::get()->getSettingValue<bool>("layout-mode")) {
+        if (layoutModeEnabled) {
             if (m_objectType == GameObjectType::Decoration &&
                 m_objectID != 44 && // 44 is checkpoints cus apparently thats a quote decoration lmao
                 m_objectID != 38 &&
