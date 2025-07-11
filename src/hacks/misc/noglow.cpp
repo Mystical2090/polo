@@ -3,9 +3,11 @@
 
 using namespace geode::prelude;
 
+extern bool noGlowEnabled;
+
 class $modify(PlayLayer) {
     void addObject(GameObject* obj) {
-        if (Mod::get()->getSettingValue<bool>("noglow")) {
+        if (noGlowEnabled) {
             obj->m_hasNoGlow = true;
         }
 
