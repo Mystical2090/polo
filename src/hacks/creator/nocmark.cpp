@@ -3,9 +3,11 @@
 // nevermind
 using namespace geode::prelude;
 
+extern bool noCMarkEnabled;
+
 class $modify(EditLevelLayer) {
     void onShare(CCObject* sender) {
-        if (Mod::get()->getSettingValue<bool>("noc")) {
+        if (noCMarkEnabled) {
             this->m_level->m_originalLevel = 0;
         }
 
