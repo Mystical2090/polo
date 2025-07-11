@@ -1,7 +1,7 @@
 #include <Geode/modify/CCDrawNode.hpp>
 using namespace geode::prelude;
 
-extern bool SolidWave
+extern bool SolidWave;
 
 class $modify (CCDrawNode) {
     bool drawPolygon(CCPoint *verts, unsigned int count, const ccColor4F &fillColor, float borderWidth, const ccColor4F &borderColor)
