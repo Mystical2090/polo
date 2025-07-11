@@ -3,12 +3,14 @@
 
 using namespace geode::prelude;
 
+extern bool hidePauseButtonEnabled;
+
 class $modify(UILayerMod, UILayer) {
     bool init(GJBaseGameLayer* p0) {
         if (!UILayer::init(p0))
             return false;
 
-        if (Mod::get()->getSettingValue<bool>("hide-pause-button")) {
+        if (hidePauseButtonEnabled) {
             if (auto menu = this->getChildByType<CCMenu>(0)) {
                 if (auto btn = menu->getChildByType<CCMenuItemSpriteExtra>(0)) {
                     if (auto sprite = btn->getNormalImage()) {
