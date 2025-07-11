@@ -35,7 +35,6 @@ add_library(${PROJECT_NAME} SHARED
     src/main.cpp
     src/hacks/misc/everytinghurtsandnosolids.cpp
     src/hacks/misc/commenthistory.cpp
-    src/Button.cpp
     src/hacks/Player/Noclip.cpp
     src/hacks/Player/jumphack.cpp
     src/hacks/misc/safemode.cpp
