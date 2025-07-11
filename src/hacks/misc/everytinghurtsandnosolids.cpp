@@ -14,15 +14,18 @@
 
 using namespace geode::prelude;
 
+extern bool everythingKillsYouEnabled;
+extern bool noSolidsEnabled;
+
 class $modify(dick, PlayerObject) {
     void collidedWithObject(float p0, GameObject* obj, cocos2d::CCRect p2, bool p3) {
-        if (Mod::get()->getSettingValue<bool>("everything-hurts")) {
+        if (everythingKillsYouEnabled) {
             if (auto playLayer = PlayLayer::get()) {
                 playLayer->destroyPlayer(this, obj);
             }
         }
 
-        if (!Mod::get()->getSettingValue<bool>("no-solids")) {
+        if (!noSolidsEnabled) {
             PlayerObject::collidedWithObject(p0, obj, p2, p3);
         }
     }
