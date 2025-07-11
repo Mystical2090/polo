@@ -39,7 +39,7 @@ bool levelEditEnabled = Mod::get()->getSavedValue<bool>("level-edit-bypass-enabl
 bool mainLevelBypassEnabled = Mod::get()->getSavedValue<bool>("main-level-bypass-enabled", false);
 bool towerBypassEnabled = Mod::get()->getSavedValue<bool>("tower-bypass-enabled", false);
 bool noGlowEnabled = Mod::get()->getSavedValue<bool>("no-glow-enabled", false);
-
+bool SolidWave = Mod::get()->getSavedValue<bool>("SolidWave", false);
 $on_mod(Loaded) {
     ImGuiCocos::get().setup([] {
         ImGui::StyleColorsDark();
