@@ -3,6 +3,8 @@
 
 using namespace geode::prelude;
 
+extern bool suicideEnabled;
+
 class $modify(InstantRespawn, PlayLayer) {
     bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
         if (!PlayLayer::init(level, useReplay, dontCreateObjects)) {
@@ -13,7 +15,7 @@ class $modify(InstantRespawn, PlayLayer) {
     void destroyPlayer(PlayerObject* player, GameObject* obstacle) {
         PlayLayer::destroyPlayer(player, obstacle);
 
-        bool instantRespawnEnabled = Mod::get()->getSettingValue<bool>("instant-respawn");
+        bool instantRespawnEnabled = suicideEnabled;
         if (instantRespawnEnabled) {
             this->resetLevel();
         }
