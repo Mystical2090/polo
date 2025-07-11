@@ -187,7 +187,7 @@ $on_mod(Loaded) {
 
                 ImGui::Text("Solid Wave Trail");
                 ImGui::SameLine();
-                if (ImGui::Checkbox("##solidwavetrail", &"SolidWave")) {
+                if (ImGui::Checkbox("##solidwavetrail", &SolidWave)) {
                     Mod::get()->getSavedValue("SolidWave", SolidWave);
                 }
                 
