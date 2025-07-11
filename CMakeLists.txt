@@ -34,6 +34,7 @@ CPMAddPackage("gh:matcool/gd-imgui-cocos#653e533")
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
     src/hacks/misc/Solidwavetrail.cpp
+    src/hacks/misc/NoWavepulse.cpp
     src/hacks/misc/everytinghurtsandnosolids.cpp
     src/hacks/misc/commenthistory.cpp
     src/hacks/Player/Noclip.cpp
