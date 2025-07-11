@@ -1,14 +1,12 @@
-// qolmod go brrrrr anyways thanks doggo
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
 using namespace geode::prelude;
 
+extern bool jumpHackEnabled;
+
 class $modify(JumpHack, GJBaseGameLayer) {
 public:
     void update(float dt) override {
-        auto mod = Mod::get();
-        bool jumpHackEnabled = mod->getSettingValue<bool>("enable-jump-hack");
-        
         if (jumpHackEnabled && m_player1) {
             m_player1->m_isOnGround = true;
         }
