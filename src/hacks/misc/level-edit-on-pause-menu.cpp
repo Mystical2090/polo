@@ -3,13 +3,15 @@
 
 using namespace geode::prelude;
 
+extern bool levelEditEnabled;
+
 class $modify(PauseLayer) {
     void customSetup() override {
         PauseLayer::customSetup();
 
         auto a = PlayLayer::get()->m_level->m_levelType;
 
-        if (Mod::get()->getSettingValue<bool>("level-edit")) {
+        if (levelEditEnabled) {
             PlayLayer::get()->m_level->m_levelType = GJLevelType::Editor;
         }
 
@@ -19,7 +21,7 @@ class $modify(PauseLayer) {
     void onEdit(cocos2d::CCObject* sender) {
         auto a = PlayLayer::get()->m_level->m_levelType;
 
-        if (Mod::get()->getSettingValue<bool>("level-edit")) {
+        if (levelEditEnabled) {
             PlayLayer::get()->m_level->m_levelType = GJLevelType::Editor;
         }
 
