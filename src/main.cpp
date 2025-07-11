@@ -184,6 +184,12 @@ $on_mod(Loaded) {
                 if (ImGui::Checkbox("##towerbypass", &towerBypassEnabled)) {
                     Mod::get()->setSavedValue("tower-bypass-enabled", towerBypassEnabled);
                 }
+
+                ImGui::Text("Solid Wave Trail");
+                ImGui::SameLine();
+                if (ImGui::Checkbox("##solidwavetrail", &"SolidWave")) {
+                    Mod::get()->getSavedValue("SolidWave", SolidWave);
+                }
                 
                 ImGui::Text("no glow");
                 ImGui::SameLine();
