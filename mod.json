@@ -3,7 +3,9 @@
     "geode": "4.6.1",
     "gd": {
         "mac": "2.2074",
-        "win": "2.2074"
+        "win": "2.2074",
+        "ios": "2.2074",
+        "android": "2.2074"
     },
     "version": "v1.0.0",
     "id": "mystical433.gtxx9903.sp67.polo",
