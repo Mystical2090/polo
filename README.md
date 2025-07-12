@@ -2,7 +2,7 @@
 A **superior** mod menu for Geometry Dash.
 
 ## How to use
-1. On PC/Mobile, press the settings icon to open the mod menu.
+1. On PC/Mobile, press the `TAB` to open the mod menu.
 2. For any questions or general support, join our Support Discord Server!
 3. Have fun using our mod!
 
