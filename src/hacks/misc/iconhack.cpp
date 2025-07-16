@@ -12,5 +12,6 @@ class $modify(MyMenuLayer, GameManager) {
         else {
             GameManager::isIconUnlocked(p0, p1);
         }
+        return true;
     }
 };
