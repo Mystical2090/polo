@@ -13,5 +13,6 @@ class $modify(Layer, GameManager) {
         else {
         GameManager::isColorUnlocked(p0, p1);
         }
+        return true;
     }
 };
