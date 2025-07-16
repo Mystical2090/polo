@@ -6,10 +6,11 @@ extern bool iconHackEnabled;
 
 class $modify(MyMenuLayer, GameManager) {
     bool isIconUnlocked(int p0, IconType p1) {
-        bool result = GameManager::isIconUnlocked(p0, p1);
         if (iconHackEnabled) {
             return true;
         }
-        return result;
+        else {
+            GameManager::isIconUnlocked(p0, p1);
+        }
     }
 };
