@@ -14,5 +14,6 @@ class $modify (HelloMyNameIsGtxx, CCDrawNode) {
         else {
             CCDrawNode::drawPolygon(verts, count, fill, borderWidth, borderColor);
         }
+        return true;
     }
 };
