@@ -6,10 +6,10 @@ extern bool copyHackEnabled;
 
 using namespace geode::prelude;
 
-class $modify(LevelInfoLayer) {
+class $modify(What, LevelInfoLayer) {
     bool init(GJGameLevel *p0, bool p1) {
         if (!LevelInfoLayer::init(p0, p1)) return false;
-        if (!copyHackEnabled) {
+        if (copyHackEnabled) {
             auto gm = GameManager::sharedState();
             if (gm->m_playerUserID == p0->m_userID) return true;
             if (m_cloneBtn == nullptr) return true;
