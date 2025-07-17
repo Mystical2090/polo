@@ -309,9 +309,9 @@ $on_mod(Loaded) {
             ImGui::EndTabBar();
             }
         ImGui::End();
+        };
     });
 };
-
 
 
 #ifndef GEODE_IS_IOS
