@@ -47,6 +47,7 @@ $on_mod(Loaded) {
         
         style.Alpha = 1.0f;
         style.FrameRounding = 3.0f;
+        style.WindowRounding = 8.0f;
         
         style.Colors[ImGuiCol_Text]                  = ImVec4(0.95f, 0.96f, 0.98f, 1.00f);
         style.Colors[ImGuiCol_TextDisabled]          = ImVec4(0.50f, 0.50f, 0.50f, 1.00f);
