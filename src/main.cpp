@@ -52,7 +52,7 @@ $on_mod(Loaded) {
         style.FrameRounding = 3.0f;
         style.WindowRounding = 8.0f;
 
-    }).draw([]() {        
+    }).draw([] {        
         ImGui::Begin("Polo", nullptr, ImGuiWindowFlags_NoCollapse);
         if (ImGui::BeginTabBar("Polo")) {
             if (ImGui::BeginTabItem("Misc")) {
