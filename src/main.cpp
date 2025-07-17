@@ -73,7 +73,7 @@ $on_mod(Loaded) {
         	style.GrabRounding = 4.5f;
         	style.TabRounding = 9.0f;
         	style.TabBorderSize = 1.0f;
-        	style.TabMinWidthForCloseButton = 0.0f;
+        //	style.TabMinWidthForCloseButton = 0.0f; aparently this doesnt exist in this imgui ver
         	style.ColorButtonPosition = ImGuiDir_Right;
         	style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
         	style.SelectableTextAlign = ImVec2(0.0f, 0.0f);
@@ -138,14 +138,14 @@ $on_mod(Loaded) {
                 ImGui::Text("speedhack");
                 ImGui::SameLine();
 
-                if (ImGui::SliderFloat("##Speedhack", &speedhackValue, 0.00001f, 50.0f) {
+                if (ImGui::SliderFloat("##Speedhack", &speedhackValue, 0.00001f, 50.0f)) {
                     Mod::get()->setSavedValue("speedhack-value", speedhackValue);
                 }
                 
                 ImGui::Text("no wave pulse");
                 ImGui::SameLine();
 
-                if (ImGui::SliderFloat("##nowavepulse", &noWavePulseValue, 0.00001f, 50.0f) {
+                if (ImGui::SliderFloat("##nowavepulse", &noWavePulseValue, 0.00001f, 50.0f)) {
                     Mod::get()->setSavedValue("no-wave-pulse-value", noWavePulseValue);
                 }
                 
