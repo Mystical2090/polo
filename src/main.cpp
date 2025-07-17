@@ -305,13 +305,12 @@ $on_mod(Loaded) {
                     style.TabRounding       = 4.0f;
                     style.GrabRounding      = 4.0f;
                     style.ScrollbarRounding = 4.0f;
-                    }
-                ImGui::EndTabBar();
                 }
-            ImGui::End();
-        });
-    }
-};
+            ImGui::EndTabBar();
+            }
+        ImGui::End();
+    });
+}
 
 
 
