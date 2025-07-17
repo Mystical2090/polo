@@ -306,7 +306,7 @@ $on_mod(Loaded) {
                     style.GrabRounding      = 4.0f;
                     style.ScrollbarRounding = 4.0f;
                 }
-            ImGui::EndTabBar();
+            ImGui::EndTabItem();
             }
         ImGui::End();
         };
