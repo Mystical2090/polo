@@ -20,8 +20,8 @@
     "resources": {
         "fonts": {
             "sans-serif": {
-                "path": "res/OpenSans-Regural.ttf"
-                "size": 18,
+                "path": "res/OpenSans-Regural.ttf",
+                "size": 18
             }
         }
     }
