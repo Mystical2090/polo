@@ -9,7 +9,7 @@
     "version": "v1.0.0",
     "id": "mystical433.gtxx9903.sp67.polo",
     "name": "Polo",
-     "developers": ["Mystical433","Gtxx9903, Speedyfriend67"],
+    "developers": ["Mystical433","Gtxx9903, Speedyfriend67"],
     "description": "",
     "links": {
             "source": "https://github.com/mystical2090/polo",
@@ -18,9 +18,9 @@
     },
     "tags": ["customization", "gameplay", "cheat", "utility", "interface"],
     "resources": {
-        "files": {
+        "files": [
                 "res/fonts/OpenSans-Regural.ttf"
-            }
+            ]
         }
     }
 }
