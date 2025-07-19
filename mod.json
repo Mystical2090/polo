@@ -18,4 +18,12 @@
             "homepage": "https://polo-dev.pages.dev"
     },
     "tags": ["customization", "gameplay", "cheat", "utility", "interface"]
+    "resources": {
+        "fonts": {
+            "sans-serif": {
+                "path": "res/OpenSans-Regural.ttf"
+                "size": 18
+            }
+        }
+    }
 }
