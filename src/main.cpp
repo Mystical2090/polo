@@ -47,7 +47,9 @@ const char* themes[] = { "Dark", "Light", "Classic", "Default" };
 $on_mod(Loaded) {
     ImGuiCocos::get().setup([] {
         ImGuiIO& io = ImGui::GetIO();
-        io.FontDefault = io.Fonts->AddFontFromFileTTF((Mod::get()->getResourcesDir() / "OpenSans-Regural.ttf").string().c_str(), 18.0f);
+        
+        ImFont* customFont = io.Fonts->AddFontFromFileTTF((Mod::get()->getResourcesDir() / "OpenSans-Regural.ttf").string().c_str(), 18.0f);
+        io.FontDefault = customFont;
         
         switch (currentTheme) {
             case 0:
