@@ -1,6 +1,5 @@
-
 {
-    "geode": "4.6.1",
+    "geode": "4.6.3",
     "gd": {
         "mac": "2.2074",
         "win": "2.2074",
@@ -17,7 +16,7 @@
             "community": "https://discord.gg/gMRKR9m7KK",
             "homepage": "https://polo-dev.pages.dev"
     },
-    "tags": ["customization", "gameplay", "cheat", "utility", "interface"]
+    "tags": ["customization", "gameplay", "cheat", "utility", "interface"],
     "resources": {
         "fonts": {
             "sans-serif": {
