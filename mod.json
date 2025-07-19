@@ -19,8 +19,7 @@
     "tags": ["customization", "gameplay", "cheat", "utility", "interface"],
     "resources": {
         "files": [
-                "res/fonts/OpenSans-Regural.ttf"
-            ]
-        }
+            "res/fonts/OpenSans-Regural.ttf"
+        ]
     }
 }
