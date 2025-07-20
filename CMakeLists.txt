@@ -31,37 +31,12 @@ include(${CPM_DOWNLOAD_LOCATION})
 
 CPMAddPackage("gh:matcool/gd-imgui-cocos#653e533")
 
-add_library(${PROJECT_NAME} SHARED
-    src/main.cpp
-    src/hacks/misc/Solidwavetrail.cpp
-    src/hacks/misc/NoWavepulse.cpp
-    src/hacks/misc/everytinghurtsandnosolids.cpp
-    src/hacks/misc/commenthistory.cpp
-    src/hacks/Player/Noclip.cpp
-    src/hacks/Player/jumphack.cpp
-    src/hacks/misc/safemode.cpp
-    src/hacks/Player/ignore-inputs.cpp
-    src/hacks/misc/speedhack.cpp
-    src/hacks/misc/iconhack.cpp
-    src/hacks/misc/autopractice.cpp
-    src/hacks/misc/suicide.cpp
-    src/hacks/creator/verifyhack.cpp
-    src/hacks/creator/copy-hack.cpp
-    src/hacks/creator/custom-obj-hack.cpp
-    src/hacks/misc/practice-music.cpp
-    src/hacks/misc/layout-mode.cpp
-    src/hacks/misc/noglow.cpp
-    src/hacks/misc/hidepausebutton.cpp
-    src/hacks/misc/colorhack.cpp
-    src/hacks/misc/show-hitboxes.cpp
-    src/hacks/misc/instantcomplete.cpp
-    src/hacks/misc/basementbypass.cpp
-    src/hacks/misc/level-edit-on-pause-menu.cpp
-    src/hacks/creator/nocmark.cpp
-    src/hacks/misc/main-levels.cpp
-    src/hacks/misc/rainbow-icons.cpp
-    src/hacks/misc/nowavepulse.cpp
-    
+file(GLOB SOURCES
+    include/*.cpp
+    src/*.cpp
+	src/*/*.cpp
+	src/*/*/*.cpp
+    src/*/*/*/*.cpp
 )
 
 
