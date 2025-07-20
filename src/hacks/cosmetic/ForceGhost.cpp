@@ -2,6 +2,9 @@
 #include <Geode/modify/MenuLayer.hpp>
 
 using namespace geode::prelude;
+
+extern bool ForceGhostOn;
+extern bool ForceGhostOff;
 class $modify (PlayerObject)
 {
     void toggleGhostEffect(GhostType state)
