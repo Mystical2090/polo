@@ -208,211 +208,235 @@ $on_mod(Loaded) {
         
         // Left panel (Tab bar content)
         if (ImGui::BeginChild("LeftPanel", ImVec2(splitter_pos, avail.y), true, ImGuiWindowFlags_NoScrollbar)) {
-            if (ImGui::BeginTabBar("Polo")) {
-                if (ImGui::BeginTabItem("Misc")) {
-                    ImGui::Text("speedhack");
-                    ImGui::SameLine();
-
-                    if (ImGui::SliderFloat("##Speedhack", &speedhackValue, 0.00001f, 50.0f)) {
-                        Mod::get()->setSavedValue("speedhack-value", speedhackValue);
-                    }
-                    
-                    ImGui::Text("no wave pulse");
-                    ImGui::SameLine();
-
-                    if (ImGui::SliderFloat("##nowavepulse", &noWavePulseValue, 0.00001f, 50.0f)) {
-                        Mod::get()->setSavedValue("no-wave-pulse-value", noWavePulseValue);
-                    }
-                    
-                    ImGui::Text("practice music hack");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##practicemusichack", &practiceMusicHackEnabled)) {
-                        Mod::get()->setSavedValue("practice-music-hack-enabled", practiceMusicHackEnabled);
-                    }
-                    
-                    ImGui::Text("hide pause button");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##hidepausebutton", &hidePauseButtonEnabled)) {
-                        Mod::get()->setSavedValue("hide-pause-button-enabled", hidePauseButtonEnabled);                
-                    }
-                    
-                    ImGui::Text("layout mode");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##layoutmode", &layoutModeEnabled)) {
-                        Mod::get()->setSavedValue("layout-mode-enabled", layoutModeEnabled);
-                    }
-                    
-                    ImGui::Text("comment history bypass");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##commenthistorybypass", &commentHistoryBypassEnabled)) {
-                        Mod::get()->setSavedValue("comment-history-bypass-enabled", commentHistoryBypassEnabled);
-                    }
-                    
-                    ImGui::Text("auto practice");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##autopractice", &autoPracticeEnabled)) {
-                        Mod::get()->setSavedValue("auto-practice-enabled", autoPracticeEnabled);
-                    }
-                    
-                    ImGui::Text("icon hack");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##iconhack", &iconHackEnabled)) {
-                        Mod::get()->setSavedValue("icon-hack-enabled", iconHackEnabled);
-                    }
-                    
-                    ImGui::Text("color hack");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##colorhack", &colorHackEnabled)) {
-                        Mod::get()->setSavedValue("color-hack-enabled", colorHackEnabled);
-                    }
-                    
-                    ImGui::Text("no solids");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##nosolids", &noSolidsEnabled)) {
-                        Mod::get()->setSavedValue("no-solids-enabled", noSolidsEnabled);
-                    }
-                    
-                    ImGui::Text("suicide");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##suicide", &suicideEnabled)) {
-                        Mod::get()->setSavedValue("suicide-enabled", suicideEnabled);
-                    }
-                    
-                    ImGui::Text("show hitboxes");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##showhitboxes", &showHitboxesEnabled)) {
-                        Mod::get()->setSavedValue("show-hitboxes-enabled", showHitboxesEnabled);
-                    }
-                    
-                    ImGui::Text("show hitboxes on death");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##showhitboxesondeath", &showHitboxesOnDeathEnabled)) {
-                        Mod::get()->setSavedValue("show-hitboxes-on-death-enabled", showHitboxesOnDeathEnabled);
-                    }
-                    
-                    ImGui::Text("rainbow icons");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##rainbowicons", &rainbowIconsEnabled)) {
-                        Mod::get()->setSavedValue("rainbow-icons-enabled", rainbowIconsEnabled);
-                    }
-                    
-                    ImGui::Text("everything kills you");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##everythingkillsyou", &everythingKillsYouEnabled)) {
-                        Mod::get()->setSavedValue("everything-kills-you-enabled", everythingKillsYouEnabled);
-                    }
-                    
-                    ImGui::Text("safe mode");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##safemode", &safeModeEnabled)) {
-                        Mod::get()->setSavedValue("safe-mode-enabled", safeModeEnabled);
-                    }
-                    
-                    ImGui::Text("instant complete");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##instantcomplete", &instantCompleteEnabled)) {
-                        Mod::get()->setSavedValue("instant-complete-enabled", instantCompleteEnabled);
-                    }
-                    
-                    ImGui::Text("basement bypass");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##basementbypass", &basementBypassEnabled)) {
-                        Mod::get()->setSavedValue("basement-bypass-enabled", basementBypassEnabled);
-                    }
-                    
-                    ImGui::Text("level edit");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##leveledit", &levelEditEnabled)) {
-                        Mod::get()->setSavedValue("level-edit-bypass-enabled", levelEditEnabled);
-                    }
-                    
-                    ImGui::Text("main level bypass");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##mainlevelbypass", &mainLevelBypassEnabled)) {
-                        Mod::get()->setSavedValue("main-level-bypass-enabled", mainLevelBypassEnabled);
-                    }
-
-                    ImGui::Text("No Wave Pulse");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##noWavePulse", &noWavePulse)) {
-                         Mod::get()->setSavedValue("noWavePulse", noWavePulse);
-                    }
-
-                    ImGui::Text("tower bypass");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##towerbypass", &towerBypassEnabled)) {
-                        Mod::get()->setSavedValue("tower-bypass-enabled", towerBypassEnabled);
-                    }
-
-                    ImGui::Text("Solid Wave Trail");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##solidwavetrail", &SolidWave)) {
-                        Mod::get()->setSavedValue("SolidWave", SolidWave);
-                    }
-                    
-                    ImGui::Text("no glow");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##noglow", &noGlowEnabled)) {
-                        Mod::get()->setSavedValue("no-glow-enabled", noGlowEnabled);
-                    }
-                    
-                    ImGui::EndTabItem();
-                }
-                if (ImGui::BeginTabItem("Editor")) {
-                    ImGui::Text("verify hack");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##verifyhack", &verifyHackEnabled)) {
-                        Mod::get()->setSavedValue("verify-hack-enabled", verifyHackEnabled);
-                    }
-                    
-                    ImGui::Text("copy hack");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##copyhack", &copyHackEnabled)) {
-                        Mod::get()->setSavedValue("copy-hack-enabled", copyHackEnabled);
-                    }
-                    
-                    ImGui::Text("no c mark");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##nocmark", &noCMarkEnabled)) {
-                        Mod::get()->setSavedValue("no-c-mark-enabled", noCMarkEnabled);
-                    }
-                    
-                    ImGui::Text("custom objects bypass");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##customobjectsbypass", &customObjectsBypassEnabled)) {
-                        Mod::get()->setSavedValue("custom-objects-bypass-enabled", customObjectsBypassEnabled);
-                    }
-                    
-                    ImGui::EndTabItem();
-                }
-
-                if (ImGui::BeginTabItem("Player")) {
-                    ImGui::Text("noclip");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##noclip", &noclipEnabled)) {
+            if (ImGui::BeginTabBar("Polo", ImGuiTabBarFlags_Reorderable | ImGuiTabBarFlags_TabListPopupButton | ImGuiTabBarFlags_FittingPolicyScroll)) {
+                
+                // Player Features
+                if (ImGui::BeginTabItem("Noclip")) {
+                    if (ImGui::Checkbox("Enable Noclip", &noclipEnabled)) {
                         Mod::get()->setSavedValue("noclip-enabled", noclipEnabled);
                     }
-                    
-                    ImGui::Text("ignore inputs");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##ignoreinputs", &ignoreInputsEnabled)) {
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Ignore Inputs")) {
+                    if (ImGui::Checkbox("Enable Ignore Inputs", &ignoreInputsEnabled)) {
                         Mod::get()->setSavedValue("ignore-inputs-enabled", ignoreInputsEnabled);
                     }
-                    
-                    ImGui::Text("jump hack");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##jumphack", &jumpHackEnabled)) {
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Jump Hack")) {
+                    if (ImGui::Checkbox("Enable Jump Hack", &jumpHackEnabled)) {
                         Mod::get()->setSavedValue("jump-hack-enabled", jumpHackEnabled);
                     }
-                    
-                    ImGui::Text("autoclicker");
-                    ImGui::SameLine();
-                    if (ImGui::Checkbox("##autoclicker", &autoclickerEnabled)) {
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Autoclicker")) {
+                    if (ImGui::Checkbox("Enable Autoclicker", &autoclickerEnabled)) {
                         Mod::get()->setSavedValue("auto-clicker-enabled", autoclickerEnabled);
                     }
                     ImGui::EndTabItem();
                 }
-                    
+
+                // Editor Features
+                if (ImGui::BeginTabItem("Verify Hack")) {
+                    if (ImGui::Checkbox("Enable Verify Hack", &verifyHackEnabled)) {
+                        Mod::get()->setSavedValue("verify-hack-enabled", verifyHackEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Copy Hack")) {
+                    if (ImGui::Checkbox("Enable Copy Hack", &copyHackEnabled)) {
+                        Mod::get()->setSavedValue("copy-hack-enabled", copyHackEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("No C Mark")) {
+                    if (ImGui::Checkbox("Enable No C Mark", &noCMarkEnabled)) {
+                        Mod::get()->setSavedValue("no-c-mark-enabled", noCMarkEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Custom Objects")) {
+                    if (ImGui::Checkbox("Enable Custom Objects Bypass", &customObjectsBypassEnabled)) {
+                        Mod::get()->setSavedValue("custom-objects-bypass-enabled", customObjectsBypassEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                // Misc Features
+                if (ImGui::BeginTabItem("Speedhack")) {
+                    ImGui::Text("Speedhack Value:");
+                    if (ImGui::SliderFloat("##Speedhack", &speedhackValue, 0.00001f, 50.0f)) {
+                        Mod::get()->setSavedValue("speedhack-value", speedhackValue);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Wave Pulse")) {
+                    ImGui::Text("No Wave Pulse Value:");
+                    if (ImGui::SliderFloat("##nowavepulse", &noWavePulseValue, 0.00001f, 50.0f)) {
+                        Mod::get()->setSavedValue("no-wave-pulse-value", noWavePulseValue);
+                    }
+                    ImGui::Separator();
+                    if (ImGui::Checkbox("No Wave Pulse", &noWavePulse)) {
+                         Mod::get()->setSavedValue("noWavePulse", noWavePulse);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Practice Music")) {
+                    if (ImGui::Checkbox("Enable Practice Music Hack", &practiceMusicHackEnabled)) {
+                        Mod::get()->setSavedValue("practice-music-hack-enabled", practiceMusicHackEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Hide Pause")) {
+                    if (ImGui::Checkbox("Hide Pause Button", &hidePauseButtonEnabled)) {
+                        Mod::get()->setSavedValue("hide-pause-button-enabled", hidePauseButtonEnabled);                
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Layout Mode")) {
+                    if (ImGui::Checkbox("Enable Layout Mode", &layoutModeEnabled)) {
+                        Mod::get()->setSavedValue("layout-mode-enabled", layoutModeEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Comment History")) {
+                    if (ImGui::Checkbox("Enable Comment History Bypass", &commentHistoryBypassEnabled)) {
+                        Mod::get()->setSavedValue("comment-history-bypass-enabled", commentHistoryBypassEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Auto Practice")) {
+                    if (ImGui::Checkbox("Enable Auto Practice", &autoPracticeEnabled)) {
+                        Mod::get()->setSavedValue("auto-practice-enabled", autoPracticeEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Icon Hack")) {
+                    if (ImGui::Checkbox("Enable Icon Hack", &iconHackEnabled)) {
+                        Mod::get()->setSavedValue("icon-hack-enabled", iconHackEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Color Hack")) {
+                    if (ImGui::Checkbox("Enable Color Hack", &colorHackEnabled)) {
+                        Mod::get()->setSavedValue("color-hack-enabled", colorHackEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("No Solids")) {
+                    if (ImGui::Checkbox("Enable No Solids", &noSolidsEnabled)) {
+                        Mod::get()->setSavedValue("no-solids-enabled", noSolidsEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Suicide")) {
+                    if (ImGui::Checkbox("Enable Suicide", &suicideEnabled)) {
+                        Mod::get()->setSavedValue("suicide-enabled", suicideEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Show Hitboxes")) {
+                    if (ImGui::Checkbox("Enable Show Hitboxes", &showHitboxesEnabled)) {
+                        Mod::get()->setSavedValue("show-hitboxes-enabled", showHitboxesEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Hitboxes on Death")) {
+                    if (ImGui::Checkbox("Show Hitboxes on Death", &showHitboxesOnDeathEnabled)) {
+                        Mod::get()->setSavedValue("show-hitboxes-on-death-enabled", showHitboxesOnDeathEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Rainbow Icons")) {
+                    if (ImGui::Checkbox("Enable Rainbow Icons", &rainbowIconsEnabled)) {
+                        Mod::get()->setSavedValue("rainbow-icons-enabled", rainbowIconsEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Everything Kills")) {
+                    if (ImGui::Checkbox("Everything Kills You", &everythingKillsYouEnabled)) {
+                        Mod::get()->setSavedValue("everything-kills-you-enabled", everythingKillsYouEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Safe Mode")) {
+                    if (ImGui::Checkbox("Enable Safe Mode", &safeModeEnabled)) {
+                        Mod::get()->setSavedValue("safe-mode-enabled", safeModeEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Instant Complete")) {
+                    if (ImGui::Checkbox("Enable Instant Complete", &instantCompleteEnabled)) {
+                        Mod::get()->setSavedValue("instant-complete-enabled", instantCompleteEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Basement Bypass")) {
+                    if (ImGui::Checkbox("Enable Basement Bypass", &basementBypassEnabled)) {
+                        Mod::get()->setSavedValue("basement-bypass-enabled", basementBypassEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Level Edit")) {
+                    if (ImGui::Checkbox("Enable Level Edit Bypass", &levelEditEnabled)) {
+                        Mod::get()->setSavedValue("level-edit-bypass-enabled", levelEditEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Main Level Bypass")) {
+                    if (ImGui::Checkbox("Enable Main Level Bypass", &mainLevelBypassEnabled)) {
+                        Mod::get()->setSavedValue("main-level-bypass-enabled", mainLevelBypassEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Tower Bypass")) {
+                    if (ImGui::Checkbox("Enable Tower Bypass", &towerBypassEnabled)) {
+                        Mod::get()->setSavedValue("tower-bypass-enabled", towerBypassEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("Solid Wave Trail")) {
+                    if (ImGui::Checkbox("Enable Solid Wave Trail", &SolidWave)) {
+                        Mod::get()->setSavedValue("SolidWave", SolidWave);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem("No Glow")) {
+                    if (ImGui::Checkbox("Enable No Glow", &noGlowEnabled)) {
+                        Mod::get()->setSavedValue("no-glow-enabled", noGlowEnabled);
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                // Credits tab
                 if (ImGui::BeginTabItem("Credits")) {
                     ImGui::Text("gtxx9003, Developer, Features, more..");
                     ImGui::Text("Mystical433, Leader Developer, Features, ui, more...");
@@ -420,9 +444,10 @@ $on_mod(Loaded) {
                     ImGui::EndTabItem();
                 }
 
+                // Info tab
                 if (ImGui::BeginTabItem("Info")) {
                     ImGui::Text("Polo version v1.0.0");
-                    ImGui::Text("Nightly Release: ");
+                if (ImGui::BeginTabItem("Info")) {
                     ImGui::SameLine();
                     ImGui::Text("False");
                     
