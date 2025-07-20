@@ -484,5 +484,6 @@ $on_mod(Loaded) {
         ImGui::EndChild();
         
         ImGui::End();
-    });
+        });
+    })
 }
