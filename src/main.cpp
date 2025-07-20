@@ -1,4 +1,3 @@
-
 #include <imgui_internal.h>
 #include <Geode/Geode.hpp>
 #include <imgui-cocos.hpp>
@@ -8,7 +7,7 @@ using namespace geode::prelude;
 // player
 bool noclipEnabled = Mod::get()->getSavedValue<bool>("noclip-enabled", false);
 bool ignoreInputsEnabled = Mod::get()->getSavedValue<bool>("ignore-inputs-enabled", false);
-bool jumpHackEnabled = Mod::get()->getSavedValue<bool>("jump-hack-emabled", false);
+bool jumpHackEnabled = Mod::get()->getSavedValue<bool>("jump-hack-enabled", false);
 bool autoclickerEnabled = Mod::get()->getSavedValue<bool>("auto-clicker-enabled", false);
 
 // editor
@@ -18,8 +17,8 @@ bool noCMarkEnabled = Mod::get()->getSavedValue<bool>("no-c-mark-enabled", false
 bool customObjectsBypassEnabled = Mod::get()->getSavedValue<bool>("custom-objects-bypass-enabled", false);
 
 // misc
-float speedhackValue = Mod::get()->getSavedValue<float>("speedhack-value");
-float noWavePulseValue = Mod::get()->getSavedValue<float>("no-wave-pulse-value");
+float speedhackValue = Mod::get()->getSavedValue<float>("speedhack-value", 1.0f);
+float noWavePulseValue = Mod::get()->getSavedValue<float>("no-wave-pulse-value", 1.0f);
 bool practiceMusicHackEnabled = Mod::get()->getSavedValue<bool>("practice-music-hack-enabled", false);
 bool hidePauseButtonEnabled = Mod::get()->getSavedValue<bool>("hide-pause-button-enabled", false);
 bool layoutModeEnabled = Mod::get()->getSavedValue<bool>("layout-mode-enabled", false);
@@ -246,7 +245,7 @@ $on_mod(Loaded) {
                     ImGui::Text("comment history bypass");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##commenthistorybypass", &commentHistoryBypassEnabled)) {
-                        Mod::get()->setSavedValue("comment-history-bypass", commentHistoryBypassEnabled);
+                        Mod::get()->setSavedValue("comment-history-bypass-enabled", commentHistoryBypassEnabled);
                     }
                     
                     ImGui::Text("auto practice");
@@ -294,13 +293,13 @@ $on_mod(Loaded) {
                     ImGui::Text("rainbow icons");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##rainbowicons", &rainbowIconsEnabled)) {
-                        Mod::get()->setSavedValue("raindow-icons-enabled", rainbowIconsEnabled);
+                        Mod::get()->setSavedValue("rainbow-icons-enabled", rainbowIconsEnabled);
                     }
                     
                     ImGui::Text("everything kills you");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##everythingkillsyou", &everythingKillsYouEnabled)) {
-                        Mod::get()->setSavedValue("everything-kills-you", everythingKillsYouEnabled);
+                        Mod::get()->setSavedValue("everything-kills-you-enabled", everythingKillsYouEnabled);
                     }
                     
                     ImGui::Text("safe mode");
@@ -324,7 +323,7 @@ $on_mod(Loaded) {
                     ImGui::Text("level edit");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##leveledit", &levelEditEnabled)) {
-                        Mod::get()->setSavedValue("level-edit-enabled", levelEditEnabled);
+                        Mod::get()->setSavedValue("level-edit-bypass-enabled", levelEditEnabled);
                     }
                     
                     ImGui::Text("main level bypass");
@@ -336,7 +335,7 @@ $on_mod(Loaded) {
                     ImGui::Text("No Wave Pulse");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##noWavePulse", &noWavePulse)) {
-                         Mod::get()->getSavedValue<bool>("noWavePulse", noWavePulse);
+                         Mod::get()->setSavedValue("noWavePulse", noWavePulse);
                     }
 
                     ImGui::Text("tower bypass");
@@ -348,7 +347,7 @@ $on_mod(Loaded) {
                     ImGui::Text("Solid Wave Trail");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##solidwavetrail", &SolidWave)) {
-                        Mod::get()->getSavedValue("SolidWave", SolidWave);
+                        Mod::get()->setSavedValue("SolidWave", SolidWave);
                     }
                     
                     ImGui::Text("no glow");
@@ -381,7 +380,7 @@ $on_mod(Loaded) {
                     ImGui::Text("custom objects bypass");
                     ImGui::SameLine();
                     if (ImGui::Checkbox("##customobjectsbypass", &customObjectsBypassEnabled)) {
-                        Mod::get()->setSavedValue("custom-object-bypass", customObjectsBypassEnabled);
+                        Mod::get()->setSavedValue("custom-objects-bypass-enabled", customObjectsBypassEnabled);
                     }
                     
                     ImGui::EndTabItem();
@@ -433,25 +432,32 @@ $on_mod(Loaded) {
                     ImGui::SameLine();
                     if (ImGui::Button("Load Settings")) {}
                     
+                    ImGui::Separator();
+                    
+                    ImGui::Text("Theme:");
+                    ImGui::SameLine();
+                    if (ImGui::Combo("##theme", &currentTheme, themes, IM_ARRAYSIZE(themes))) {
+                        Mod::get()->setSavedValue("theme", currentTheme);
+                    }
+                    
                     ImGui::EndTabItem();
                 }
-                ImGui::EndTabItem();
+                
+                ImGui::EndTabBar();
             }
-            ImGui::EndTabBar();
         }
+        ImGui::EndChild();
+
+        ImGui::SameLine();
+        VerticalSplitter("##splitter", &splitter_pos);
+        ImGui::SameLine();
+
+        if (ImGui::BeginChild("Polo", ImVec2(0, avail.y), true)) {
+            ImGui::Text("Donate to use!");
+            ImGui::Separator();
+        }
+        ImGui::EndChild();
+        
         ImGui::End();
     });
 }
-
-
-#ifndef GEODE_IS_IOS
-#include <Geode/modify/CCKeyboardDispatcher.hpp>
-class $modify(ImGuiKeybindHook, cocos2d::CCKeyboardDispatcher) {
-    bool dispatchKeyboardMSG(cocos2d::enumKeyCodes key, bool isKeyDown, bool isKeyRepeat) {
-        if (key == cocos2d::enumKeyCodes::KEY_Tab && isKeyDown) {
-            ImGuiCocos::get().toggle();
-        }
-        return CCKeyboardDispatcher::dispatchKeyboardMSG(key, isKeyDown, isKeyRepeat);
-    }
-};
-#endif
