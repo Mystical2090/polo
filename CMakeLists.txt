@@ -48,6 +48,8 @@ endif()
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 include_directories(include)
 
+add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
+
 setup_geode_mod(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} imgui-cocos)
