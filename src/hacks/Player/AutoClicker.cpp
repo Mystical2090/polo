@@ -1,7 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayLayer.hpp>
 using namespace geode::prelude;
-
+// oh nah im not dealing with this chatgpt code sorry mr mystic
 class $modify(PlayLayer) {
     bool m_isAutoClicking = false;
     float m_clickTimer = 0.0f;
