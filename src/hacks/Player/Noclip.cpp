@@ -3,7 +3,7 @@
 
 using namespace geode::prelude;
 
-extern bool noclipEnabled;
+bool noclipEnabled = false;
 
 class $modify(Noclip, PlayLayer) {
     void destroyPlayer(PlayerObject* player, GameObject* object) {
