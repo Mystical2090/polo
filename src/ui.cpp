@@ -70,6 +70,14 @@ bool SettingCell::init(std::string name, std::string gv, SettingCellType type) {
 
     auto gameManager = GameManager::sharedState();
 
+    #define SETTING(name, gv) m_listItems->addObject( \
+        SettingCell::create(name, gv, SettingCellType::Default) \
+    )
+    #define SETTING_WITH_TYPE(name, gv, type) m_listItems->addObject( \
+        SettingCell::create(name, gv, type) \
+    )
+
+
     switch (type) {
         case Default:
             m_toggler = CCMenuItemToggler::createWithStandardSprites(
