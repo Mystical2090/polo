@@ -34,8 +34,8 @@ CPMAddPackage("gh:matcool/gd-imgui-cocos#653e533")
 file(GLOB SOURCES
     include/*.cpp
     src/*.cpp
-	src/*/*.cpp
-	src/*/*/*.cpp
+	# src/*/*.cpp
+	# src/*/*/*.cpp
 )
 
 
