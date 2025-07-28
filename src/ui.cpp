@@ -232,7 +232,11 @@ bool SettingsLayer::setup() {
 
     m_mainLayer->addChildAtPosition(bg, Anchor::Left, ccp(65.f, 0.f));
 
-    switchPage(SettingPage::Tab1, true, typeinfo_cast<CCMenuItemSpriteExtra*>(this->getChildByIDRecursive("Label1")));
+    auto label1Btn = createCategoryBtn("Tab1", this, SettingPage::Tab1, menu_selector(SettingsLayer::onCategoryBtn));
+    label1Btn->setID("Label1");
+    menu->addChild(label1Btn);
+    switchPage(SettingPage::Tab1, true, label1Btn);
+
 
     auto searchBtnSpr = CCSprite::createWithSpriteFrameName("gj_findBtn_001.png");
     auto searchBtn = CCMenuItemSpriteExtra::create(
