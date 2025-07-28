@@ -66,4 +66,4 @@ public:
 };
 
 inline bool label1Enabled() { return SettingsLayer::isLabel1Enabled(); }
-inline bool label2
+inline bool label2;
