@@ -64,9 +64,11 @@ public:
     static bool isAutoclickerEnabled() { return GameManager::get()->getGameVariable("autoclicker_enabled"); }
     static bool isJumpHackEnabled() { return GameManager::get()->getGameVariable("jumphack_enabled"); }
     static bool isIgnoreInputsEnabled() { return GameManager::get()->getGameVariable("ignore_inputs_enabled"); }
+    static bool isAutoPracticeEnabled() { return GameManager::get()->getGameVariable("autopractice_enabled"); }
 };
 
 inline bool noclipEnabled() { return SettingsLayer::isNoclipEnabled(); }
 inline bool autoclickerEnabled() { return SettingsLayer::isAutoclickerEnabled(); }
 inline bool jumpHackEnabled() { return SettingsLayer::isJumpHackEnabled(); }
 inline bool ignoreInputsEnabled() { return SettingsLayer::isIgnoreInputsEnabled(); }
+inline bool autoPracticeEnabled() { return SettingsLayer::isAutoPracticeEnabled(); }
