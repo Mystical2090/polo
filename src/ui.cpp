@@ -122,10 +122,10 @@ void SettingCell::onCheckboxToggled(CCObject* sender) {
 
 std::string descForGV(std::string gv) {
     std::map<std::string, std::string> descriptions = {
-        {"noclip_enabled", "Allows the player to pass through obstacles and walls"},
-        {"autoclicker_enabled", "Automatically clicks for the player during gameplay"},
-        {"jumphack_enabled", "Modifies jump mechanics for enhanced control"},
-        {"ignore_inputs_enabled", "Ignores player input during gameplay"},
+        {"noclip_enabled", "i am mystic"},
+        {"autoclicker_enabled", ":3"},
+        {"jumphack_enabled", ">w<"},
+        {"ignore_inputs_enabled", "help text"},
     };
 
     if (descriptions.find(gv) != descriptions.end()) {
@@ -320,10 +320,10 @@ void SettingsLayer::switchPage(SettingPage page, bool isFirstRun, CCMenuItemSpri
             SETTING("Ignore Inputs", "ignore_inputs_enabled")
             break;
         case Cosmetic:
-            // Empty for now - you can add cosmetic settings here later
+            // empty
             break;
         case Misc:
-            // Empty for now - you can add misc settings here later
+            SETTING("Auto Practice", "autopractice_enabled")
             break;
         case Credits:
             SETTING_WITH_TYPE("Mystical433 (UI, Features, Bug fixes)", "", SettingCellType::Credit)
