@@ -70,14 +70,6 @@ bool SettingCell::init(std::string name, std::string gv, SettingCellType type) {
 
     auto gameManager = GameManager::sharedState();
 
-    #define SETTING(name, gv) m_listItems->addObject( \
-        SettingCell::create(name, gv, SettingCellType::Default) \
-    )
-    #define SETTING_WITH_TYPE(name, gv, type) m_listItems->addObject( \
-        SettingCell::create(name, gv, type) \
-    )
-
-
     switch (type) {
         case Default:
             m_toggler = CCMenuItemToggler::createWithStandardSprites(
@@ -89,16 +81,7 @@ bool SettingCell::init(std::string name, std::string gv, SettingCellType type) {
             m_toggler->toggle(
                 GameManager::get()->getGameVariable(gv.c_str())
             );
-
-            spr = CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
-            spr->setScale(0.65f);
-            btn = CCMenuItemSpriteExtra::create(
-                spr, this, menu_selector(SettingCell::onInfo)
-            );
-            btn->setID("info-button");
-            btn->setPositionX(-35.f);
             
-            menu->addChild(btn);
             menu->addChild(m_toggler);
             break;
         case Button:
@@ -127,7 +110,6 @@ bool SettingCell::init(std::string name, std::string gv, SettingCellType type) {
 }
 
 void SettingCell::onButton(CCObject* sender) {
-    // Handle button click - you can customize this behavior
     log::info("Button clicked for: {}", m_name);
 }
 
@@ -232,11 +214,7 @@ bool SettingsLayer::setup() {
 
     m_mainLayer->addChildAtPosition(bg, Anchor::Left, ccp(65.f, 0.f));
 
-    auto label1Btn = createCategoryBtn("Tab1", this, SettingPage::Tab1, menu_selector(SettingsLayer::onCategoryBtn));
-    label1Btn->setID("Label1");
-    menu->addChild(label1Btn);
-    switchPage(SettingPage::Tab1, true, label1Btn);
-
+    switchPage(SettingPage::Tab1, true, typeinfo_cast<CCMenuItemSpriteExtra*>(this->getChildByIDRecursive("Tab1")));
 
     auto searchBtnSpr = CCSprite::createWithSpriteFrameName("gj_findBtn_001.png");
     auto searchBtn = CCMenuItemSpriteExtra::create(
@@ -334,7 +312,7 @@ void SettingsLayer::switchPage(SettingPage page, bool isFirstRun, CCMenuItemSpri
 
     switch (page) {
         case Tab1:
-            SETTING("Label1", "label1_enabled")
+            SETTING("Noclip", "noclip_enabled")
             break;
         case Tab2:
             SETTING("Label2", "label2_enabled")
@@ -390,7 +368,6 @@ void SettingsLayer::refreshList() {
     
     m_mainLayer->addChildAtPosition(m_border, Anchor::Right, ccp(-195.f, 0.f));
 }
-
 
 #ifndef GEODE_IS_IOS
 #include <Geode/modify/CCKeyboardDispatcher.hpp>
