@@ -93,15 +93,8 @@ bool SettingCell::init(std::string name, std::string gv, SettingCellType type) {
             menu->addChild(btn);
             menu->addChild(m_toggler);
             break;
-        case Button:
-            spr = ButtonSprite::create("Yes", "goldFont.fnt", "GJ_button_05.png");
-            spr->setScale(0.5f);
-            btn = CCMenuItemSpriteExtra::create(
-                spr, this, menu_selector(SettingCell::onButton)
-            );
-            btn->setID("button");
-            btn->setPositionX(-10.f);
-            menu->addChild(btn);
+        case Credit:
+            // just text dicks
             break;
     }
 
@@ -129,10 +122,10 @@ void SettingCell::onCheckboxToggled(CCObject* sender) {
 
 std::string descForGV(std::string gv) {
     std::map<std::string, std::string> descriptions = {
-        {"label1_enabled", "Controls Label 1 functionality"},
-        {"label2_enabled", "Controls Label 2 functionality"},
-        {"label3_enabled", "Controls Label 3 functionality"},
-        {"label4_enabled", "Controls Label 4 functionality"},
+        {"noclip_enabled", "Allows the player to pass through obstacles and walls"},
+        {"autoclicker_enabled", "Automatically clicks for the player during gameplay"},
+        {"jumphack_enabled", "Modifies jump mechanics for enhanced control"},
+        {"ignore_inputs_enabled", "Ignores player input during gameplay"},
     };
 
     if (descriptions.find(gv) != descriptions.end()) {
@@ -201,9 +194,10 @@ bool SettingsLayer::setup() {
         createCategoryBtn(name, this, page, menu_selector(SettingsLayer::onCategoryBtn)) \
     );
 
-    CATEGORY_BTN("Tab2", SettingPage::Tab2)
-    CATEGORY_BTN("Tab3", SettingPage::Tab3)
-    CATEGORY_BTN("Tab4", SettingPage::Tab4)
+    CATEGORY_BTN("Player", SettingPage::Player)
+    CATEGORY_BTN("Cosmetic", SettingPage::Cosmetic)
+    CATEGORY_BTN("Misc", SettingPage::Misc)
+    CATEGORY_BTN("Credits", SettingPage::Credits)
 
     menu->setLayout(
         ColumnLayout::create()
@@ -222,7 +216,7 @@ bool SettingsLayer::setup() {
 
     m_mainLayer->addChildAtPosition(bg, Anchor::Left, ccp(65.f, 0.f));
 
-    switchPage(SettingPage::Tab2, true, typeinfo_cast<CCMenuItemSpriteExtra*>(this->getChildByIDRecursive("Tab2")));
+    switchPage(SettingPage::Player, true, typeinfo_cast<CCMenuItemSpriteExtra*>(this->getChildByIDRecursive("Player")));
 
     auto searchBtnSpr = CCSprite::createWithSpriteFrameName("gj_findBtn_001.png");
     auto searchBtn = CCMenuItemSpriteExtra::create(
@@ -319,14 +313,21 @@ void SettingsLayer::switchPage(SettingPage page, bool isFirstRun, CCMenuItemSpri
     );
 
     switch (page) {
-        case Tab2:
-            SETTING("Label2", "label2_enabled")
+        case Player:
+            SETTING("Noclip", "noclip_enabled")
+            SETTING("Autoclicker", "autoclicker_enabled")
+            SETTING("Jump Hack", "jumphack_enabled")
+            SETTING("Ignore Inputs", "ignore_inputs_enabled")
             break;
-        case Tab3:
-            SETTING("Label3", "label3_enabled")
+        case Cosmetic:
+            // Empty for now - you can add cosmetic settings here later
             break;
-        case Tab4:
-            SETTING("Label4", "label4_enabled")
+        case Misc:
+            // Empty for now - you can add misc settings here later
+            break;
+        case Credits:
+            SETTING_WITH_TYPE("Mystical433 (UI, Features, Bug fixes)", "", SettingCellType::Credit)
+            SETTING_WITH_TYPE("Gtxx9903 (Fixes, Optimizations)", "", SettingCellType::Credit)
             break;
     }
     
