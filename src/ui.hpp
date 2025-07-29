@@ -59,11 +59,13 @@ protected:
 public:
     static SettingsLayer* create();
 
-    static bool isLabel1Enabled() { return GameManager::get()->getGameVariable("label1"); }
-    static bool isLabel2Enabled() { return GameManager::get()->getGameVariable("label2"); }
-    static bool isLabel3Enabled() { return GameManager::get()->getGameVariable("label3"); }
-    static bool isLabel4Enabled() { return GameManager::get()->getGameVariable("label4"); }
+    static bool isNoclipEnabled() { return GameManager::get()->getGameVariable("noclip_enabled"); }
+    static bool isLabel2Enabled() { return GameManager::get()->getGameVariable("label2_enabled"); }
+    static bool isLabel3Enabled() { return GameManager::get()->getGameVariable("label3_enabled"); }
+    static bool isLabel4Enabled() { return GameManager::get()->getGameVariable("label4_enabled"); }
 };
 
-inline bool label1Enabled() { return SettingsLayer::isLabel1Enabled(); }
-inline bool label2;
+inline bool noclipEnabled() { return SettingsLayer::isNoclipEnabled(); }
+inline bool label2Enabled() { return SettingsLayer::isLabel2Enabled(); }
+inline bool label3Enabled() { return SettingsLayer::isLabel3Enabled(); }
+inline bool label4Enabled() { return SettingsLayer::isLabel4Enabled(); }
