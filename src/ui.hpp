@@ -3,15 +3,16 @@
 using namespace geode::prelude;
 
 enum SettingPage {
-    Tab1,
-    Tab2,
-    Tab3,
-    Tab4
+    Player,
+    Cosmetic,
+    Misc,
+    Credits
 };
 
 enum SettingCellType {
     Default,
-    Button
+    Button,
+    Credit
 };
 
 using SearchCB = std::function<void(std::string)>;
@@ -60,12 +61,12 @@ public:
     static SettingsLayer* create();
 
     static bool isNoclipEnabled() { return GameManager::get()->getGameVariable("noclip_enabled"); }
-    static bool isLabel2Enabled() { return GameManager::get()->getGameVariable("label2_enabled"); }
-    static bool isLabel3Enabled() { return GameManager::get()->getGameVariable("label3_enabled"); }
-    static bool isLabel4Enabled() { return GameManager::get()->getGameVariable("label4_enabled"); }
+    static bool isAutoclickerEnabled() { return GameManager::get()->getGameVariable("autoclicker_enabled"); }
+    static bool isJumpHackEnabled() { return GameManager::get()->getGameVariable("jumphack_enabled"); }
+    static bool isIgnoreInputsEnabled() { return GameManager::get()->getGameVariable("ignore_inputs_enabled"); }
 };
 
 inline bool noclipEnabled() { return SettingsLayer::isNoclipEnabled(); }
-inline bool label2Enabled() { return SettingsLayer::isLabel2Enabled(); }
-inline bool label3Enabled() { return SettingsLayer::isLabel3Enabled(); }
-inline bool label4Enabled() { return SettingsLayer::isLabel4Enabled(); }
+inline bool autoclickerEnabled() { return SettingsLayer::isAutoclickerEnabled(); }
+inline bool jumpHackEnabled() { return SettingsLayer::isJumpHackEnabled(); }
+inline bool ignoreInputsEnabled() { return SettingsLayer::isIgnoreInputsEnabled(); }
