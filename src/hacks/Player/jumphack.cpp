@@ -1,5 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
+#include "src/ui.hpp"
 using namespace geode::prelude;
 class $modify(JumpHack, GJBaseGameLayer) {
 public:
