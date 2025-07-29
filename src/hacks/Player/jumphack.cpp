@@ -1,9 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GJBaseGameLayer.hpp>
 using namespace geode::prelude;
-
-extern bool jumpHackEnabled;
-
 class $modify(JumpHack, GJBaseGameLayer) {
 public:
     void update(float dt) override {
