@@ -380,6 +380,8 @@ $on_mod(Loaded) {
                 ImGui::EndTabItem();
             }
 
+
+            // if (ImGui::Begin
             if (ImGui::BeginTabItem("Settings")) {
                 if (ImGui::Combo("Theme", &currentTheme, themes, IM_ARRAYSIZE(themes))) {
                     Mod::get()->setSavedValue("theme", currentTheme);
